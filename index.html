@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>To-do List</title>
+      <link rel="stylesheet" href="./css/reset.css" />
+      <link rel="stylesheet" href="./css/base.css" />
+   </head>
+   <body>
+      <div class="container">
+         <!-- 사이드 바 -->
+         <nav class="sidebar">
+            <div class="menu-top">
+               <div class="menu-item hamburger">
+                  <img src="./assets/img/hamburger.dark.png" alt="삼단바" />
+               </div>
+               <div class="menu-item project">
+                  <img src="./assets/img/folder.dark.png" alt="폴더" />
+                  <span>Project</span>
+               </div>
+               <div class="menu-item schedule">
+                  <img src="./assets/img/date.dark.png" alt="달력" />
+                  <span>Schedule</span>
+               </div>
+            </div>
+            <div class="menu-bottom">
+               <div class="menu-item settings">
+                  <img src="./assets/img/settings.dark.png" alt="톱니바퀴" />
+                  <span>Settings</span>
+               </div>
+            </div>
+         </nav>
+
+         <!-- 메인  -->
+         <main class="main-content">
+            <!-- 헤더 부분 -->
+            <header class="header">
+               <div class="greeting">
+                  <h1>좋은 아침이에요, <span class="highlight">~님</span></h1>
+                  <p class="date">2026년 1월 21일</p>
+               </div>
+               <div class="header-actions">
+                  <button class="icon-btn bell">
+                     <img src="./assets/img/bell.dark.png" />
+                  </button>
+                  <button class="icon-btn theme">
+                     <img src="./assets/img/moon.png" />
+                  </button>
+               </div>
+            </header>
+
+            <!-- 통계 -->
+            <section class="stats-container">
+               <div class="card">
+                  <h3>Total Tasks</h3>
+                  <p class="total-number">0</p>
+               </div>
+               <div class="card">
+                  <h3>To Do</h3>
+                  <p class="total-number">0</p>
+               </div>
+               <div class="card">
+                  <h3>In Progress</h3>
+                  <p class="total-number">0</p>
+               </div>
+               <div class="card">
+                  <h3>Done</h3>
+                  <p class="total-number">0</p>
+               </div>
+               <div class="card">
+                  <h3>Achievement</h3>
+                  <p class="total-number">-</p>
+               </div>
+            </section>
+
+            <!-- 컨트롤러 -->
+            <section class="controls">
+               <div class="search-box">
+                  <input type="text" placeholder="할 일 검색..." />
+               </div>
+               <div class="filters">
+                  <button class="filter-btn">
+                     <span>전체 기간</span>
+                  </button>
+                  <button class="filter-btn">
+                     <span> 전체 우선순위 </span>
+                  </button>
+                  <button class="filter-btn sort">
+                     <span> 정렬: 오름차순 </span>
+                  </button>
+               </div>
+               <button class="add-btn">+ 새 할 일</button>
+            </section>
+
+            <!-- 정렬 -->
+            <div class="sort-bar">
+               <div class="bar-wrap">
+                  <span class="period-tag">기간: 오늘</span>
+               </div>
+               <div class="bar-wrap">
+                  <span class="sort-tag">우선순위: 중간</span>
+               </div>
+               <div class="bar-wrap">
+                  <span class="priority-tag">정렬: 오름차순</span>
+               </div>
+               <div class="bar-wrap">
+                  <button class="reset-btn">전체 데이터 초기화</button>
+               </div>
+            </div>
+
+            <!-- 메모 -->
+            <section class="board">
+               <div class="column">
+                  <div class="column-header to-do">
+                     <span>할 일</span>
+                     <span class="count">0</span>
+                  </div>
+                  <div class="task-list">
+                     <p class="to-do-msg">할 일이 없습니다</p>
+                  </div>
+               </div>
+
+               <div class="column">
+                  <div class="column-header ing">
+                     <span>진행 중</span>
+                     <span class="count">0</span>
+                  </div>
+                  <div class="task-list">
+                     <p class="ing-msg">진행 중인 일이 없습니다</p>
+                  </div>
+               </div>
+
+               <div class="column">
+                  <div class="column-header finish">
+                     <span>완료</span>
+                     <span class="count">0</span>
+                  </div>
+                  <div class="task-list">
+                     <p class="finish-msg">완료된 일이 없습니다</p>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+      <script src=""></script>
+   </body>
+</html>
