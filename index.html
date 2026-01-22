@@ -8,6 +8,8 @@
       <link rel="stylesheet" href="./css/base.css" />
       <link rel="stylesheet" href="./css/media.css" />
       <link rel="stylesheet" href="./css/modal.css" />
+      <link rel="stylesheet" href="./css/nickname.css">
+     
    </head>
    <body>
       <div class="container">
@@ -44,13 +46,42 @@
             <!-- 헤더 부분 -->
             <header class="header">
                <!-- 인사 -->
-               <div class="greeting">
-                  <h1>
-                     좋은 아침이에요,<br class="mobile-br" />
-                     <span class="highlight">401호</span>님
-                  </h1>
-                  <p class="date">2026년 1월 21일</p>
-               </div>
+              <div class="greeting">
+            <h1>
+              좋은 아침이에요,<br class="mobile-br" />
+              <div class="nickname-container">
+                <span class="highlight nickname-text" id="nickname-text"></span>
+                <!-- 닉네임 수정 및 저장 -->
+                <input
+                  type="text"
+                  class="nickname-input nickname-edit-input"
+                  maxlength="10"
+                />
+                <span class="suffix">님</span>
+                <button type="button" class="icon-edit-btn edit-btn">
+                  <img src="./assets/img/edit.svg" alt="닉네임수정" />
+                </button>
+                <!-- 이미지 클릭시 나타날 수정 완료 버튼 -->
+                <div class="edit-action-group edit-hidden">
+                  <button
+                    type="button"
+        
+                    class="mini-btn edit-cancel-btn"
+                  >
+                    취소
+                  </button>
+                  <button
+                    type="button"
+                   
+                    class="mini-btn edit-save-btn"
+                  >
+                    완료
+                  </button>
+                </divclass=>
+              </div>
+            </h1>
+            <p class="date" id="current-dat">날짜 불러오는 중...</p>
+          </div>
                <!-- 알람 / 테마 -->
                <div class="header-actions">
                   <!-- 알람 -->
@@ -268,5 +299,5 @@
       <!-- JS -->
       <script src="./js/filter.js"></script>
       <script src="./js/theme.js"></script>
-   </body>
+      <script src="./js/nickname.js"></script>
 </html>
