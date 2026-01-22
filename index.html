@@ -16,23 +16,23 @@
             <!-- 햄버거, Project, Schedule -->
             <div class="menu-top">
                <!-- 햄버거 -->
-               <button class="menu-item hamburger">
+               <button class="menu-item hamburger" type="button">
                   <img src="./assets/img/hamburger-light.svg" alt="삼단바" />
                </button>
                <!-- Project -->
-               <button class="menu-item project">
+               <button class="menu-item project" type="button">
                   <img src="./assets/img/folder-light.svg" alt="폴더" />
                   <span>Project</span>
                </button>
                <!-- Schedule -->
-               <button class="menu-item schedule">
+               <button class="menu-item schedule" type="button">
                   <img src="./assets/img/date-light.svg" alt="달력" />
                   <span>Schedule</span>
                </button>
             </div>
             <!-- 설정 / 톱니바퀴 -->
             <div class="menu-bottom">
-               <button class="menu-item settings">
+               <button class="menu-item settings" type="button">
                   <img src="./assets/img/settings-light.svg" alt="톱니바퀴" />
                   <span>Settings</span>
                </button>
@@ -54,11 +54,11 @@
                <!-- 알람 / 테마 -->
                <div class="header-actions">
                   <!-- 알람 -->
-                  <button class="icon-btn bell">
+                  <button class="icon-btn bell" type="button">
                      <img src="./assets/img/bell-light.svg" alt="알림" />
                   </button>
                   <!-- 테마 -->
-                  <button class="icon-btn theme">
+                  <button class="icon-btn theme" id="themeToggle" type="button" aria-label="테마 전환">
                      <img src="./assets/img/sun-light.svg" alt="테마" />
                   </button>
                </div>
@@ -95,38 +95,50 @@
                   <div class="search-box">
                      <input type="text" placeholder="할 일 검색..." />
                   </div>
+
                   <!-- 필터 -->
                   <div class="filters">
                      <!-- 전체 기간 -->
-                     <button class="filter-btn">
+                     <button class="filter-btn" type="button">
                         <span>전체 기간</span>
                      </button>
+
                      <!-- 전체 우선순위 -->
-                     <button class="filter-btn">
-                        <span> 전체 우선순위 </span>
-                     </button>
+                     <div class="filter-dropdown">
+                        <button class="filter-btn" type="button">
+                           <span>전체 우선순위</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                           <li><button type="button" class="dropdown-item">높음</button></li>
+                           <li><button type="button" class="dropdown-item">중간</button></li>
+                           <li><button type="button" class="dropdown-item">낮음</button></li>
+                        </ul>
+                     </div>
                      <!-- 오름차순 / 내림차순 -->
-                     <button class="filter-btn sort">
-                        <span> 정렬: 오름차순 </span>
+                     <button class="filter-btn sort" type="button">
+                        <span>정렬: <span class="sort-highlight" id="sort-text">오름차순</span></span>
                      </button>
                   </div>
                   <!-- + 새 할 일... / 추가 버튼 -->
-                  <button class="add-btn">+ 새 할 일</button>
+                  <button class="add-btn" type="button">+ 새 할 일</button>
                </section>
 
                <!-- 현재 선택 - 정렬 -->
                <div class="sort-bar">
-                  <!-- 기간 -->
+                  <!-- 정렬: 오름차순 / 내림차순 -->
                   <div class="bar-wrap">
+                     <span class="priority-tag"
+                        >정렬:
+                        <span class="highlight" id="btn-priority">오름차순</span>
+                     </span>
+                  </div>
+                  <!-- 기간 -->
+                  <div class="bar-wrap hidden">
                      <span class="period-tag">기간: <span class="highlight">오늘</span></span>
                   </div>
                   <!-- 우선순위 -->
-                  <div class="bar-wrap">
+                  <div class="bar-wrap hidden">
                      <span class="sort-tag">우선순위: <span class="highlight">중간</span></span>
-                  </div>
-                  <!-- 정렬 -->
-                  <div class="bar-wrap">
-                     <span class="priority-tag">정렬: <span class="highlight">오름차순</span></span>
                   </div>
                   <!-- 데이터 초기화 -->
                   <div class="bar-wrap reset-wrap">
@@ -134,7 +146,7 @@
                   </div>
                </div>
 
-               <!-- 진행 상황 -->
+               <!-- 진행 상황 박스 -->
                <section class="board">
                   <!-- 할 일 -->
                   <div class="column">
@@ -181,7 +193,7 @@
          </div>
 
          <!-- 카드 메인(form) 입력 -->
-         <div class="modal-card-from">
+         <div class="modal-card-form">
             <!-- 제목 -->
             <div class="form-item">
                <label class="form-label">제목*</label>
@@ -223,7 +235,7 @@
                   <!-- 중간 -->
                   <label class="bottom-actions-medium">
                      <input type="radio" name="bottom-actions" value="bottom-actions-medium" hidden />
-                     <span class-medium>중간</span>
+                     <span class="medium">중간</span>
                   </label>
                   <!-- 낮음 -->
                   <label class="bottom-actions-low">
@@ -248,12 +260,13 @@
 
          <!-- 취소/완료 버튼 -->
          <div class="form-actions">
-            <button type="button" class="btn-cencel">취소</button>
+            <button type="button" class="btn-cancel">취소</button>
             <button type="submit" class="btn-submit">완료</button>
          </div>
       </div>
 
       <!-- JS -->
-      <script src=""></script>
+      <script src="./js/filter.js"></script>
+      <script src="./js/theme.js"></script>
    </body>
 </html>
