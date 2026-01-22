@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>To-do List</title>
+      <link rel="stylesheet" href="./css/reset.css" />
+      <link rel="stylesheet" href="./css/base.css" />
+      <link rel="stylesheet" href="./css/media.css" />
+      <link rel="stylesheet" href="./css/modal.css" />
+   </head>
+   <body>
+      <div class="container">
+         <!-- 사이드 바 -->
+         <nav class="sidebar">
+            <!-- 햄버거, Project, Schedule -->
+            <div class="menu-top">
+               <!-- 햄버거 -->
+               <button class="menu-item hamburger">
+                  <img src="./assets/img/hamburger-light.svg" alt="삼단바" />
+               </button>
+               <!-- Project -->
+               <button class="menu-item project">
+                  <img src="./assets/img/folder-light.svg" alt="폴더" />
+                  <span>Project</span>
+               </button>
+               <!-- Schedule -->
+               <button class="menu-item schedule">
+                  <img src="./assets/img/date-light.svg" alt="달력" />
+                  <span>Schedule</span>
+               </button>
+            </div>
+            <!-- 설정 / 톱니바퀴 -->
+            <div class="menu-bottom">
+               <button class="menu-item settings">
+                  <img src="./assets/img/settings-light.svg" alt="톱니바퀴" />
+                  <span>Settings</span>
+               </button>
+            </div>
+         </nav>
+
+         <!-- 메인  -->
+         <main class="main-content">
+            <!-- 헤더 부분 -->
+            <header class="header">
+               <!-- 인사 -->
+               <div class="greeting">
+                  <h1>
+                     좋은 아침이에요,<br class="mobile-br" />
+                     <span class="highlight">401호</span>님
+                  </h1>
+                  <p class="date">2026년 1월 21일</p>
+               </div>
+               <!-- 알람 / 테마 -->
+               <div class="header-actions">
+                  <!-- 알람 -->
+                  <button class="icon-btn bell">
+                     <img src="./assets/img/bell-light.svg" alt="알림" />
+                  </button>
+                  <!-- 테마 -->
+                  <button class="icon-btn theme">
+                     <img src="./assets/img/sun-light.svg" alt="테마" />
+                  </button>
+               </div>
+            </header>
+
+            <div class="content-wrap">
+               <!-- Total Takes / To Do / In Progress / Done / Achievement -->
+               <section class="stats-container">
+                  <div class="card total">
+                     <h3>Total Tasks</h3>
+                     <p class="total-number">0</p>
+                  </div>
+                  <div class="card todo">
+                     <h3>To Do</h3>
+                     <p class="total-number">0</p>
+                  </div>
+                  <div class="card ing">
+                     <h3>In Progress</h3>
+                     <p class="total-number">0</p>
+                  </div>
+                  <div class="card done">
+                     <h3>Done</h3>
+                     <p class="total-number">0</p>
+                  </div>
+                  <div class="card achieve">
+                     <h3>Achievement</h3>
+                     <p class="total-number">-</p>
+                  </div>
+               </section>
+
+               <!-- 컨트롤러 -->
+               <section class="controls">
+                  <!-- 할 일 검색... -->
+                  <div class="search-box">
+                     <input type="text" placeholder="할 일 검색..." />
+                  </div>
+                  <!-- 필터 -->
+                  <div class="filters">
+                     <!-- 전체 기간 -->
+                     <button class="filter-btn">
+                        <span>전체 기간</span>
+                     </button>
+                     <!-- 전체 우선순위 -->
+                     <button class="filter-btn">
+                        <span> 전체 우선순위 </span>
+                     </button>
+                     <!-- 오름차순 / 내림차순 -->
+                     <button class="filter-btn sort">
+                        <span> 정렬: 오름차순 </span>
+                     </button>
+                  </div>
+                  <!-- + 새 할 일... / 추가 버튼 -->
+                  <button class="add-btn">+ 새 할 일</button>
+               </section>
+
+               <!-- 현재 선택 - 정렬 -->
+               <div class="sort-bar">
+                  <!-- 기간 -->
+                  <div class="bar-wrap">
+                     <span class="period-tag">기간: <span class="highlight">오늘</span></span>
+                  </div>
+                  <!-- 우선순위 -->
+                  <div class="bar-wrap">
+                     <span class="sort-tag">우선순위: <span class="highlight">중간</span></span>
+                  </div>
+                  <!-- 정렬 -->
+                  <div class="bar-wrap">
+                     <span class="priority-tag">정렬: <span class="highlight">오름차순</span></span>
+                  </div>
+                  <!-- 데이터 초기화 -->
+                  <div class="bar-wrap reset-wrap">
+                     <button class="reset-btn">전체 데이터 초기화</button>
+                  </div>
+               </div>
+
+               <!-- 진행 상황 -->
+               <section class="board">
+                  <!-- 할 일 -->
+                  <div class="column">
+                     <div class="column-header to-do">
+                        <span>할 일</span>
+                        <span class="count">0</span>
+                     </div>
+                     <div class="task-list">
+                        <p class="to-do-msg">할 일이 없습니다</p>
+                     </div>
+                  </div>
+
+                  <!-- 진행 중 -->
+                  <div class="column">
+                     <div class="column-header ing">
+                        <span>진행 중</span>
+                        <span class="count">0</span>
+                     </div>
+                     <div class="task-list">
+                        <p class="ing-msg">진행 중인 일이 없습니다</p>
+                     </div>
+                  </div>
+
+                  <!-- 완료 -->
+                  <div class="column">
+                     <div class="column-header finish">
+                        <span>완료</span>
+                        <span class="count">0</span>
+                     </div>
+                     <div class="task-list">
+                        <p class="finish-msg">완료된 일이 없습니다</p>
+                     </div>
+                  </div>
+               </section>
+            </div>
+         </main>
+      </div>
+
+      <!-- 모달 구역 -->
+      <div class="modal-card">
+         <!-- 상단 -->
+         <div class="modal-card-header">
+            <span class="modal-card-title">할 일 수정</span>
+         </div>
+
+         <!-- 카드 메인(form) 입력 -->
+         <div class="modal-card-from">
+            <!-- 제목 -->
+            <div class="form-item">
+               <label class="form-label">제목*</label>
+               <input
+                  type="text"
+                  class="form-input"
+                  id="title"
+                  name="title"
+                  placeholder="제목을 입력하세요..."
+                  maxlength="20"
+                  required
+               />
+            </div>
+            <!-- 내용 -->
+            <div class="form-item">
+               <label class="form-label">내용</label>
+               <textarea
+                  name="content"
+                  class="form-textarea"
+                  id="content"
+                  placeholder="60자 이내로 상세 내용을 입력하세요..."
+                  maxlength="60"
+                  required
+               ></textarea>
+            </div>
+         </div>
+
+         <!-- 하단 우선순위 - 상태  -->
+         <div class="bottom-priority-situation">
+            <!-- 왼족 우선순위 -->
+            <div class="bottom-actions-left">
+               <span>우선순위</span>
+               <!-- 우선순위 input -->
+               <div class="bottom-actions-group">
+                  <label class="bottom-actions-high">
+                     <input type="radio" name="bottom-actions" value="bottom-actions-high" required hidden />
+                     <span>높음</span>
+                  </label>
+                  <!-- 중간 -->
+                  <label class="bottom-actions-medium">
+                     <input type="radio" name="bottom-actions" value="bottom-actions-medium" hidden />
+                     <span class-medium>중간</span>
+                  </label>
+                  <!-- 낮음 -->
+                  <label class="bottom-actions-low">
+                     <input type="radio" name="bottom-actions" value="bottom-actions-low" hidden />
+                     <span class="low">낮음</span>
+                  </label>
+               </div>
+            </div>
+            <!-- 오른쪽 상태 -->
+            <div class="bottom-actions-right">
+               <span>상태</span>
+               <div class="select-wrap">
+                  <select name="select-wraps" id="select-wraps">
+                     <option value="done">완료</option>
+                     <option value="todo">미완료</option>
+                  </select>
+                  <!-- 가상요소로 넣어도 돼요!!! 일단 보이는거 보려고 한거 !-->
+                  <span class="arrow">▼</span>
+               </div>
+            </div>
+         </div>
+
+         <!-- 취소/완료 버튼 -->
+         <div class="form-actions">
+            <button type="button" class="btn-cencel">취소</button>
+            <button type="submit" class="btn-submit">완료</button>
+         </div>
+      </div>
+
+      <!-- JS -->
+      <script src=""></script>
+   </body>
+</html>

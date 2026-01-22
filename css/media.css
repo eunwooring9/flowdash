@@ -1,0 +1,254 @@
+/* 태블릿 기준 - 1279px */
+@media screen and (max-width: 1279px) {
+   * {
+      transition: all 0.3s ease;
+   }
+
+   /* ----- 사이드 바 ----- */
+   .sidebar {
+      width: 100px;
+   }
+
+   /* 햄버거, Project, Schedule */
+   .menu-top img {
+      width: 35px;
+      height: 35px;
+   }
+
+   .menu-item.hamburger > img {
+      width: 27px;
+      height: 27px;
+   }
+
+   .menu-bottom img {
+      width: 35px;
+      height: 35px;
+   }
+
+   /* 인사 */
+   .greeting h1 {
+      font-size: 30px;
+      font-weight: 700;
+   }
+
+   /* 벨 / 테마 */
+   .header-actions {
+      padding-right: 35px;
+   }
+
+   /* ----- Total Takes / To Do / In Progress / Done / Achievement ----- */
+   .stats-container {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+   }
+
+   .board {
+      grid-template-columns: 1fr;
+      height: auto;
+   }
+
+   .column {
+      margin-bottom: 20px;
+   }
+
+   /* ----- 컨트롤러 ----- */
+   .controls {
+      flex-wrap: wrap;
+   }
+
+   /* 검색 창 */
+   .search-box {
+      display: flex;
+   }
+
+   .search-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+   }
+
+   /* 필터 */
+   .filters {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      margin-left: auto;
+   }
+
+   /* 추가 버튼 / + 새 할 일... */
+   .add-btn {
+      margin: auto;
+   }
+
+   /* ----- 현재 선택 - 정렬 ----- */
+   .sort-bar {
+      gap: 20px;
+   }
+
+   /* ----- 진행 상황 ----- */
+   .board {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+   }
+}
+
+/* 컨트롤러 중간 조정 */
+@media screen and (max-width: 1123px) {
+   .controls {
+      display: flex;
+      gap: 25px;
+      transition: all 0.3s ease;
+   }
+
+   .reset-btn {
+      font-size: 14px;
+   }
+
+   .task-list {
+      min-height: 300px;
+      transition: all 0.3s ease;
+   }
+}
+
+/* ----- 모바일 버전 ----- */
+@media screen and (max-width: 768px) {
+   * {
+      transition: all 0.3s ease;
+   }
+
+   /* ----- 사이드 바 ----- */
+   /* .sidebar {
+      padding: 0;
+      width: auto;
+      height: auto;
+      background: transparent;
+      position: absolute;
+      right: 70px;
+      top: 67px;
+   } */
+
+   /* 햄버거, Project, Schedule */
+   .menu-top {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      align-items: center;
+   }
+
+   .menu-item.project,
+   .menu-item.schedule {
+      display: none;
+   }
+
+   /* 톱니바퀴 / 설정 */
+   .menu-bottom {
+      display: none;
+   }
+
+   /* ----- 메인부분 ----- */
+   .main-content {
+      padding: 20px;
+   }
+
+   /* ----- 헤더 ----- */
+   .header {
+      justify-content: space-between;
+   }
+
+   /* 인사 */
+   .greeting h1 {
+      font-size: 23px;
+      font-weight: 700;
+   }
+
+   /* 알람 / 테마 */
+   .header-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      padding-right: 10px;
+   }
+
+   /* 중단 ~ 하단 박스 */
+   .content-wrap {
+      padding: 0px 10px 30px 10px;
+   }
+
+   /* Total Takes / To Do / In Progress / Done / Achievement */
+   .stats-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+   }
+
+   .stats-container .card:last-child {
+      grid-column: span 2;
+   }
+
+   .card {
+      width: 100%;
+      height: auto;
+      min-height: 120px;
+   }
+
+   .controls {
+      flex-direction: column;
+      gap: 10px;
+   }
+
+   /* 검색 / 필터 / 추가 */
+   .search-box input,
+   .filter-btn,
+   .add-btn {
+      width: 100%;
+      justify-content: center;
+   }
+
+   .filters {
+      margin-left: 0;
+   }
+
+   /* ----- 정렬 ----- */
+   .sort-bar {
+      gap: 10px;
+      font-size: 13px;
+   }
+
+   .bar-wrap {
+      width: 100px;
+   }
+
+   /* 리셋 버튼 */
+   .reset-btn {
+      font-size: 13px;
+   }
+
+   /* 진행 상황 */
+   .column-header {
+      font-size: 20px;
+   }
+
+   .task-list {
+      min-height: 250px;
+   }
+
+   @media screen and (max-width: 620px) {
+      /* 인사칸 내리기 */
+      .mobile-br {
+         display: block;
+      }
+
+      /* 알람 / 테마 */
+      .icon-btn > img {
+         width: 30px;
+         height: 30px;
+      }
+
+      .menu-item.hamburger > img {
+         width: 30px;
+         height: 30px;
+      }
+   }
+}
