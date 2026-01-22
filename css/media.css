@@ -4,16 +4,11 @@
 
 /* 태블릿 기준 - 1279px */
 @media screen and (max-width: 1279px) {
-   /* ----- 사이드 바 ----- */
-   .sidebar {
-      width: 100px;
-   }
-
    /* 햄버거, Project, Schedule */
    .menu-top img,
    .menu-bottom img {
-      width: 35px;
-      height: 35px;
+      width: 27px;
+      height: 27px;
    }
 
    .menu-item.hamburger img {
@@ -31,10 +26,14 @@
       padding-right: 35px;
    }
 
-   /* ----- 통계 카드 3열로 변경 ----- */
+   /* ----- 통계 카드 2열로 변경 ----- */
    .stats-container {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+   }
+
+   .stats-container .card:last-child {
+      grid-column: span 2;
    }
 
    .column {
@@ -128,12 +127,17 @@
    /* ----- 헤더 ----- */
    .header {
       justify-content: space-between;
-      padding: 25px 15px 25px 25px;
+      padding: 30px 20px;
+      margin-bottom: 25px;
    }
 
    /* 인사 */
    .greeting h1 {
       font-size: 23px;
+   }
+
+   .date {
+      font-size: 13px;
    }
 
    /* 알람 / 테마 */
@@ -158,6 +162,7 @@
    .stats-container {
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
+      margin-bottom: 20px;
    }
 
    .stats-container .card:last-child {
@@ -166,8 +171,7 @@
 
    .card {
       width: 100%;
-      height: auto;
-      min-height: 120px;
+      min-height: 70px;
    }
 
    .controls {
@@ -278,13 +282,6 @@
          gap: 10px;
       }
 
-      .filter-btn {
-         width: auto;
-         min-width: 90px;
-         height: 40px;
-         font-size: 14px;
-      }
-
       .add-btn {
          height: 43px;
          display: flex;
@@ -320,11 +317,6 @@
 
       .total-number {
          font-size: 30px;
-      }
-
-      .filters {
-         display: flex;
-         flex-wrap: wrap;
       }
    }
 }
