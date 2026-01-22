@@ -72,6 +72,10 @@
    font-weight: 700;
 }
 
+.mobile-br {
+   display: none;
+}
+
 .highlight {
    color: #4e56ed;
 }

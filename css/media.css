@@ -1,5 +1,9 @@
 /* 태블릿 기준 - 1279px */
 @media screen and (max-width: 1279px) {
+   * {
+      transition: all 0.3s ease;
+   }
+
    /* ----- 사이드 바 ----- */
    .sidebar {
       width: 100px;
@@ -96,17 +100,27 @@
    .controls {
       display: flex;
       gap: 25px;
+      transition: all 0.3s ease;
+   }
+
+   .reset-btn {
+      font-size: 14px;
    }
 
    .task-list {
       min-height: 300px;
+      transition: all 0.3s ease;
    }
 }
 
 /* ----- 모바일 버전 ----- */
 @media screen and (max-width: 768px) {
+   * {
+      transition: all 0.3s ease;
+   }
+
    /* ----- 사이드 바 ----- */
-   .sidebar {
+   /* .sidebar {
       padding: 0;
       width: auto;
       height: auto;
@@ -114,7 +128,7 @@
       position: absolute;
       right: 70px;
       top: 67px;
-   }
+   } */
 
    /* 햄버거, Project, Schedule */
    .menu-top {
@@ -141,7 +155,7 @@
 
    /* ----- 헤더 ----- */
    .header {
-      justify-content: center;
+      justify-content: space-between;
    }
 
    /* 인사 */
@@ -152,10 +166,10 @@
 
    /* 알람 / 테마 */
    .header-actions {
-      width: 50%;
       display: flex;
       justify-content: flex-end;
       gap: 10px;
+      padding-right: 10px;
    }
 
    /* 중단 ~ 하단 박스 */
@@ -208,10 +222,33 @@
 
    /* 리셋 버튼 */
    .reset-btn {
-      font-size: 15px;
+      font-size: 13px;
+   }
+
+   /* 진행 상황 */
+   .column-header {
+      font-size: 20px;
    }
 
    .task-list {
       min-height: 250px;
+   }
+
+   @media screen and (max-width: 620px) {
+      /* 인사칸 내리기 */
+      .mobile-br {
+         display: block;
+      }
+
+      /* 알람 / 테마 */
+      .icon-btn > img {
+         width: 30px;
+         height: 30px;
+      }
+
+      .menu-item.hamburger > img {
+         width: 30px;
+         height: 30px;
+      }
    }
 }
