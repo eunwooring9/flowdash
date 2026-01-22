@@ -1,34 +1,29 @@
+* {
+   transition: all 0.3s ease;
+}
+
 /* 태블릿 기준 - 1279px */
 @media screen and (max-width: 1279px) {
-   * {
-      transition: all 0.3s ease;
-   }
-
    /* ----- 사이드 바 ----- */
    .sidebar {
       width: 100px;
    }
 
    /* 햄버거, Project, Schedule */
-   .menu-top img {
-      width: 35px;
-      height: 35px;
-   }
-
-   .menu-item.hamburger > img {
-      width: 27px;
-      height: 27px;
-   }
-
+   .menu-top img,
    .menu-bottom img {
       width: 35px;
       height: 35px;
    }
 
+   .menu-item.hamburger img {
+      width: 27px;
+      height: 27px;
+   }
+
    /* 인사 */
    .greeting h1 {
       font-size: 30px;
-      font-weight: 700;
    }
 
    /* 벨 / 테마 */
@@ -36,15 +31,10 @@
       padding-right: 35px;
    }
 
-   /* ----- Total Takes / To Do / In Progress / Done / Achievement ----- */
+   /* ----- 통계 카드 3열로 변경 ----- */
    .stats-container {
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-   }
-
-   .board {
-      grid-template-columns: 1fr;
-      height: auto;
    }
 
    .column {
@@ -59,10 +49,6 @@
    /* 검색 창 */
    .search-box {
       display: flex;
-   }
-
-   .search-box {
-      display: flex;
       justify-content: center;
       align-items: center;
       flex: 1;
@@ -70,9 +56,7 @@
 
    /* 필터 */
    .filters {
-      display: flex;
       justify-content: center;
-      align-items: center;
       flex: 1;
       margin-left: auto;
    }
@@ -87,11 +71,11 @@
       gap: 20px;
    }
 
-   /* ----- 진행 상황 ----- */
+   /* ----- 보드 1열로 변경 ----- */
    .board {
-      display: flex;
-      flex-direction: column;
+      grid-template-columns: 1fr;
       gap: 30px;
+      height: auto;
    }
 }
 
@@ -100,7 +84,6 @@
    .controls {
       display: flex;
       gap: 25px;
-      transition: all 0.3s ease;
    }
 
    .reset-btn {
@@ -109,59 +92,48 @@
 
    .task-list {
       min-height: 300px;
-      transition: all 0.3s ease;
    }
 }
 
 /* ----- 모바일 버전 ----- */
 @media screen and (max-width: 768px) {
-   * {
-      transition: all 0.3s ease;
-   }
-
    /* ----- 사이드 바 ----- */
-   /* .sidebar {
-      padding: 0;
+   .sidebar {
+      padding: 50px 5px 10px 15px;
       width: auto;
       height: auto;
       background: transparent;
-      position: absolute;
-      right: 70px;
-      top: 67px;
-   } */
-
-   /* 햄버거, Project, Schedule */
-   .menu-top {
       display: flex;
-      width: 100%;
-      justify-content: space-around;
+      justify-content: flex-start;
       align-items: center;
    }
 
+   /* 햄버거, Project, Schedule */
    .menu-item.project,
-   .menu-item.schedule {
-      display: none;
-   }
-
-   /* 톱니바퀴 / 설정 */
+   .menu-item.schedule,
    .menu-bottom {
       display: none;
    }
 
-   /* ----- 메인부분 ----- */
+   .menu-item.hamburger img {
+      width: 20px;
+      height: 20px;
+   }
+
+   /* ----- 메인 영역 ----- */
    .main-content {
-      padding: 20px;
+      padding: 0px 10px 20px 0px;
    }
 
    /* ----- 헤더 ----- */
    .header {
       justify-content: space-between;
+      padding: 25px 15px 25px 25px;
    }
 
    /* 인사 */
    .greeting h1 {
       font-size: 23px;
-      font-weight: 700;
    }
 
    /* 알람 / 테마 */
@@ -172,12 +144,17 @@
       padding-right: 10px;
    }
 
+   .icon-btn img {
+      width: 25px;
+      height: 25px;
+   }
+
    /* 중단 ~ 하단 박스 */
    .content-wrap {
       padding: 0px 10px 30px 10px;
    }
 
-   /* Total Takes / To Do / In Progress / Done / Achievement */
+   /* 통계 2열로 변경 */
    .stats-container {
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
@@ -208,16 +185,37 @@
 
    .filters {
       margin-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+   }
+
+   .filters > .filter-btn,
+   .filters > .filter-dropdown {
+      flex: 1 1 calc(50% - 10px);
    }
 
    /* ----- 정렬 ----- */
    .sort-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 10px;
+      height: auto;
       font-size: 13px;
    }
 
    .bar-wrap {
-      width: 100px;
+      width: auto;
+      min-width: 100px;
+      flex: 1;
+   }
+
+   .bar-wrap.reset-wrap {
+      margin-left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
    }
 
    /* 리셋 버튼 */
@@ -235,20 +233,98 @@
    }
 
    @media screen and (max-width: 620px) {
+      /* ----- 헤더 ----- */
+      .header {
+         margin-bottom: 20px;
+      }
+
+      .greeting h1 {
+         font-size: 20px;
+      }
+
+      .date {
+         font-size: 13px;
+      }
+
+      /* 알람 / 테마 */
+      .icon-btn img {
+         width: 20px;
+         height: 20px;
+      }
+
+      /* ----- 카드 ----- */
+      .card {
+         padding: 25px;
+      }
+
+      .stats-container {
+         margin-bottom: 20px;
+      }
+
+      .total-number {
+         font-size: 35px;
+      }
+
+      .controls {
+         padding: 10px;
+      }
+
+      /* 버튼 높이 조절 */
+      .search-box input {
+         height: 50px;
+      }
+
+      .filters {
+         gap: 10px;
+      }
+
+      .filter-btn {
+         width: auto;
+         min-width: 90px;
+         height: 40px;
+         font-size: 14px;
+      }
+
+      .add-btn {
+         height: 43px;
+         display: flex;
+         align-items: center;
+         font-size: 17px;
+      }
+
+      .bar-wrap {
+         width: auto;
+         min-width: 90px;
+      }
+
+      .bar-wrap.reset-wrap {
+         margin-left: 0;
+         /* width: 100%; */
+         text-align: center;
+      }
+   }
+
+   @media screen and (max-width: 420px) {
       /* 인사칸 내리기 */
       .mobile-br {
          display: block;
       }
 
-      /* 알람 / 테마 */
-      .icon-btn > img {
-         width: 30px;
-         height: 30px;
+      .card {
+         padding: 20px 15px;
       }
 
-      .menu-item.hamburger > img {
-         width: 30px;
-         height: 30px;
+      .card h3 {
+         font-size: 13px;
+      }
+
+      .total-number {
+         font-size: 30px;
+      }
+
+      .filters {
+         display: flex;
+         flex-wrap: wrap;
       }
    }
 }
