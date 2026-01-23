@@ -1,384 +1,386 @@
 @font-face {
-  font-family: "Pretendard";
-  font-weight: 45 920;
-  font-style: normal;
-  font-display: swap;
-  src:
-    url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/packages/pretendard/dist/web/variable/woff2/PretendardVariable.woff2")
-      format("woff2-variations"),
-    url("/fonts/PretendardVariable.woff2") format("woff2-variations");
+   font-family: "Pretendard";
+   font-weight: 45 920;
+   font-style: normal;
+   font-display: swap;
+   src:
+      url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/packages/pretendard/dist/web/variable/woff2/PretendardVariable.woff2")
+         format("woff2-variations"),
+      url("/fonts/PretendardVariable.woff2") format("woff2-variations");
 }
+
 .container {
-  display: flex;
-  height: 100vh;
-  width: 100%;
+   display: flex;
+   height: 100vh;
+   width: 100%;
 }
 
 .hidden {
-  display: none !important;
+   display: none !important;
 }
 
 /* ----- 사이드 바 ----- */
 .sidebar {
-  display: flex;
-  flex-direction: column;
-  width: 100px;
-  background-color: #e9e9e9;
-  padding: 55px 45px;
-  justify-content: space-between;
+   display: flex;
+   flex-direction: column;
+   width: 100px;
+   background-color: #e9e9e9;
+   padding: 55px 45px;
+   justify-content: space-between;
 }
 
 /* 햄버거, Project, Schedule */
 .menu-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 30px;
 }
 
 .menu-top img,
 .menu-bottom img {
-  width: 30px;
-  height: 30px;
+   width: 30px;
+   height: 30px;
 }
 
 .menu-item.hamburger img {
-  width: 33px;
-  height: 30px;
+   width: 33px;
+   height: 30px;
 }
 
 .menu-bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 .menu-top span,
 .menu-bottom span {
-  font-size: 14px;
-  font-weight: 400;
+   font-size: 14px;
+   font-weight: 400;
 }
 /* 사이드바 이미지 정렬 */
 .menu-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 3px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 3px;
 }
 
 /* 폴더 이미지 상단 조절 */
 .project {
-  margin-top: 77px;
+   margin-top: 77px;
 }
 
 /* ----- 메인 구역 ----- */
 .main-content {
-  flex: 1;
-  padding: 0;
-  overflow-y: auto;
-  height: 100%;
+   flex: 1;
+   padding: 0;
+   overflow-y: auto;
+   height: 100%;
 }
 
 /* ----- 해더 ----- */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 35px 45px;
-  margin-bottom: 45px;
-  background: #ffffff;
-  box-shadow: 0px 3px 6px rgba(136, 136, 136, 0.25);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 35px 45px;
+   margin-bottom: 45px;
+   background: #ffffff;
+   box-shadow: 0px 3px 6px rgba(136, 136, 136, 0.25);
 }
 
 /* 좋은 OO이에요! */
 .greeting h1 {
-  font-size: 40px;
-  font-weight: 700;
+   font-size: 40px;
+   font-weight: 700;
 }
 
 .mobile-br {
-  display: none;
+   display: none;
 }
 
 .highlight {
-  color: #4e56ed;
+   color: #4e56ed;
 }
 
 /* 20OO년 OO월 OO일 */
 .date {
-  font-size: 17px;
-  font-weight: 600;
-  margin-top: 16px;
+   font-size: 17px;
+   font-weight: 600;
+   margin-top: 16px;
 }
 
 /* ----- 벨 / 테마 버튼 ----- */
 .header-actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 31px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 31px;
 }
 
 .icon-btn img {
-  width: 30px;
-  height: 30px;
+   width: 30px;
+   height: 30px;
 }
 
 /* ----- 중앙 영역 시작 ----- */
 .content-wrap {
-  padding: 0px 40px 40px 40px;
+   padding: 0px 40px 40px 40px;
 }
 
 /* ----- 5개 카드 분할 ----- */
 .stats-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 44px;
-  margin-bottom: 57px;
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   gap: 44px;
+   margin-bottom: 57px;
 }
 
 /* ----- 카드 ----- */
 .card {
-  width: 100%;
-  height: 137px;
-  background: #fffeff;
-  box-shadow: 0px 3px 6px rgba(119, 119, 119, 0.25);
-  border-radius: 20px;
-  border-top: 5px solid;
-  padding: 30px 0px 84px 30px;
+   width: 100%;
+   height: 137px;
+   background: #fffeff;
+   box-shadow: 0px 3px 6px rgba(119, 119, 119, 0.25);
+   border-radius: 20px;
+   border-top: 5px solid;
+   padding: 30px 0px 84px 30px;
 }
 
 /* 카드 테두리 색 */
 .card.total {
-  border-top-color: #4e56ed;
+   border-top-color: #4e56ed;
 }
 
 .card.todo {
-  border-top-color: #f22a2a;
+   border-top-color: #f22a2a;
 }
 
 .card.ing {
-  border-top-color: #f59e0b;
+   border-top-color: #f59e0b;
 }
 
 .card.done {
-  border-top-color: #22c55e;
+   border-top-color: #22c55e;
 }
 
 .card.achieve {
-  border-top-color: #8b5cf6;
+   border-top-color: #8b5cf6;
 }
 
 /* ----- Total Takes / To Do / In Progress / Done / Achievement ----- */
 .card h3 {
-  font-size: 16px;
-  font-weight: 500;
-  color: #6a6a6a;
-  margin-bottom: 6px;
+   font-size: 16px;
+   font-weight: 500;
+   color: #6a6a6a;
+   margin-bottom: 6px;
 }
 
 /* --- 남은 카운트 --- */
 .total-number {
-  font-size: 40px;
-  font-weight: 500;
+   font-size: 40px;
+   font-weight: 500;
 }
 
 /* ----- 컨트롤러 부분 ----- */
 .controls {
-  display: flex;
-  gap: 15px;
-  padding: 25px;
-  margin-bottom: 20px;
-  background: #fffeff;
-  box-shadow: 0px 3px 6px rgba(122, 122, 122, 0.25);
-  border-radius: 20px;
+   display: flex;
+   gap: 15px;
+   padding: 25px;
+   margin-bottom: 20px;
+   background: #fffeff;
+   box-shadow: 0px 3px 6px rgba(122, 122, 122, 0.25);
+   border-radius: 20px;
 }
 
 /* ----- 할 일 검색... ----- */
 .search-box input {
-  width: 328px;
-  height: 61px;
-  padding: 18px;
-  background: #fffeff;
-  border: 1px solid #cfcfcf;
-  border-radius: 15px;
+   width: 328px;
+   height: 61px;
+   padding: 18px;
+   background: #fffeff;
+   border: 1px solid #cfcfcf;
+   border-radius: 15px;
 }
 
 /* ----- 필터 ----- */
 .filters {
-  display: flex;
-  gap: 25px;
-  justify-content: flex-start;
-  align-items: center;
+   display: flex;
+   gap: 25px;
+   justify-content: flex-start;
+   align-items: center;
 }
 
 .filter-btn {
-  font-weight: 500;
-  width: 134px;
-  height: 61px;
-  background: #fffeff;
-  border: 1px solid #cfcfcf;
-  border-radius: 15px;
+   font-weight: 500;
+   width: 134px;
+   height: 61px;
+   background: #fffeff;
+   border: 1px solid #cfcfcf;
+   border-radius: 15px;
 }
 
 /* ----- 정렬 부분 빼고 화살표 표시 ----- */
 .filter-btn:not(.sort)::after {
-  content: "▼";
-  font-size: 12px;
-  color: #555555;
-  margin-left: 10px;
+   content: "▼";
+   font-size: 12px;
+   color: #555555;
+   margin-left: 10px;
 }
 
 .filter-btn.sort {
-  border-radius: 30px;
+   border-radius: 30px;
 }
 
 /* ----- 전체 우선순위 선택 ----- */
 .filter-dropdown {
-  position: relative;
+   position: relative;
 }
 
 /* ----- 드롭다운 박스 ----- */
 .dropdown-menu {
-  position: absolute;
-  width: 100%;
-  background-color: #ffffff;
-  border-radius: 20px;
-  border: 1px solid #cfcfcf;
-  box-shadow: 0px 3px 6px rgba(122, 122, 122, 0.25);
-  z-index: 101;
-  top: 65px;
-  padding: 10px;
+   position: absolute;
+   width: 100%;
+   background-color: #ffffff;
+   border-radius: 20px;
+   border: 1px solid #cfcfcf;
+   box-shadow: 0px 3px 6px rgba(122, 122, 122, 0.25);
+   z-index: 101;
+   top: 65px;
+   padding: 10px;
 
-  /* 숨겨둠!! */
-  display: none;
+   /* 숨겨둠!! */
+   display: none;
 }
 
 /* ----- active 됐을 때 (높음, 중간, 낮음) 보이기 ----- */
 .filter-dropdown.active .dropdown-menu {
-  display: block;
+   display: block;
 }
 
 /* ----- 높음, 중간, 낮음 ----- */
 .dropdown-menu li {
-  font-size: 15px;
-  cursor: pointer;
-  list-style: none;
-  padding: 10px 20px;
+   font-size: 15px;
+   cursor: pointer;
+   list-style: none;
+   padding: 10px 20px;
 }
 
 .dropdown-item:hover {
-  background-color: #ffffff;
-  color: #f22a2a;
+   background-color: #ffffff;
+   color: #f22a2a;
 }
 
 /* ----- 정렬: 오름차순 (하이라이트) ----- */
 .sort-highlight {
-  color: #4e56ed;
+   color: #4e56ed;
 }
 
 /* ----- 추가 버튼 / + 새 할 일... ----- */
 .add-btn {
-  margin-left: auto;
-  color: white;
-  background-color: #4e56ed;
-  width: 444px;
-  height: 61px;
-  padding: 18px;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: 600;
+   margin-left: auto;
+   color: white;
+   background-color: #4e56ed;
+   width: 444px;
+   height: 61px;
+   padding: 18px;
+   border-radius: 8px;
+   font-size: 20px;
+   font-weight: 600;
 }
 
 /* ----- 현재 정렬 상황 ----- */
 .sort-bar {
-  display: flex;
-  justify-content: flex-start;
-  gap: 40px;
-  margin-bottom: 20px;
-  font-size: 15px;
-  font-weight: 600;
+   display: flex;
+   justify-content: flex-start;
+   gap: 40px;
+   margin-bottom: 20px;
+   font-size: 15px;
+   font-weight: 600;
 }
 
 .bar-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fffeff;
-  border: 1px solid #cfcfcf;
-  padding: 10px;
-  /* width: 143px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #fffeff;
+   border: 1px solid #cfcfcf;
+   padding: 10px;
+   /* width: 143px;
    height: 43px; */
-  border-radius: 30px;
-  box-shadow: 0px 3px 6px rgba(122, 122, 122, 0.25);
+   border-radius: 30px;
+   box-shadow: 0px 3px 6px rgba(122, 122, 122, 0.25);
 }
 
 /* ----- 전체 데이터 초기화 ----- */
 .bar-wrap:last-child {
-  margin-left: auto;
+   margin-left: auto;
 }
 
 .reset-wrap {
-  border: none;
-  box-shadow: none;
+   box-shadow: none;
+   background-color: #fafafa;
+   border: none;
 }
 
 .reset-btn {
-  color: #ff0000;
-  font-weight: 600;
-  font-size: 17px;
+   color: #ff0000;
+   font-weight: 600;
+   font-size: 17px;
 }
 
 /* ----- 현재 진행상황 - 박스 분할 ----- */
 .board {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 88px;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 88px;
 }
 
 /* ----- 박스 3개 ----- */
 .column {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  background: #ffffff;
-  box-shadow: 0px 3px 6px rgba(119, 119, 119, 0.25);
-  border-radius: 25px;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   background: #ffffff;
+   box-shadow: 0px 3px 6px rgba(119, 119, 119, 0.25);
+   border-radius: 25px;
 }
 
 /* ----- 할 일 / 진행 중 / 완료 ----- */
 .column-header {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-  border-bottom: 2px solid;
-  font-size: 25px;
-  color: #767676;
-  padding: 10px 11px 22px 20px;
+   display: flex;
+   justify-content: space-between;
+   padding-bottom: 15px;
+   margin-bottom: 15px;
+   border-bottom: 2px solid;
+   font-size: 25px;
+   color: #767676;
+   padding: 10px 11px 22px 20px;
 }
 
 /* 할 일 - 경계선 */
 .to-do {
-  border-bottom-color: #f22a2a;
+   border-bottom-color: #f22a2a;
 }
 
 /* 진행 중 - 경계선 */
 .ing {
-  border-bottom-color: #f59e0b;
+   border-bottom-color: #f59e0b;
 }
 
 /* 완료 - 경계선 */
 .finish {
-  border-bottom-color: #22c55e;
+   border-bottom-color: #22c55e;
 }
 
 /* task 박스 */
 .task-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  min-height: 470px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex: 1;
+   min-height: 470px;
 }
