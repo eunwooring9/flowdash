@@ -1,5 +1,5 @@
 * {
-  transition: all 0.3s ease;
+   transition: all 0.3s ease;
 }
 
 /* 태블릿 기준 - 1279px */
@@ -284,53 +284,84 @@
 
     .date {
       font-size: 13px;
-    }
+   }
 
-    /* 알람 / 테마 */
-    .icon-btn img {
-      width: 20px;
-      height: 20px;
-    }
-
-    /* ----- 카드 ----- */
-    .card {
-      padding: 25px;
-    }
-
-    .stats-container {
-      margin-bottom: 20px;
-    }
-
-    .total-number {
-      font-size: 35px;
-    }
-
-    .controls {
-      padding: 10px;
-    }
-
-    /* 버튼 높이 조절 */
-    .search-box input {
-      height: 50px;
-    }
-
-    .filters {
-      gap: 10px;
-    }
-
-    .add-btn {
-      height: 43px;
+   /* 알람 / 테마 */
+   .header-actions {
       display: flex;
-      align-items: center;
-      font-size: 17px;
-    }
+      justify-content: flex-end;
+      gap: 10px;
+      padding-right: 10px;
+   }
 
-    .bar-wrap {
+   .icon-btn img {
+      width: 25px;
+      height: 25px;
+   }
+
+   /* 중단 ~ 하단 박스 */
+   .content-wrap {
+      padding: 0px 20px 30px 20px;
+   }
+
+   /* 통계 2열로 변경 */
+   .stats-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-bottom: 20px;
+   }
+
+   .stats-container .card:last-child {
+      grid-column: span 2;
+   }
+
+   .card {
+      width: 100%;
+      min-height: 70px;
+   }
+
+   .controls {
+      flex-direction: column;
+      gap: 10px;
+   }
+
+   /* 검색 / 필터 / 추가 */
+   .search-box input,
+   .filter-btn,
+   .add-btn {
+      width: 100%;
+      justify-content: center;
+   }
+
+   .filters {
+      margin-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+   }
+
+   .filters > .filter-btn,
+   .filters > .filter-dropdown {
+      flex: 1 1 calc(50% - 10px);
+   }
+
+   /* ----- 정렬 ----- */
+   .sort-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      height: auto;
+      font-size: 13px;
+   }
+
+   .bar-wrap {
       width: auto;
-      min-width: 90px;
-    }
+      min-width: 100px;
+      flex: 1;
+   }
 
-    .bar-wrap.reset-wrap {
+   .bar-wrap.reset-wrap {
       margin-left: 0;
       /* width: 100%; */
       text-align: center;
@@ -359,7 +390,7 @@
 
     .card h3 {
       font-size: 13px;
-    }
+   }
 
     .total-number {
       font-size: 30px;
