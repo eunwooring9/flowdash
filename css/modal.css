@@ -102,7 +102,7 @@
 
 /* 클릭 전 기존 배경 컬러 */
 .bottom-actions-high,
-body.dark .bottom-actions-medium {
+body.dark .bottom-actions-high {
   background-color: #f22a2a;
 }
 
@@ -112,7 +112,7 @@ body.dark .bottom-actions-medium {
 }
 
 .bottom-actions-low,
-body.dark .bottom-actions-medium {
+body.dark .bottom-actions-low {
   background-color: #22c55e;
 }
 
