@@ -1,86 +1,86 @@
 .modal-card {
-  margin: 20px auto;
-  padding: 30px;
-  width: 90%;
-  /* 찾아 보니까 모바일 반응형 할때 생각해서
+	margin: 20px auto;
+	padding: 30px;
+	width: 90%;
+	/* 찾아 보니까 모바일 반응형 할때 생각해서
 미리 여백 확보하는게 좋다해서 90% 잡음*/
-  /* max-width: 740px; */
-  min-height: auto;
-  border: 2px solid #22c55e;
-  border-radius: 20px;
-  background-color: #fff;
-  font-size: 32px;
-  font-weight: 400;
-  color: #000;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+	/* max-width: 740px; */
+	min-height: auto;
+	border: 2px solid #22c55e;
+	border-radius: 20px;
+	background-color: #fff;
+	font-size: 32px;
+	font-weight: 400;
+	color: #000;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
 }
 
 /* 상단 */
 .modal-card-header {
-  margin-bottom: 30px;
-  padding-bottom: 10px;
+	margin-bottom: 30px;
+	padding-bottom: 10px;
 }
 
 /* 카드 메인(form) 입력 */
 .modal-card-form {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
 }
 
 /* 제목 - 내용 */
 .form-item {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  font-size: 15px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	font-size: 15px;
 }
 
 .form-input {
-  padding: 13px;
-  width: 100%;
-  border: 1px solid #000;
-  border-radius: 8px;
-  font-size: 15px;
-  box-sizing: border-box;
+	padding: 13px;
+	width: 100%;
+	border: 1px solid #000;
+	border-radius: 8px;
+	font-size: 15px;
+	box-sizing: border-box;
 }
 
 /* 내용 */
 .form-textarea {
-  margin-bottom: 15px;
-  padding: 13px;
-  width: 100%;
-  height: 130px;
+	margin-bottom: 15px;
+	padding: 13px;
+	width: 100%;
+	height: 130px;
 
-  border: 1px solid #000;
-  border-radius: 8px;
-  font-size: 15px;
-  box-sizing: border-box;
+	border: 1px solid #000;
+	border-radius: 8px;
+	font-size: 15px;
+	box-sizing: border-box;
 }
 
 /* 하단 우선순위 - 상태 */
 .bottom-priority-situation {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 10px;
-  font-size: 15px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+	margin-top: 10px;
+	font-size: 15px;
 }
 
 /* 왼쪽 우선순위- 상태 사이 공간 똑같이 flex */
 .bottom-actions-left,
 .bottom-actions-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
 }
 
 .bottom-actions-group {
-  display: flex;
-  gap: 10px;
+	display: flex;
+	gap: 10px;
 }
 
 /* --- 여기 부터가 클릭 시 네온 부분 --- */
@@ -89,104 +89,98 @@
 .bottom-actions-high,
 .bottom-actions-medium,
 .bottom-actions-low {
-  padding: 8px 8px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 20px;
-  transition: all 0.3s ease;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	padding: 8px 8px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 20px;
+	transition: all 0.3s ease;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 /* 클릭 전 기존 배경 컬러 */
 .bottom-actions-high,
-body.dark .bottom-actions-high {
-  background-color: #f22a2a;
+body.dark .bottom-actions-medium {
+	background-color: #f22a2a;
 }
 
 .bottom-actions-medium,
 body.dark .bottom-actions-medium {
-  background-color: #f59e0b;
+	background-color: #f59e0b;
 }
 
 .bottom-actions-low,
-body.dark .bottom-actions-low {
-  background-color: #22c55e;
+body.dark .bottom-actions-medium {
+	background-color: #22c55e;
 }
 
 /* 클릭 될때 강조하고 네온 넣는 부분 */
 .bottom-actions-group label:has(input:checked) {
-  font-weight: bold;
-  transform: scale(1.03);
+	font-weight: bold;
+	transform: scale(1.03);
 }
 
 /* 높음 클릭 */
 .bottom-actions-high:has(input:checked) {
-  box-shadow:
-    0 0 0 1px #f22a2a,
-    0 0 6px #ee5d5d;
+	box-shadow: 0 0 0 1px #f22a2a, 0 0 6px #ee5d5d;
 }
 
 /* 중간 클릭 */
 .bottom-actions-medium:has(input:checked) {
-  box-shadow:
-    0 0 0 1px #f59e0b,
-    0 0 6px #f5b23d;
+	box-shadow: 0 0 0 1px #f59e0b, 0 0 6px #f5b23d;
 }
 
 /* 낮음 체크 */
 .bottom-actions-low:has(input:checked) {
-  box-shadow:
-    0 0 0 1px #22c55e,
-    0 0 6px #57ec8e;
+	box-shadow: 0 0 0 1px #22c55e, 0 0 6px #57ec8e;
 }
 
 /* 오른쪽 상태 */
 .select-wrap {
-  position: relative;
+	position: relative;
 }
 
 .select-wrap select {
-  padding: 12px;
-  width: 100%;
-  border: 1px solid #afaaaaa0;
-  border-radius: 12px;
-  font-size: 20px;
-  appearance: none;
-  background-color: #fff;
-  cursor: pointer;
+	padding: 12px;
+	width: 100%;
+	border: 1px solid #afaaaaa0;
+	border-radius: 12px;
+	font-size: 20px;
+	appearance: none;
+	background-color: #fff;
+	cursor: pointer;
 }
 
 .arrow {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  cursor: pointer;
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	pointer-events: none;
+	cursor: pointer;
 }
 
 /* 취소-완료 버튼 */
 .form-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
 }
 
 /* 취소-완료 동일 사이즈 */
 .modal-card .btn-cancel,
 .modal-card .btn-submit {
-  margin-top: 15px;
-  padding: 8px 15px;
-  border: 1px solid #afaaaaa0;
-  border-radius: 8px;
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #fff;
-  color: var(--text);
-  transition: all 0.2s;
+	margin-top: 15px;
+	padding: 8px 15px;
+	border: 1px solid #afaaaaa0;
+	border-radius: 8px;
+	font-size: 20px;
+	cursor: pointer;
+	background-color: #fff;
+	color: var(--text);
+	transition: all 0.2s;
 }
 
 /* 취소-완료 다른 컬러 */
@@ -201,38 +195,112 @@ body.dark .bottom-actions-low {
 
 /* 취소 버튼 호버 */
 .modal-card .btn-cancel:hover {
-  background-color: #f1f1f1;
-  border-color: var(--primary);
-  color: var(--primary);
+	background-color: #f1f1f1;
+	border-color: var(--primary);
+	color: var(--primary);
 }
 
 /* 완료 버튼 호버 */
 .modal-card .btn-submit:hover {
-  background-color: #f1f1f1;
-  border-color: var(--primary);
-  color: var(--primary);
+	background-color: #f1f1f1;
+	border-color: var(--primary);
+	color: var(--primary);
 }
 
 /* 다크 모드 버튼 대응 부분 */
 body.dark .modal-card .btn-cancel {
-  background-color: var(--panel2);
-  color: var(--text);
+	background-color: var(--panel2);
+	color: var(--text);
 }
 
 body.dark .modal-card .btn-submit {
-  background-color: #7d7d88;
-  color: var(--text);
+	background-color: #7d7d88;
+	color: var(--text);
 }
 
 body.dark .modal-card .btn-cancel:hover,
 body.dark .modal-card .btn-submit:hover {
-  border-color: #4dabff;
-  color: #4dabff;
+	border-color: #4dabff;
+	color: #4dabff;
 }
 
 /* 버튼 클릭 시 */
 .btn-cancel:active,
 .btn-submit:active {
-  transform: scale(0.95);
-  transition: transform 0.2s;
+	transform: scale(0.95);
+	transition: transform 0.2s;
+}
+/* ===== 모달 오버레이 ===== */
+.modal-overlay {
+	position: fixed;
+	inset: 0;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	background: rgba(0, 0, 0, 0.45);
+	backdrop-filter: blur(3px);
+	z-index: 9999;
+}
+
+.modal-overlay.is-open {
+	display: flex;
+}
+
+/* ===== 모달 카드 ===== */
+.modal-card {
+	width: 100vh;
+	max-height: 100vh;
+	overflow: auto;
+	border-radius: 20px;
+	background: #fff;
+	transform: translateY(10px);
+	opacity: 0;
+}
+
+.modal-overlay.is-open .modal-card {
+	transform: translateY(0);
+	opacity: 1;
+}
+.task-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	gap: 12px;
+	padding: 16px;
+}
+
+/* 카드 기본 스타일 */
+.task-card {
+	background: #fff;
+	border: 1px solid #e6e6e6;
+	border-radius: 14px;
+	padding: 14px 14px 12px;
+}
+
+/* 제목 */
+.task-card__title {
+	font-size: 16px;
+	font-weight: 700;
+	margin-bottom: 8px;
+	word-break: break-word;
+}
+
+/* 내용 */
+.task-card__content {
+	font-size: 14px;
+	color: #555;
+	margin-bottom: 10px;
+	word-break: break-word;
+}
+
+/* 우선순위, 시간 표시 */
+.task-card__meta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	font-size: 12px;
+	color: #777;
 }

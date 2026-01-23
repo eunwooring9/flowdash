@@ -9,8 +9,8 @@
    --muted2: #767676;
    /* --border: #cfcfcf; */
 
-   --shadow: 0px 3px 6px rgba(120, 120, 120, 0.736);
-   --shadow2: 0px 3px 6px rgba(136, 136, 136, 0.25);
+	--shadow: 0px 3px 6px rgba(120, 120, 120, 0.736);
+	--shadow2: 0px 3px 6px rgba(136, 136, 136, 0.25);
 
    --primary: #4e56ed;
    --focus: rgba(99, 102, 241, 0.22);
@@ -18,18 +18,18 @@
 
 /* 다크 모드 */
 body.dark {
-   --bg: #151515;
-   --panel: #19191d;
-   --panel2: #18181b;
-   --sidebar: #101010;
+	--bg: #151515;
+	--panel: #19191d;
+	--panel2: #18181b;
+	--sidebar: #101010;
 
-   --text: #e5e7eb;
-   --muted: #94a3b8;
-   --muted2: #94a3b8;
-   --border: #f59e0b;
+	--text: #e5e7eb;
+	--muted: #94a3b8;
+	--muted2: #94a3b8;
+	--border: #f59e0b;
 
-   --shadow: 0px 3px 6px rgba(201, 193, 193, 0.25);
-   --shadow2: 0px 3px 6px rgba(201, 193, 193, 0.25);
+	--shadow: 0px 3px 6px rgba(120, 120, 120, 0.736);
+	--shadow2: 0 12px 26px rgba(0, 0, 0, 0.35);
 
    --primary: #4e56ed;
    --focus: rgba(129, 140, 248, 0.18);
@@ -59,8 +59,8 @@ body {
 
 /* 헤더 */
 .header {
-   background: var(--panel);
-   box-shadow: 0px 3px 6px rgba(120, 120, 120, 0.736);
+	background: var(--panel);
+	box-shadow: 0px 3px 6px rgba(120, 120, 120, 0.736);
 }
 
 .greeting h1 {
@@ -92,20 +92,9 @@ body {
 .form-textarea,
 .btn-cencel,
 .btn-submit {
-   background: var(--panel2);
-   color: var(--text);
-   border-color: #b0b0b0;
-}
-
-.bar-wrap {
-   border: none;
-   background: var(--panel2);
-   color: var(--text);
-}
-
-.reset-wrap {
-   border: none;
-   background: none;
+	background: var(--panel2);
+	color: var(--text);
+	border-color: #b0b0b0;
 }
 
 /* placeholder */
@@ -147,19 +136,19 @@ body {
 .form-input:focus,
 .form-textarea:focus,
 .select-wrap select:focus {
-   outline: none;
-   border: 1px solid #6366f1;
+	outline: none;
+	border: 1px solid #6366f1;
 }
 
 /* ===== 모달 다크 ===== */
 body.dark .modal-card {
-   background-color: var(--panel);
-   color: var(--text);
-   border-color: var(--border);
-   box-shadow: 0px 3px 6px rgba(120, 120, 120, 0.736);
+	background-color: var(--panel);
+	color: var(--text);
+	border-color: var(--border);
+	box-shadow: 0px 3px 6px rgba(120, 120, 120, 0.736);
 }
 body.dark .card {
-   box-shadow: 0px 3px 6px rgba(120, 120, 120, 0.736);
+	box-shadow: 0px 3px 6px rgba(120, 120, 120, 0.736);
 }
 
 body.dark .modal-card-title,
