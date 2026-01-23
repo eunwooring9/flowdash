@@ -17,6 +17,7 @@
 .icon-edit-btn img {
   width: 30px;
   height: 30px;
+  opacity: 0.4;
 }
 
 /* 기본 닉네임 input  */
@@ -46,11 +47,8 @@
 
 .nickname-text {
   padding: 2px 8px;
-  color: #0f18b9;
-  text-shadow:
-    0 0 5px rgba(255, 255, 255, 0.8),
-    0 0 12px rgba(74, 144, 226, 0.6),
-    0 0 30px rgba(74, 144, 226, 0.3);
+  color: #4e56ed;
+
   background: none;
   box-shadow: none;
   border: none;
