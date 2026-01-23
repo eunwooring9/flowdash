@@ -45,42 +45,28 @@
       <main class="main-content">
         <!-- 헤더 부분 -->
         <header class="header">
-          <!-- 인사 -->
           <div class="greeting">
             <h1>
-              좋은 아침이에요,<br class="mobile-br" />
+              <span id="greeting-message">안녕하세요</span>,
+              <br class="mobile-br" />
+
               <span class="nickname-container">
                 <span class="highlight nickname-text" id="nickname-text"></span>
-                <!-- 닉네임 수정 및 저장 -->
                 <input
                   type="text"
                   class="nickname-input nickname-edit-input"
                   maxlength="10"
                 />
                 <span class="suffix">님</span>
-                <button type="button" class="icon-edit-btn edit-btn">
-                  <img src="./assets/img/edit.svg" alt="닉네임수정" />
-                </button>
-                <!-- 이미지 클릭시 나타날 수정 완료 버튼 -->
-                <div class="edit-action-group edit-hidden">
-                  <button type="button" class="mini-btn edit-cancel-btn">
-                    취소
-                  </button>
-                  <button type="button" class="mini-btn edit-save-btn">
-                    완료
-                  </button>
-                </div>
               </span>
             </h1>
-            <p class="date" id="current-dat">날짜 불러오는 중...</p>
+            <p class="date" id="current-date">날짜 불러오는 중...</p>
           </div>
-          <!-- 알람 / 테마 -->
+
           <div class="header-actions">
-            <!-- 알람 -->
             <button class="icon-btn bell" type="button">
               <img src="./assets/img/bell-light.svg" alt="알림" />
             </button>
-            <!-- 테마 -->
             <button
               class="icon-btn theme"
               id="themeToggle"

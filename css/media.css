@@ -76,6 +76,20 @@
     gap: 30px;
     height: auto;
   }
+
+  /* ----- nickname -----*/
+  .greeting h1 {
+    font-size: 34px;
+  }
+  .nickname-text,
+  .nickname-input,
+  .suffix {
+    font-size: 37px;
+  }
+
+  .nickname-input {
+    width: 180px;
+  }
 }
 
 /* 컨트롤러 중간 조정 */
@@ -91,6 +105,16 @@
 
   .task-list {
     min-height: 300px;
+  }
+
+  /* nickname */
+  .greeting h1 {
+    font-size: 33px;
+  }
+  .nickname-text,
+  .nickname-input,
+  .suffix {
+    font-size: 34px;
   }
 }
 
@@ -235,6 +259,18 @@
   .task-list {
     min-height: 250px;
   }
+  /* nickname */
+  .greeting h1 {
+    font-size: 31px;
+  }
+  .nickname-text,
+  .nickname-input,
+  .suffix {
+    font-size: 32px;
+  }
+  .nickname-input {
+    width: 110px;
+  }
 
   @media screen and (max-width: 620px) {
     /* ----- 헤더 ----- */
@@ -299,6 +335,16 @@
       /* width: 100%; */
       text-align: center;
     }
+
+    /* nickname */
+    .greeting h1 {
+      font-size: 26px;
+    }
+    .nickname-text,
+    .nickname-input,
+    .suffix {
+      font-size: 27px;
+    }
   }
 
   @media screen and (max-width: 420px) {
@@ -317,6 +363,17 @@
 
     .total-number {
       font-size: 30px;
+    }
+
+    /* nickname */
+
+    .greeting h1 {
+      font-size: 22px;
+    }
+    .nickname-text,
+    .nickname-input,
+    .suffix {
+      font-size: 22px;
     }
   }
 }
