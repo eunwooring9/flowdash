@@ -1,330 +1,322 @@
 * {
-   transition: all 0.3s ease;
+	transition: all 0.3s ease;
 }
 
 /* 태블릿 기준 - 1279px */
 @media screen and (max-width: 1279px) {
-   /* ----- 사이드 바 ----- */
-   .sidebar {
-      width: 100px;
-   }
+	/* 햄버거, Project, Schedule */
+	.menu-top img,
+	.menu-bottom img {
+		width: 27px;
+		height: 27px;
+	}
 
-   /* 햄버거, Project, Schedule */
-   .menu-top img,
-   .menu-bottom img {
-      width: 35px;
-      height: 35px;
-   }
+	.menu-item.hamburger img {
+		width: 27px;
+		height: 27px;
+	}
 
-   .menu-item.hamburger img {
-      width: 27px;
-      height: 27px;
-   }
+	/* 인사 */
+	.greeting h1 {
+		font-size: 30px;
+	}
 
-   /* 인사 */
-   .greeting h1 {
-      font-size: 30px;
-   }
+	/* 벨 / 테마 */
+	.header-actions {
+		padding-right: 35px;
+	}
 
-   /* 벨 / 테마 */
-   .header-actions {
-      padding-right: 35px;
-   }
+	/* ----- 통계 카드 2열로 변경 ----- */
+	.stats-container {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 18px;
+	}
 
-   /* ----- 통계 카드 3열로 변경 ----- */
-   .stats-container {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-   }
+	.stats-container .card:last-child {
+		grid-column: span 2;
+	}
 
-   .column {
-      margin-bottom: 20px;
-   }
+	.column {
+		margin-bottom: 20px;
+	}
 
-   /* ----- 컨트롤러 ----- */
-   .controls {
-      flex-wrap: wrap;
-   }
+	/* ----- 컨트롤러 ----- */
+	.controls {
+		flex-wrap: wrap;
+	}
 
-   /* 검색 창 */
-   .search-box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex: 1;
-   }
+	/* 검색 창 */
+	.search-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 1;
+	}
 
-   /* 필터 */
-   .filters {
-      justify-content: center;
-      flex: 1;
-      margin-left: auto;
-   }
+	/* 필터 */
+	.filters {
+		justify-content: center;
+		flex: 1;
+		margin-left: auto;
+	}
 
-   /* 추가 버튼 / + 새 할 일... */
-   .add-btn {
-      margin: auto;
-   }
+	/* 추가 버튼 / + 새 할 일... */
+	.add-btn {
+		margin: auto;
+	}
 
-   /* ----- 현재 선택 - 정렬 ----- */
-   .sort-bar {
-      gap: 20px;
-   }
+	/* ----- 현재 선택 - 정렬 ----- */
+	.sort-bar {
+		gap: 20px;
+	}
 
-   /* ----- 보드 1열로 변경 ----- */
-   .board {
-      grid-template-columns: 1fr;
-      gap: 30px;
-      height: auto;
-   }
+	/* ----- 보드 1열로 변경 ----- */
+	.board {
+		grid-template-columns: 1fr;
+		gap: 30px;
+		height: auto;
+	}
 }
 
 /* 컨트롤러 중간 조정 */
 @media screen and (max-width: 1123px) {
-   .controls {
-      display: flex;
-      gap: 25px;
-   }
+	.controls {
+		display: flex;
+		gap: 25px;
+	}
 
-   .reset-btn {
-      font-size: 14px;
-   }
+	.reset-btn {
+		font-size: 14px;
+	}
 
-   .task-list {
-      min-height: 300px;
-   }
+	.task-list {
+		min-height: 300px;
+	}
 }
 
 /* ----- 모바일 버전 ----- */
 @media screen and (max-width: 768px) {
-   /* ----- 사이드 바 ----- */
-   .sidebar {
-      padding: 50px 5px 10px 15px;
-      width: auto;
-      height: auto;
-      background: transparent;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-   }
+	/* ----- 사이드 바 ----- */
+	.sidebar {
+		padding: 50px 5px 10px 15px;
+		width: auto;
+		height: auto;
+		background: transparent;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
 
-   /* 햄버거, Project, Schedule */
-   .menu-item.project,
-   .menu-item.schedule,
-   .menu-bottom {
-      display: none;
-   }
+	/* 햄버거, Project, Schedule */
+	.menu-item.project,
+	.menu-item.schedule,
+	.menu-bottom {
+		display: none;
+	}
 
-   .menu-item.hamburger img {
-      width: 20px;
-      height: 20px;
-   }
+	.menu-item.hamburger img {
+		width: 20px;
+		height: 20px;
+	}
 
-   /* ----- 메인 영역 ----- */
-   .main-content {
-      padding: 0px 10px 20px 0px;
-   }
+	/* ----- 메인 영역 ----- */
+	.main-content {
+		padding: 0px 10px 20px 0px;
+	}
 
-   /* ----- 헤더 ----- */
-   .header {
-      justify-content: space-between;
-      padding: 25px 15px 25px 25px;
-   }
+	/* ----- 헤더 ----- */
+	.header {
+		justify-content: space-between;
+		padding: 30px 20px;
+		margin-bottom: 25px;
+	}
 
-   /* 인사 */
-   .greeting h1 {
-      font-size: 23px;
-   }
+	/* 인사 */
+	.greeting h1 {
+		font-size: 23px;
+	}
 
-   /* 알람 / 테마 */
-   .header-actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      padding-right: 10px;
-   }
+	.date {
+		font-size: 13px;
+	}
 
-   .icon-btn img {
-      width: 25px;
-      height: 25px;
-   }
+	/* 알람 / 테마 */
+	.header-actions {
+		display: flex;
+		justify-content: flex-end;
+		gap: 10px;
+		padding-right: 10px;
+	}
 
-   /* 중단 ~ 하단 박스 */
-   .content-wrap {
-      padding: 0px 10px 30px 10px;
-   }
+	.icon-btn img {
+		width: 25px;
+		height: 25px;
+	}
 
-   /* 통계 2열로 변경 */
-   .stats-container {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-   }
+	/* 중단 ~ 하단 박스 */
+	.content-wrap {
+		padding: 0px 10px 30px 10px;
+	}
 
-   .stats-container .card:last-child {
-      grid-column: span 2;
-   }
+	/* 통계 2열로 변경 */
+	.stats-container {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 18px;
+		margin-bottom: 20px;
+	}
 
-   .card {
-      width: 100%;
-      height: auto;
-      min-height: 120px;
-   }
+	.stats-container .card:last-child {
+		grid-column: span 2;
+	}
 
-   .controls {
-      flex-direction: column;
-      gap: 10px;
-   }
+	.card {
+		width: 100%;
+		min-height: 70px;
+	}
 
-   /* 검색 / 필터 / 추가 */
-   .search-box input,
-   .filter-btn,
-   .add-btn {
-      width: 100%;
-      justify-content: center;
-   }
+	.controls {
+		flex-direction: column;
+		gap: 10px;
+	}
 
-   .filters {
-      margin-left: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-   }
+	/* 검색 / 필터 / 추가 */
+	.search-box input,
+	.filter-btn,
+	.add-btn {
+		width: 100%;
+		justify-content: center;
+	}
 
-   .filters > .filter-btn,
-   .filters > .filter-dropdown {
-      flex: 1 1 calc(50% - 10px);
-   }
+	.filters {
+		margin-left: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
 
-   /* ----- 정렬 ----- */
-   .sort-bar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      height: auto;
-      font-size: 13px;
-   }
+	.filters > .filter-btn,
+	.filters > .filter-dropdown {
+		flex: 1 1 calc(50% - 10px);
+	}
 
-   .bar-wrap {
-      width: auto;
-      min-width: 100px;
-      flex: 1;
-   }
+	/* ----- 정렬 ----- */
+	.sort-bar {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px;
+		height: auto;
+		font-size: 13px;
+	}
 
-   .bar-wrap.reset-wrap {
-      margin-left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-   }
+	.bar-wrap {
+		width: auto;
+		min-width: 100px;
+		flex: 1;
+	}
 
-   /* 리셋 버튼 */
-   .reset-btn {
-      font-size: 13px;
-   }
+	.bar-wrap.reset-wrap {
+		margin-left: 0;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
 
-   /* 진행 상황 */
-   .column-header {
-      font-size: 20px;
-   }
+	/* 리셋 버튼 */
+	.reset-btn {
+		font-size: 13px;
+	}
 
-   .task-list {
-      min-height: 250px;
-   }
+	/* 진행 상황 */
+	.column-header {
+		font-size: 20px;
+	}
 
-   @media screen and (max-width: 620px) {
-      /* ----- 헤더 ----- */
-      .header {
-         margin-bottom: 20px;
-      }
+	.task-list {
+		min-height: 250px;
+	}
 
-      .greeting h1 {
-         font-size: 20px;
-      }
+	@media screen and (max-width: 620px) {
+		/* ----- 헤더 ----- */
+		.header {
+			margin-bottom: 20px;
+		}
 
-      .date {
-         font-size: 13px;
-      }
+		.greeting h1 {
+			font-size: 20px;
+		}
 
-      /* 알람 / 테마 */
-      .icon-btn img {
-         width: 20px;
-         height: 20px;
-      }
+		.date {
+			font-size: 13px;
+		}
 
-      /* ----- 카드 ----- */
-      .card {
-         padding: 25px;
-      }
+		/* 알람 / 테마 */
+		.icon-btn img {
+			width: 20px;
+			height: 20px;
+		}
 
-      .stats-container {
-         margin-bottom: 20px;
-      }
+		/* ----- 카드 ----- */
+		.card {
+			padding: 25px;
+		}
 
-      .total-number {
-         font-size: 35px;
-      }
+		.stats-container {
+			margin-bottom: 20px;
+		}
 
-      .controls {
-         padding: 10px;
-      }
+		.total-number {
+			font-size: 35px;
+		}
 
-      /* 버튼 높이 조절 */
-      .search-box input {
-         height: 50px;
-      }
+		.controls {
+			padding: 10px;
+		}
 
-      .filters {
-         gap: 10px;
-      }
+		/* 버튼 높이 조절 */
+		.search-box input {
+			height: 50px;
+		}
 
-      .filter-btn {
-         width: auto;
-         min-width: 90px;
-         height: 40px;
-         font-size: 14px;
-      }
+		.filters {
+			gap: 10px;
+		}
 
-      .add-btn {
-         height: 43px;
-         display: flex;
-         align-items: center;
-         font-size: 17px;
-      }
+		.add-btn {
+			height: 43px;
+			display: flex;
+			align-items: center;
+			font-size: 17px;
+		}
 
-      .bar-wrap {
-         width: auto;
-         min-width: 90px;
-      }
+		.bar-wrap {
+			width: auto;
+			min-width: 90px;
+		}
 
-      .bar-wrap.reset-wrap {
-         margin-left: 0;
-         /* width: 100%; */
-         text-align: center;
-      }
-   }
+		.bar-wrap.reset-wrap {
+			margin-left: 0;
+			/* width: 100%; */
+			text-align: center;
+		}
+	}
 
-   @media screen and (max-width: 420px) {
-      /* 인사칸 내리기 */
-      .mobile-br {
-         display: block;
-      }
+	@media screen and (max-width: 420px) {
+		/* 인사칸 내리기 */
+		.mobile-br {
+			display: block;
+		}
 
-      .card {
-         padding: 20px 15px;
-      }
+		.card {
+			padding: 20px 15px;
+		}
 
-      .card h3 {
-         font-size: 13px;
-      }
+		.card h3 {
+			font-size: 13px;
+		}
 
-      .total-number {
-         font-size: 30px;
-      }
-
-      .filters {
-         display: flex;
-         flex-wrap: wrap;
-      }
-   }
+		.total-number {
+			font-size: 30px;
+		}
+	}
 }

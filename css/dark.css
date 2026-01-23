@@ -9,7 +9,7 @@
 	--muted2: #767676;
 	--border: #cfcfcf;
 
-	--shadow: 0px 3px 6px rgba(119, 119, 119, 0.25);
+	--shadow: 0px 3px 6px rgba(120, 120, 120, 0.736);
 	--shadow2: 0px 3px 6px rgba(136, 136, 136, 0.25);
 
 	--primary: #4e56ed;
@@ -18,17 +18,17 @@
 
 /* 다크 모드 */
 body.dark {
-	--bg: #000;
-	--panel: #18181b;
-	--panel2: #0b1220;
+	--bg: #151515;
+	--panel: #19191d;
+	--panel2: #18181b;
 	--sidebar: #101010;
 
 	--text: #e5e7eb;
 	--muted: #94a3b8;
 	--muted2: #94a3b8;
-	--border: #1f2a44;
+	--border: #f59e0b;
 
-	--shadow: 0 18px 42px rgba(0, 0, 0, 0.45);
+	--shadow: 0px 3px 6px rgba(120, 120, 120, 0.736);
 	--shadow2: 0 12px 26px rgba(0, 0, 0, 0.35);
 
 	--primary: #4e56ed;
@@ -60,7 +60,7 @@ body {
 /* 헤더 */
 .header {
 	background: var(--panel);
-	box-shadow: var(--shadow2);
+	box-shadow: 0px 3px 6px rgba(120, 120, 120, 0.736);
 }
 
 .greeting h1 {
@@ -95,7 +95,7 @@ body {
 .btn-submit {
 	background: var(--panel2);
 	color: var(--text);
-	border-color: var(--border);
+	border-color: #b0b0b0;
 }
 
 /* placeholder */
@@ -137,15 +137,18 @@ body {
 .form-textarea:focus,
 .select-wrap select:focus {
 	outline: none;
-	box-shadow: 0 0 0 4px var(--focus);
+	border: 1px solid #6366f1;
 }
 
 /* ===== 모달 다크 ===== */
 body.dark .modal-card {
 	background-color: var(--panel);
 	color: var(--text);
-	border-color: var(--border); /* 초록 테두리 톤다운 */
-	box-shadow: var(--shadow2);
+	border-color: var(--border);
+	box-shadow: 0px 3px 6px rgba(120, 120, 120, 0.736);
+}
+body.dark .card {
+	box-shadow: 0px 3px 6px rgba(120, 120, 120, 0.736);
 }
 
 body.dark .modal-card-title,
