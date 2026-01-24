@@ -20,7 +20,7 @@ function saveTodos(list) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
 }
 
-let todoStore = loadTodos();
+export let todoStore = loadTodos();
 
 // =====================
 // DOM
@@ -82,8 +82,7 @@ overlay?.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && overlay?.classList.contains("is-open"))
-    closeModal();
+  if (e.key === "Escape" && overlay?.classList.contains("is-open")) closeModal();
 });
 
 // =====================
@@ -97,9 +96,7 @@ function formatTime(ts) {
 
 // priority 라디오 값 가져오기 (high / medium / low -> high / mid / low)
 function getPriority() {
-  const checked = document.querySelector(
-    'input[name="bottom-actions"]:checked',
-  );
+  const checked = document.querySelector('input[name="bottom-actions"]:checked');
   if (!checked) return "mid";
   if (checked.value === "high") return "high";
   if (checked.value === "medium") return "mid";
@@ -155,11 +152,7 @@ function makeTodoCard(todo) {
 
   const priorityEl = document.createElement("span");
   priorityEl.textContent =
-    todo.priority === "high"
-      ? "높음"
-      : todo.priority === "mid"
-        ? "중간"
-        : "낮음";
+    todo.priority === "high" ? "높음" : todo.priority === "mid" ? "중간" : "낮음";
 
   const timeEl = document.createElement("span");
   timeEl.className = "task-card__time";
@@ -198,8 +191,7 @@ function updateEmptyMsgs() {
   const doneCount = todoStore.filter((t) => t.status === "done").length;
 
   if (todoEmptyMsg) todoEmptyMsg.style.display = todoCount === 0 ? "" : "none";
-  if (doingEmptyMsg)
-    doingEmptyMsg.style.display = doingCount === 0 ? "" : "none";
+  if (doingEmptyMsg) doingEmptyMsg.style.display = doingCount === 0 ? "" : "none";
   if (doneEmptyMsg) doneEmptyMsg.style.display = doneCount === 0 ? "" : "none";
 }
 
@@ -219,13 +211,22 @@ function updateCounts() {
   if (doneCardEl) doneCardEl.textContent = String(doneCount);
 }
 
-function renderAll() {
+// function renderAll() {
+// list(목록) 호출하면 검색된 것만 그리기
+export function renderAll(list) {
   clearLists();
 
-  todoStore.forEach((todo) => {
+  const searchList = list || todoStore;
+
+  searchList.forEach((todo) => {
     const listEl = getListElByStatus(todo.status);
     listEl?.appendChild(makeTodoCard(todo));
   });
+
+  // todoStore.forEach((todo) => {
+  //   const listEl = getListElByStatus(todo.status);
+  //   listEl?.appendChild(makeTodoCard(todo));
+  // });
 
   updateEmptyMsgs();
   updateCounts();
@@ -269,9 +270,7 @@ modalSubmitBtn?.addEventListener("click", (e) => {
   // 입력 초기화
   titleInput.value = "";
   contentInput.value = "";
-  document
-    .querySelectorAll('input[name="bottom-actions"]')
-    .forEach((el) => (el.checked = false));
+  document.querySelectorAll('input[name="bottom-actions"]').forEach((el) => (el.checked = false));
   if (statusSelect) statusSelect.value = "todo";
 
   closeModal();
