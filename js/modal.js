@@ -1,18 +1,27 @@
+// =====================
+// Storage
+// =====================
 const STORAGE_KEY = "todoList";
 
 function loadTodos() {
 	const data = localStorage.getItem(STORAGE_KEY);
 	if (!data) return [];
-	return JSON.parse(data);
+	try {
+		return JSON.parse(data);
+	} catch {
+		return [];
+	}
 }
 
-function saveTodos(todos) {
-	localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+function saveTodos(list) {
+	localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
 }
 
 let todoStore = loadTodos();
 
-// ===== DOM 요소들 =====
+// =====================
+// DOM
+// =====================
 const addBtn = document.querySelector(".add-btn");
 const overlay = document.getElementById("modalOverlay");
 const modalCancelBtn = document.querySelector(".btn-cancel");
@@ -21,17 +30,39 @@ const modalSubmitBtn = document.querySelector(".btn-submit");
 const titleInput = document.getElementById("title");
 const contentInput = document.getElementById("content");
 
-// 첫 번째 컬럼(할 일)
-const todoList = document.querySelectorAll(".board .column")[0]?.querySelector(".task-list");
+// ✅ status select (너 HTML id가 select-wraps)
+const statusSelect = document.getElementById("select-wraps");
 
-// "할 일이 없습니다" 문구
+// ✅ 3개 컬럼 task-list 잡기 (순서: 할일/진행중/완료)
+const columns = document.querySelectorAll(".board .column");
+const todoListEl = columns[0]?.querySelector(".task-list");
+const doingListEl = columns[1]?.querySelector(".task-list");
+const doneListEl = columns[2]?.querySelector(".task-list");
+
+// 빈 문구(p)
 const todoEmptyMsg = document.querySelector(".to-do-msg");
+const doingEmptyMsg = document.querySelector(".ing-msg");
+const doneEmptyMsg = document.querySelector(".finish-msg");
 
-// ===== 모달 열고 닫기 =====
+// 각 컬럼 카운트(span.count)
+const todoCountEl = columns[0]?.querySelector(".count");
+const doingCountEl = columns[1]?.querySelector(".count");
+const doneCountEl = columns[2]?.querySelector(".count");
+
+// 상단 카드 카운트
+const totalCardEl = document.querySelector(".card.total .total-number");
+const todoCardEl = document.querySelector(".card.todo .total-number");
+const doingCardEl = document.querySelector(".card.ing .total-number");
+const doneCardEl = document.querySelector(".card.done .total-number");
+
+// =====================
+// Modal Open/Close
+// =====================
 function openModal() {
 	if (!overlay) return;
 	overlay.classList.add("is-open");
 	document.body.style.overflow = "hidden";
+	titleInput?.focus();
 }
 
 function closeModal() {
@@ -40,25 +71,20 @@ function closeModal() {
 	document.body.style.overflow = "";
 }
 
-// 새할일 버튼 클릭시 모달 열림
 addBtn?.addEventListener("click", openModal);
-
-// 취소 버튼 클릭시 모달 닫힘
 modalCancelBtn?.addEventListener("click", closeModal);
 
-// 배경 클릭시 모달 닫힘
 overlay?.addEventListener("click", (e) => {
 	if (e.target === overlay) closeModal();
 });
 
-// esc키를 누르면 모달 닫힘
 document.addEventListener("keydown", (e) => {
-	if (e.key === "Escape" && overlay?.classList.contains("is-open")) {
-		closeModal();
-	}
+	if (e.key === "Escape" && overlay?.classList.contains("is-open")) closeModal();
 });
 
-// ===== 시간 문자열 만들기 =====
+// =====================
+// Utils
+// =====================
 function formatTime(ts) {
 	const d = new Date(ts);
 	const pad = (n) => String(n).padStart(2, "0");
@@ -67,10 +93,45 @@ function formatTime(ts) {
 	)}`;
 }
 
-// ===== 카드 만들기 =====
+// priority 라디오 값 가져오기 (high / medium / low -> high / mid / low)
+function getPriority() {
+	const checked = document.querySelector('input[name="bottom-actions"]:checked');
+	if (!checked) return "mid";
+	if (checked.value === "high") return "high";
+	if (checked.value === "medium") return "mid";
+	if (checked.value === "low") return "low";
+	return "mid";
+}
+
+// status select 값 가져오기 (todo/done만 있으면 doing은 추후 옵션 추가 가능)
+function getStatus() {
+	const v = statusSelect?.value;
+	if (v === "done") return "done";
+	if (v === "doing") return "doing"; // 옵션 추가하면 자동 지원
+	return "todo";
+}
+
+// status에 맞는 리스트 element
+function getListElByStatus(status) {
+	if (status === "doing") return doingListEl;
+	if (status === "done") return doneListEl;
+	return todoListEl;
+}
+
+// status에 맞는 empty msg
+function getEmptyMsgByStatus(status) {
+	if (status === "doing") return doingEmptyMsg;
+	if (status === "done") return doneEmptyMsg;
+	return todoEmptyMsg;
+}
+
+// =====================
+// Card 만들기 (DOM API 방식)
+// =====================
 function makeTodoCard(todo) {
 	const card = document.createElement("div");
-	card.className = "task-card";
+	card.className = `task-card priority-${todo.priority}`;
+	card.dataset.id = todo.id;
 
 	const titleEl = document.createElement("div");
 	titleEl.className = "task-card__title";
@@ -98,18 +159,76 @@ function makeTodoCard(todo) {
 	metaEl.appendChild(priorityEl);
 	metaEl.appendChild(timeEl);
 
+	// 완료면 완료시간도 표시
+	if (todo.status === "done" && todo.completedAt) {
+		const doneEl = document.createElement("span");
+		doneEl.className = "task-card__time";
+		doneEl.textContent = `완료: ${formatTime(todo.completedAt)}`;
+		metaEl.appendChild(doneEl);
+	}
+
 	card.appendChild(metaEl);
 
 	return card;
 }
 
-// ===== 완료 버튼 클릭 =====
+// =====================
+// Render (3칸 전체 다시 그리기)
+// =====================
+function clearLists() {
+	// task-card만 지우고, 빈 문구 p는 유지
+	[todoListEl, doingListEl, doneListEl].forEach((listEl) => {
+		if (!listEl) return;
+		listEl.querySelectorAll(".task-card").forEach((el) => el.remove());
+	});
+}
+
+function updateEmptyMsgs() {
+	const todoCount = todoStore.filter((t) => t.status === "todo").length;
+	const doingCount = todoStore.filter((t) => t.status === "doing").length;
+	const doneCount = todoStore.filter((t) => t.status === "done").length;
+
+	if (todoEmptyMsg) todoEmptyMsg.style.display = todoCount === 0 ? "" : "none";
+	if (doingEmptyMsg) doingEmptyMsg.style.display = doingCount === 0 ? "" : "none";
+	if (doneEmptyMsg) doneEmptyMsg.style.display = doneCount === 0 ? "" : "none";
+}
+
+function updateCounts() {
+	const todoCount = todoStore.filter((t) => t.status === "todo").length;
+	const doingCount = todoStore.filter((t) => t.status === "doing").length;
+	const doneCount = todoStore.filter((t) => t.status === "done").length;
+	const total = todoStore.length;
+
+	if (todoCountEl) todoCountEl.textContent = String(todoCount);
+	if (doingCountEl) doingCountEl.textContent = String(doingCount);
+	if (doneCountEl) doneCountEl.textContent = String(doneCount);
+
+	if (totalCardEl) totalCardEl.textContent = String(total);
+	if (todoCardEl) todoCardEl.textContent = String(todoCount);
+	if (doingCardEl) doingCardEl.textContent = String(doingCount);
+	if (doneCardEl) doneCardEl.textContent = String(doneCount);
+}
+
+function renderAll() {
+	clearLists();
+
+	todoStore.forEach((todo) => {
+		const listEl = getListElByStatus(todo.status);
+		listEl?.appendChild(makeTodoCard(todo));
+	});
+
+	updateEmptyMsgs();
+	updateCounts();
+}
+
+// =====================
+// Submit (모달 완료)
+// =====================
 modalSubmitBtn?.addEventListener("click", (e) => {
 	e.preventDefault();
 
 	const title = titleInput.value.trim();
 	const content = contentInput.value.trim();
-
 	if (!title) {
 		alert("제목은 필수입니다!");
 		titleInput.focus();
@@ -117,50 +236,36 @@ modalSubmitBtn?.addEventListener("click", (e) => {
 	}
 
 	const now = Date.now();
+	const status = getStatus();
+	const priority = getPriority();
 
 	const newTodo = {
 		id: crypto.randomUUID(),
 		title,
 		content,
-		status: "todo",
-		priority: getPriority(),
+		status, // ✅ todo/doing/done 저장
+		priority, // ✅ high/mid/low 저장
 		createdAt: now,
 		updatedAt: now,
-		completedAt: null,
+		completedAt: status === "done" ? now : null, // ✅ 완료면 완료시간
 	};
 
-	// 1) 메모리에 저장
 	todoStore.push(newTodo);
-
-	// 2) 로컬스토리지에 저장
 	saveTodos(todoStore);
 
-	// 3) 화면에 추가
-	if (todoEmptyMsg) todoEmptyMsg.style.display = "none";
-	todoList?.appendChild(makeTodoCard(newTodo));
-
-	console.log("저장됨:", newTodo);
+	// 화면 갱신
+	renderAll();
 
 	// 입력 초기화
 	titleInput.value = "";
 	contentInput.value = "";
+	document.querySelectorAll('input[name="bottom-actions"]').forEach((el) => (el.checked = false));
+	if (statusSelect) statusSelect.value = "todo";
 
 	closeModal();
 });
 
-function getPriority() {
-	const checked = document.querySelector('input[name="bottom-actions"]:checked');
-	if (!checked) return "mid";
-	if (checked.value === "high") return "high";
-	if (checked.value === "medium") return "mid";
-	if (checked.value === "low") return "low";
-	return "mid";
-}
-
-// ===== 새로고침해도 다시 그리기 =====
-todoStore.forEach((todo) => {
-	if (todo.status === "todo") {
-		if (todoEmptyMsg) todoEmptyMsg.style.display = "none";
-		todoList?.appendChild(makeTodoCard(todo));
-	}
-});
+// =====================
+// 최초 로드 시 렌더
+// =====================
+renderAll();
