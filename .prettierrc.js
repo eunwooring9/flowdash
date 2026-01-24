@@ -39,7 +39,7 @@ module.exports = {
    *
    * ※ HTML 속성은 Prettier가 자동 처리
    */
-  singleQuote: true,
+  singleQuote: false,
 
   /**
    * 객체 속성의 따옴표 처리 (JavaScript)

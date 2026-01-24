@@ -2,16 +2,13 @@
   margin: 20px auto;
   padding: 30px;
   width: 90%;
-  /* 찾아 보니까 모바일 반응형 할때 생각해서
-미리 여백 확보하는게 좋다해서 90% 잡음*/
-  /* max-width: 740px; */
   min-height: auto;
   border: 2px solid #22c55e;
   border-radius: 20px;
   background-color: #fff;
   font-size: 32px;
   font-weight: 400;
-  color: #000;
+  color: #fff;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -102,7 +99,7 @@
 
 /* 클릭 전 기존 배경 컬러 */
 .bottom-actions-high,
-body.dark .bottom-actions-medium {
+body.dark .bottom-actions-high {
   background-color: #f22a2a;
 }
 
@@ -112,7 +109,7 @@ body.dark .bottom-actions-medium {
 }
 
 .bottom-actions-low,
-body.dark .bottom-actions-medium {
+body.dark .bottom-actions-low {
   background-color: #22c55e;
 }
 
@@ -187,16 +184,6 @@ body.dark .bottom-actions-medium {
   background-color: #fff;
   color: var(--text);
   transition: all 0.2s;
-}
-
-/* 취소-완료 다른 컬러 */
-
-/* 취소 */
-/*.modal-card .btn-cancel {
-}
-
-/* 완료 */
-/*.modal-card .btn-submit {
 }
 
 /* 취소 버튼 호버 */

@@ -6,10 +6,10 @@
     <title>To-do List</title>
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/nickname.css" />
     <link rel="stylesheet" href="./css/media.css" />
     <link rel="stylesheet" href="./css/modal.css" />
     <link rel="stylesheet" href="./css/dark.css" />
-    <link rel="stylesheet" href="./css/nickname.css" />
   </head>
   <body>
     <div class="container">
@@ -45,48 +45,25 @@
       <main class="main-content">
         <!-- 헤더 부분 -->
         <header class="header">
-          <!-- 인사 -->
           <div class="greeting">
             <h1>
-              좋은 아침이에요,<br class="mobile-br" />
+              <span id="greeting-message">안녕하세요</span>
+              <br class="mobile-br" />
+
               <span class="nickname-container">
                 <span class="highlight nickname-text" id="nickname-text"></span>
-                <!-- 닉네임 수정 및 저장 -->
-                <input
-                  type="text"
-                  class="nickname-input nickname-edit-input"
-                  maxlength="10"
-                />
+                <input type="text" class="nickname-input nickname-edit-input" maxlength="10" />
                 <span class="suffix">님</span>
-                <button type="button" class="icon-edit-btn edit-btn">
-                  <img src="./assets/img/edit.svg" alt="닉네임수정" />
-                </button>
-                <!-- 이미지 클릭시 나타날 수정 완료 버튼 -->
-                <div class="edit-action-group edit-hidden">
-                  <button type="button" class="mini-btn edit-cancel-btn">
-                    취소
-                  </button>
-                  <button type="button" class="mini-btn edit-save-btn">
-                    완료
-                  </button>
-                </div>
               </span>
             </h1>
-            <p class="date" id="current-dat">날짜 불러오는 중...</p>
+            <p class="date" id="current-date">날짜 불러오는 중...</p>
           </div>
-          <!-- 알람 / 테마 -->
+
           <div class="header-actions">
-            <!-- 알람 -->
             <button class="icon-btn bell" type="button">
               <img src="./assets/img/bell-light.svg" alt="알림" />
             </button>
-            <!-- 테마 -->
-            <button
-              class="icon-btn theme"
-              id="themeToggle"
-              type="button"
-              aria-label="테마 전환"
-            >
+            <button class="icon-btn theme" id="themeToggle" type="button" aria-label="테마 전환">
               <img src="./assets/img/sun-light.svg" alt="테마" />
             </button>
           </div>
@@ -133,17 +110,13 @@
                 </button>
                 <ul class="dropdown-menu">
                   <li>
-                    <button type="button" class="dropdown-item">
-                      전체 기간
-                    </button>
+                    <button type="button" class="dropdown-item">전체 기간</button>
                   </li>
                   <li>
                     <button type="button" class="dropdown-item">오늘</button>
                   </li>
                   <li>
-                    <button type="button" class="dropdown-item">
-                      최근 7일
-                    </button>
+                    <button type="button" class="dropdown-item">최근 7일</button>
                   </li>
                 </ul>
               </div>
@@ -155,9 +128,7 @@
                 </button>
                 <ul class="dropdown-menu">
                   <li>
-                    <button type="button" class="dropdown-item">
-                      전체 우선순위
-                    </button>
+                    <button type="button" class="dropdown-item">전체 우선순위</button>
                   </li>
                   <li>
                     <button type="button" class="dropdown-item">높음</button>
@@ -172,12 +143,7 @@
               </div>
               <!-- 오름차순 / 내림차순 -->
               <button class="filter-btn sort" type="button">
-                <span
-                  >정렬:
-                  <span class="sort-highlight" id="sort-text"
-                    >오름차순</span
-                  ></span
-                >
+                <span>정렬: <span class="sort-highlight" id="sort-text">오름차순</span></span>
               </button>
             </div>
             <!-- + 새 할 일... / 추가 버튼 -->
@@ -195,15 +161,11 @@
             </div>
             <!-- 기간 -->
             <div class="bar-wrap hidden">
-              <span class="period-tag"
-                >기간: <span class="highlight">오늘</span></span
-              >
+              <span class="period-tag">기간: <span class="highlight">오늘</span></span>
             </div>
             <!-- 우선순위 -->
             <div class="bar-wrap hidden">
-              <span class="sort-tag"
-                >우선순위: <span class="highlight">중간</span></span
-              >
+              <span class="sort-tag">우선순위: <span class="highlight">중간</span></span>
             </div>
             <!-- 데이터 초기화 -->
             <div class="bar-wrap reset-wrap">
@@ -253,12 +215,7 @@
     <!-- 모달 구역 -->
     <!-- 모달 오버레이 -->
     <div class="modal-overlay" id="modalOverlay" aria-hidden="false">
-      <div
-        class="modal-card"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modalTitle"
-      >
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <!-- 상단 -->
         <div class="modal-card-header">
           <span class="modal-card-title" id="modalTitle">할 일 수정</span>
@@ -301,22 +258,11 @@
             <!-- 우선순위 input -->
             <div class="bottom-actions-group">
               <label class="bottom-actions-high">
-                <input
-                  type="radio"
-                  name="bottom-actions"
-                  value="high"
-                  required
-                  hidden
-                />
+                <input type="radio" name="bottom-actions" value="high" required hidden />
                 <span>높음</span>
               </label>
               <label class="bottom-actions-medium">
-                <input
-                  type="radio"
-                  name="bottom-actions"
-                  value="medium"
-                  hidden
-                />
+                <input type="radio" name="bottom-actions" value="medium" hidden />
                 <span class="medium">중간</span>
               </label>
               <label class="bottom-actions-low">

@@ -9,9 +9,7 @@ function updateThemeIcon(isDark) {
   const img = toggle?.querySelector("img");
   if (!img) return;
 
-  img.src = isDark
-    ? "./assets/img/moon-dark.svg"
-    : "./assets/img/sun-light.svg";
+  img.src = isDark ? "./assets/img/moon-dark.svg" : "./assets/img/sun-light.svg";
 }
 
 updateThemeIcon(document.body.classList.contains("dark"));
