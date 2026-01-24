@@ -1,76 +1,106 @@
-// 기본 닉네임 값
-const userInfo = {
-  nickname: "guestUser",
-};
+// 초반 데이터 설정 로컬스토리지 활용해서 하기
+// 상수는 대문자로 쓰기
+const DEFAULT_NICKNAME = "FlowDash";
+const savedNickname = localStorage.getItem("userNickname");
 
+// 이름이 있으면 쓰고 없으면 기본값 할당해
+let currentName = "";
+if (savedNickname === null) {
+  currentName = DEFAULT_NICKNAME;
+} else {
+  currentName = savedNickname;
+}
+
+// 이름보여주는거, 수정하는거, 날짜바꾸기 이름넣어서 실행하기
 const nicknameText = document.querySelector(".nickname-text");
 const nicknameInput = document.querySelector(".nickname-edit-input");
-const editBtn = document.querySelector(".edit-btn");
-const actionGroup = document.querySelector(".edit-action-group");
-const cancelBtn = document.querySelector(".edit-cancel-btn");
-const saveBtn = document.querySelector(".edit-save-btn");
+const greetingMessage = document.querySelector("#greeting-message");
 
-// 닉네임이랑 초기 세팅해서 guesUser 이름 나오게
-function init() {
+// 만약에 해서 05시 11시 / 11시 17시 / 17시 22시 / 나머지는 그냥 안녕하세요 넣기
+function updateTimeGreeting() {
+  const now = new Date();
+  const hours = now.getHours();
+  let message = "안녕하세요";
+
+  if (hours >= 5 && hours < 11) {
+    message = "좋은 아침이에요";
+  } else if (hours >= 11 && hours < 17) {
+    message = "좋은 오후에요";
+  } else if (hours >= 17 && hours < 22) {
+    message = "좋은 저녁이에요";
+  } else {
+    message = "안녕하세요";
+  }
+
+  // 인사말 화면에 넣기
+  if (greetingMessage) {
+    greetingMessage.innerText = message;
+  }
+}
+
+// 닉네임 클릭해서 수정했을때 원래대로
+function saveNicknameProcess() {
+  const inputValue = nicknameInput.value.trim();
+
+  //빈칸이면 원래이름으로 이름 새로 넣으면 로컬로 업데이트
+  if (inputValue === "") {
+    nicknameInput.value = currentName;
+  } else {
+    currentName = inputValue;
+    localStorage.setItem("userNickname", inputValue);
+    //콘솔확인용
+    // console.log('이름 저장 :', inputValue);
+  }
+
+  // 화면에 글자 바꾸고 나서 입력하는 부분 숨기기기 스타일 디스플레이 넣어서 인라인으로 바꾸고 none
+  nicknameText.innerText = currentName;
+  nicknameText.style.display = "inline";
+  nicknameInput.style.display = "none";
+}
+
+//처음에 먼저 실행됬을때 보여줘야하는 기본 닉네임
+function startName() {
   if (nicknameText) {
-    nicknameText.innerText = userInfo.nickname;
+    nicknameText.innerText = currentName;
   }
+
+  // 날짜 표시 기능 추가 (수정)
+  const dateElement = document.querySelector("#current-date");
+  if (dateElement) {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const date = now.getDate();
+    dateElement.innerText = `${year}년 ${month}월 ${date}일`;
+  }
+
+  updateTimeGreeting();
 }
+startName();
 
-// 이미지눌러서 수정할수있게 실행(if문 사용해서
-function toggleEditMode(isEditing) {
-  if (isEditing) {
-    // 수정할때는 게스트 가리고 이미지도 가려야함
-    nicknameText.style.display = "none";
-    editBtn.style.display = "none";
-    //수정때는 입력창 보이게 하고 취소랑 완료버튼 빼놓기
-    nicknameInput.style.display = "inline-block";
-    actionGroup.style.display = "inline-flex";
-    //입력창에 이름쓰고 글 쓸수있게
-    nicknameInput.value = userInfo.nickname;
-    nicknameInput.focus();
-  } else {
-    nicknameText.style.display = "inline";
-    editBtn.style.display = "flex";
+// 이벤트 라인
 
-    nicknameInput.style.display = "none";
-    actionGroup.style.display = "none";
-  }
-}
+// 닉네임 부분 클릭했을때 클릭 이벤트로 function실행해서 수정중에는 나타나게 하기
+// 입력창 커서 깜빡이게 해서 포인트 주기
+nicknameText.addEventListener("click", function () {
+  nicknameText.style.display = "none";
+  nicknameInput.style.display = "inline-block";
+  nicknameInput.value = currentName;
+  nicknameInput.focus();
+});
 
-init();
+// 입력할때 그외 밖에 만지면 blur 하면 저장하기
+nicknameInput.addEventListener("blur", function () {
+  saveNicknameProcess();
+});
 
-// 수정 버튼
-editBtn.onclick = () => {
-  toggleEditMode(true);
-};
-
-// 취소 버튼
-cancelBtn.onclick = () => {
-  toggleEditMode(false);
-};
-
-// 완료 버튼
-saveBtn.onclick = () => {
-  const newName = nicknameInput.value.trim();
-  // 내뇽이 비었지 않고 있으면 저장하고 화면 글자 바꾸고 수정끝내기
-  // 만약 아무것도 안했으면 경고창 띄우게 하기
-  if (newName !== "") {
-    userInfo.nickname = newName;
-    nicknameText.innerText = newName;
-    toggleEditMode(false);
-  } else {
-    alert("닉네임을 입력해주세요!");
-    nicknameInput.focus();
-  }
-};
-
-// 마우스 대신 키보드로도 할수있게 keydown쓰는거하기 키다운 엔더 - esc 완료 - 취소
+// 엔터 눌러도 저장되게 esc 누르면 취소되게 keydown 사용하기
 nicknameInput.onkeydown = (event) => {
   if (event.key === "Enter") {
-    saveBtn.onclick();
+    nicknameInput.blur();
   }
   if (event.key === "Escape") {
-    cancelBtn.onclick();
+    nicknameText.style.display = "inline";
+    nicknameInput.style.display = "none";
   }
 };

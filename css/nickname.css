@@ -1,23 +1,7 @@
 .nickname-container {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   vertical-align: middle;
-}
-.icon-edit-btn {
-  padding: 0;
-  display: flex;
-  align-items: center;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-/* 닉네임 옆 버튼 이미지  */
-.icon-edit-btn img {
-  width: 30px;
-  height: 30px;
-  opacity: 0.4;
 }
 
 /* 기본 닉네임 input  */
@@ -27,48 +11,39 @@
   outline: none;
   width: 220px;
   height: 45px;
-  border: 1px solid #afaaaaa0;
-  border-radius: 8px;
   background-color: var(--modal-bg);
   color: var(--modal-text);
-}
-
-.edit-action-group {
-  display: none;
-  gap: 10px;
-}
-
-/* 닉네임 text 폰트 */
-.nickname-text,
-.nickname-input {
-  font-size: 35px;
+  font-size: 40px;
   font-weight: 600;
+}
+
+.nickname-container .nickname-text,
+.nickname-container .nickname-edit-input,
+.nickname-container .suffix {
+  position: relative;
+  transform: translateY(-4px);
 }
 
 .nickname-text {
   padding: 2px 8px;
   color: #4e56ed;
-
-  background: none;
-  box-shadow: none;
-  border: none;
+  font-size: 42px;
+  font-weight: 600;
   padding: 2px 8px;
   border-radius: 4px;
   line-height: 1.4;
+  cursor: pointer;
+  position: relative;
 }
 
-/* 닉네임 수정때 text 수정 */
-.nickname-edit-input {
-  font-weight: 580;
+/* 님 글자 */
+.suffix {
+  position: relative;
+  font-size: 42px;
+  font-weight: 600;
+  margin-left: 2px;
 }
-/* 취소 완료 버튼 공통  */
-.mini-btn {
-  padding: 4px 10px;
-  font-size: 15px;
-  border: 1px solid #afaaaaa0;
-  border-radius: 7px;
-  background-color: var(--modal-bg);
-  color: var(--modal-text);
-  cursor: pointer;
-  transform: translateY(-4px);
+/* 닉네임 수정때 text 수정 */
+.nickname-text:hover {
+  background-color: rgba(78, 86, 237, 0.1);
 }

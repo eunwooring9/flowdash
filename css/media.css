@@ -76,6 +76,20 @@
     gap: 30px;
     height: auto;
   }
+
+  .greeting h1 .nickname-container .nickname-text,
+  .greeting h1 .nickname-container .nickname-edit-input,
+  .greeting h1 .nickname-container .suffix {
+    font-size: 31px;
+  }
+  /* 중간 살짝만 올라가게 */
+  .nickname-container .nickname-text,
+  .nickname-container .nickname-edit-input {
+    transform: translateY(-2.5px);
+  }
+  .nickname-container .suffix {
+    transform: translateY(-2.5px);
+  }
 }
 
 /* 컨트롤러 중간 조정 */
@@ -92,8 +106,26 @@
   .task-list {
     min-height: 300px;
   }
-}
 
+  /* nickname */
+  /* .greeting h1 {
+    font-size: 30px;
+  }
+  .nickname-text,
+  .nickname-input,
+  .suffix {
+    font-size: 30px;
+  } */
+
+  /* 1024 닉네임 부분 추가 */
+  .nickname-container .nickname-text,
+  .nickname-container .nickname-edit-input,
+  .nickname-container .suffix {
+    font-size: 40px;
+    font-weight: 600;
+    transform: translateY(-2.5px);
+  }
+}
 /* ----- 모바일 버전 ----- */
 @media screen and (max-width: 768px) {
   /* ----- 사이드 바 ----- */
@@ -225,87 +257,127 @@
     min-height: 250px;
   }
 
-  @media screen and (max-width: 620px) {
-    /* ----- 헤더 ----- */
-    .header {
-      margin-bottom: 20px;
-    }
-
-    .greeting h1 {
-      font-size: 20px;
-    }
-
-    .date {
-      font-size: 13px;
-    }
-
-    /* 알람 / 테마 */
-    .icon-btn img {
-      width: 20px;
-      height: 20px;
-    }
-
-    /* ----- 카드 ----- */
-    .card {
-      padding: 25px;
-    }
-
-    .stats-container {
-      margin-bottom: 20px;
-    }
-
-    .total-number {
-      font-size: 35px;
-    }
-
-    .controls {
-      padding: 10px;
-    }
-
-    /* 버튼 높이 조절 */
-    .search-box input {
-      height: 50px;
-    }
-
-    .filters {
-      gap: 10px;
-    }
-
-    .add-btn {
-      height: 43px;
-      display: flex;
-      align-items: center;
-      font-size: 17px;
-    }
-
-    .bar-wrap {
-      width: auto;
-      min-width: 90px;
-    }
-
-    .bar-wrap.reset-wrap {
-      margin-left: 0;
-      /* width: 100%; */
-      text-align: center;
-    }
+  .nickname-input {
+    width: 110px;
+  }
+  .greeting h1 .nickname-container .nickname-text,
+  .greeting h1 .nickname-container .nickname-edit-input,
+  .greeting h1 .nickname-container .suffix {
+    font-size: 23px;
   }
 
-  @media screen and (max-width: 420px) {
-    /* 인사칸 내리기 */
-    .mobile-br {
-      display: block;
-    }
+  .greeting h1 .nickname-container .nickname-edit-input {
+    width: 110px;
+    font-size: inherit;
+  }
+  .nickname-container .nickname-text,
+  .nickname-container .nickname-edit-input,
+  .nickname-container .suffix {
+    transform: translateY(-1.5px);
+  }
+}
 
-    .card {
-      padding: 20px 15px;
-    }
+/* nickname */
+@media (min-width: 1024px) {
+  .nickname-container .nickname-edit-input {
+    font-size: 40px;
+  }
+}
 
-    .card h3 {
-      font-size: 13px;
-    }
+@media screen and (max-width: 620px) {
+  /* ----- 헤더 ----- */
+  .header {
+    margin-bottom: 20px;
+  }
 
-    .total-number {
-      font-size: 30px;
-    }
+  .greeting h1 {
+    font-size: 20px;
+  }
+
+  .date {
+    font-size: 13px;
+  }
+
+  /* 알람 / 테마 */
+  .icon-btn img {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* ----- 카드 ----- */
+  .card {
+    padding: 25px;
+  }
+
+  .stats-container {
+    margin-bottom: 20px;
+  }
+
+  .total-number {
+    font-size: 35px;
+  }
+
+  .controls {
+    padding: 10px;
+  }
+
+  /* 버튼 높이 조절 */
+  .search-box input {
+    height: 50px;
+  }
+
+  .filters {
+    gap: 10px;
+  }
+
+  .add-btn {
+    height: 43px;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+  }
+
+  .bar-wrap {
+    width: auto;
+    min-width: 90px;
+  }
+
+  .bar-wrap.reset-wrap {
+    margin-left: 0;
+    /* width: 100%; */
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  /* 인사칸 내리기 */
+  .mobile-br {
+    display: block;
+  }
+
+  .card {
+    padding: 20px 15px;
+  }
+
+  .card h3 {
+    font-size: 13px;
+  }
+
+  .total-number {
+    font-size: 30px;
+  }
+  .total-number {
+    font-size: 30px;
+  }
+
+  /* nickname */
+  .greeting h1 .nickname-container .nickname-text,
+  .greeting h1 .nickname-container .nickname-edit-input,
+  .greeting h1 .nickname-container .suffix {
+    font-size: 20px;
+  }
+
+  .greeting h1 .nickname-container .nickname-edit-input {
+    width: 90px;
   }
 }
