@@ -186,11 +186,11 @@ body.dark .bottom-actions-medium {
 /* 취소-완료 다른 컬러 */
 
 /* 취소 */
-.modal-card .btn-cancel {
+/*.modal-card .btn-cancel {
 }
 
 /* 완료 */
-.modal-card .btn-submit {
+/*.modal-card .btn-submit {
 }
 
 /* 취소 버튼 호버 */
