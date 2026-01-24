@@ -1,20 +1,23 @@
+function generateId() {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2);
+}
 // =====================
 // Storage
 // =====================
 const STORAGE_KEY = "todoList";
 
 function loadTodos() {
-	const data = localStorage.getItem(STORAGE_KEY);
-	if (!data) return [];
-	try {
-		return JSON.parse(data);
-	} catch {
-		return [];
-	}
+  const data = localStorage.getItem(STORAGE_KEY);
+  if (!data) return [];
+  try {
+    return JSON.parse(data);
+  } catch {
+    return [];
+  }
 }
 
 function saveTodos(list) {
-	localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
 }
 
 let todoStore = loadTodos();
@@ -59,210 +62,219 @@ const doneCardEl = document.querySelector(".card.done .total-number");
 // Modal Open/Close
 // =====================
 function openModal() {
-	if (!overlay) return;
-	overlay.classList.add("is-open");
-	document.body.style.overflow = "hidden";
-	titleInput?.focus();
+  if (!overlay) return;
+  overlay.classList.add("is-open");
+  document.body.style.overflow = "hidden";
+  titleInput?.focus();
 }
 
 function closeModal() {
-	if (!overlay) return;
-	overlay.classList.remove("is-open");
-	document.body.style.overflow = "";
+  if (!overlay) return;
+  overlay.classList.remove("is-open");
+  document.body.style.overflow = "";
 }
 
 addBtn?.addEventListener("click", openModal);
 modalCancelBtn?.addEventListener("click", closeModal);
 
 overlay?.addEventListener("click", (e) => {
-	if (e.target === overlay) closeModal();
+  if (e.target === overlay) closeModal();
 });
 
 document.addEventListener("keydown", (e) => {
-	if (e.key === "Escape" && overlay?.classList.contains("is-open")) closeModal();
+  if (e.key === "Escape" && overlay?.classList.contains("is-open"))
+    closeModal();
 });
 
 // =====================
 // Utils
 // =====================
 function formatTime(ts) {
-	const d = new Date(ts);
-	const pad = (n) => String(n).padStart(2, "0");
-	return `${d.getFullYear()}. ${pad(d.getMonth() + 1)}. ${pad(d.getDate())} ${pad(d.getHours())}:${pad(
-		d.getMinutes()
-	)}`;
+  const d = new Date(ts);
+  const pad = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}. ${pad(d.getMonth() + 1)}. ${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
 }
 
 // priority 라디오 값 가져오기 (high / medium / low -> high / mid / low)
 function getPriority() {
-	const checked = document.querySelector('input[name="bottom-actions"]:checked');
-	if (!checked) return "mid";
-	if (checked.value === "high") return "high";
-	if (checked.value === "medium") return "mid";
-	if (checked.value === "low") return "low";
-	return "mid";
+  const checked = document.querySelector(
+    'input[name="bottom-actions"]:checked',
+  );
+  if (!checked) return "mid";
+  if (checked.value === "high") return "high";
+  if (checked.value === "medium") return "mid";
+  if (checked.value === "low") return "low";
+  return "mid";
 }
 
 // status select 값 가져오기 (todo/done만 있으면 doing은 추후 옵션 추가 가능)
 function getStatus() {
-	const v = statusSelect?.value;
-	if (v === "done") return "done";
-	if (v === "doing") return "doing"; // 옵션 추가하면 자동 지원
-	return "todo";
+  const v = statusSelect?.value;
+  if (v === "done") return "done";
+  if (v === "doing") return "doing"; // 옵션 추가하면 자동 지원
+  return "todo";
 }
 
 // status에 맞는 리스트 element
 function getListElByStatus(status) {
-	if (status === "doing") return doingListEl;
-	if (status === "done") return doneListEl;
-	return todoListEl;
+  if (status === "doing") return doingListEl;
+  if (status === "done") return doneListEl;
+  return todoListEl;
 }
 
 // status에 맞는 empty msg
 function getEmptyMsgByStatus(status) {
-	if (status === "doing") return doingEmptyMsg;
-	if (status === "done") return doneEmptyMsg;
-	return todoEmptyMsg;
+  if (status === "doing") return doingEmptyMsg;
+  if (status === "done") return doneEmptyMsg;
+  return todoEmptyMsg;
 }
 
 // =====================
 // Card 만들기 (DOM API 방식)
 // =====================
 function makeTodoCard(todo) {
-	const card = document.createElement("div");
-	card.className = `task-card priority-${todo.priority}`;
-	card.dataset.id = todo.id;
+  const card = document.createElement("div");
+  card.className = `task-card priority-${todo.priority}`;
+  card.dataset.id = todo.id;
 
-	const titleEl = document.createElement("div");
-	titleEl.className = "task-card__title";
-	titleEl.textContent = todo.title;
+  const titleEl = document.createElement("div");
+  titleEl.className = "task-card__title";
+  titleEl.textContent = todo.title;
 
-	card.appendChild(titleEl);
+  card.appendChild(titleEl);
 
-	if (todo.content) {
-		const contentEl = document.createElement("div");
-		contentEl.className = "task-card__content";
-		contentEl.textContent = todo.content;
-		card.appendChild(contentEl);
-	}
+  if (todo.content) {
+    const contentEl = document.createElement("div");
+    contentEl.className = "task-card__content";
+    contentEl.textContent = todo.content;
+    card.appendChild(contentEl);
+  }
 
-	const metaEl = document.createElement("div");
-	metaEl.className = "task-card__meta";
+  const metaEl = document.createElement("div");
+  metaEl.className = "task-card__meta";
 
-	const priorityEl = document.createElement("span");
-	priorityEl.textContent = todo.priority === "high" ? "높음" : todo.priority === "mid" ? "중간" : "낮음";
+  const priorityEl = document.createElement("span");
+  priorityEl.textContent =
+    todo.priority === "high"
+      ? "높음"
+      : todo.priority === "mid"
+        ? "중간"
+        : "낮음";
 
-	const timeEl = document.createElement("span");
-	timeEl.className = "task-card__time";
-	timeEl.textContent = `생성: ${formatTime(todo.createdAt)}`;
+  const timeEl = document.createElement("span");
+  timeEl.className = "task-card__time";
+  timeEl.textContent = `생성: ${formatTime(todo.createdAt)}`;
 
-	metaEl.appendChild(priorityEl);
-	metaEl.appendChild(timeEl);
+  metaEl.appendChild(priorityEl);
+  metaEl.appendChild(timeEl);
 
-	// 완료면 완료시간도 표시
-	if (todo.status === "done" && todo.completedAt) {
-		const doneEl = document.createElement("span");
-		doneEl.className = "task-card__time";
-		doneEl.textContent = `완료: ${formatTime(todo.completedAt)}`;
-		metaEl.appendChild(doneEl);
-	}
+  // 완료면 완료시간도 표시
+  if (todo.status === "done" && todo.completedAt) {
+    const doneEl = document.createElement("span");
+    doneEl.className = "task-card__time";
+    doneEl.textContent = `완료: ${formatTime(todo.completedAt)}`;
+    metaEl.appendChild(doneEl);
+  }
 
-	card.appendChild(metaEl);
+  card.appendChild(metaEl);
 
-	return card;
+  return card;
 }
 
 // =====================
 // Render (3칸 전체 다시 그리기)
 // =====================
 function clearLists() {
-	// task-card만 지우고, 빈 문구 p는 유지
-	[todoListEl, doingListEl, doneListEl].forEach((listEl) => {
-		if (!listEl) return;
-		listEl.querySelectorAll(".task-card").forEach((el) => el.remove());
-	});
+  // task-card만 지우고, 빈 문구 p는 유지
+  [todoListEl, doingListEl, doneListEl].forEach((listEl) => {
+    if (!listEl) return;
+    listEl.querySelectorAll(".task-card").forEach((el) => el.remove());
+  });
 }
 
 function updateEmptyMsgs() {
-	const todoCount = todoStore.filter((t) => t.status === "todo").length;
-	const doingCount = todoStore.filter((t) => t.status === "doing").length;
-	const doneCount = todoStore.filter((t) => t.status === "done").length;
+  const todoCount = todoStore.filter((t) => t.status === "todo").length;
+  const doingCount = todoStore.filter((t) => t.status === "doing").length;
+  const doneCount = todoStore.filter((t) => t.status === "done").length;
 
-	if (todoEmptyMsg) todoEmptyMsg.style.display = todoCount === 0 ? "" : "none";
-	if (doingEmptyMsg) doingEmptyMsg.style.display = doingCount === 0 ? "" : "none";
-	if (doneEmptyMsg) doneEmptyMsg.style.display = doneCount === 0 ? "" : "none";
+  if (todoEmptyMsg) todoEmptyMsg.style.display = todoCount === 0 ? "" : "none";
+  if (doingEmptyMsg)
+    doingEmptyMsg.style.display = doingCount === 0 ? "" : "none";
+  if (doneEmptyMsg) doneEmptyMsg.style.display = doneCount === 0 ? "" : "none";
 }
 
 function updateCounts() {
-	const todoCount = todoStore.filter((t) => t.status === "todo").length;
-	const doingCount = todoStore.filter((t) => t.status === "doing").length;
-	const doneCount = todoStore.filter((t) => t.status === "done").length;
-	const total = todoStore.length;
+  const todoCount = todoStore.filter((t) => t.status === "todo").length;
+  const doingCount = todoStore.filter((t) => t.status === "doing").length;
+  const doneCount = todoStore.filter((t) => t.status === "done").length;
+  const total = todoStore.length;
 
-	if (todoCountEl) todoCountEl.textContent = String(todoCount);
-	if (doingCountEl) doingCountEl.textContent = String(doingCount);
-	if (doneCountEl) doneCountEl.textContent = String(doneCount);
+  if (todoCountEl) todoCountEl.textContent = String(todoCount);
+  if (doingCountEl) doingCountEl.textContent = String(doingCount);
+  if (doneCountEl) doneCountEl.textContent = String(doneCount);
 
-	if (totalCardEl) totalCardEl.textContent = String(total);
-	if (todoCardEl) todoCardEl.textContent = String(todoCount);
-	if (doingCardEl) doingCardEl.textContent = String(doingCount);
-	if (doneCardEl) doneCardEl.textContent = String(doneCount);
+  if (totalCardEl) totalCardEl.textContent = String(total);
+  if (todoCardEl) todoCardEl.textContent = String(todoCount);
+  if (doingCardEl) doingCardEl.textContent = String(doingCount);
+  if (doneCardEl) doneCardEl.textContent = String(doneCount);
 }
 
 function renderAll() {
-	clearLists();
+  clearLists();
 
-	todoStore.forEach((todo) => {
-		const listEl = getListElByStatus(todo.status);
-		listEl?.appendChild(makeTodoCard(todo));
-	});
+  todoStore.forEach((todo) => {
+    const listEl = getListElByStatus(todo.status);
+    listEl?.appendChild(makeTodoCard(todo));
+  });
 
-	updateEmptyMsgs();
-	updateCounts();
+  updateEmptyMsgs();
+  updateCounts();
 }
 
 // =====================
 // Submit (모달 완료)
 // =====================
 modalSubmitBtn?.addEventListener("click", (e) => {
-	e.preventDefault();
+  e.preventDefault();
 
-	const title = titleInput.value.trim();
-	const content = contentInput.value.trim();
-	if (!title) {
-		alert("제목은 필수입니다!");
-		titleInput.focus();
-		return;
-	}
+  const title = titleInput.value.trim();
+  const content = contentInput.value.trim();
+  if (!title) {
+    alert("제목은 필수입니다!");
+    titleInput.focus();
+    return;
+  }
 
-	const now = Date.now();
-	const status = getStatus();
-	const priority = getPriority();
+  const now = Date.now();
+  const status = getStatus();
+  const priority = getPriority();
 
-	const newTodo = {
-		id: crypto.randomUUID(),
-		title,
-		content,
-		status, // ✅ todo/doing/done 저장
-		priority, // ✅ high/mid/low 저장
-		createdAt: now,
-		updatedAt: now,
-		completedAt: status === "done" ? now : null, // ✅ 완료면 완료시간
-	};
+  const newTodo = {
+    id: generateId(),
+    title,
+    content,
+    status, // ✅ todo/doing/done 저장
+    priority, // ✅ high/mid/low 저장
+    createdAt: now,
+    updatedAt: now,
+    completedAt: status === "done" ? now : null, // ✅ 완료면 완료시간
+  };
 
-	todoStore.push(newTodo);
-	saveTodos(todoStore);
+  todoStore.push(newTodo);
+  saveTodos(todoStore);
 
-	// 화면 갱신
-	renderAll();
+  // 화면 갱신
+  renderAll();
 
-	// 입력 초기화
-	titleInput.value = "";
-	contentInput.value = "";
-	document.querySelectorAll('input[name="bottom-actions"]').forEach((el) => (el.checked = false));
-	if (statusSelect) statusSelect.value = "todo";
+  // 입력 초기화
+  titleInput.value = "";
+  contentInput.value = "";
+  document
+    .querySelectorAll('input[name="bottom-actions"]')
+    .forEach((el) => (el.checked = false));
+  if (statusSelect) statusSelect.value = "todo";
 
-	closeModal();
+  closeModal();
 });
 
 // =====================

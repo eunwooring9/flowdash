@@ -1,7 +1,7 @@
 *,
 *::before,
 *::after {
-   box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -42,41 +42,41 @@ header,
 main,
 nav,
 footer {
-   margin: 0;
-   padding: 0;
-   border: 0;
-   font-size: 100%;
-   font-family:
-      "Pretendard",
-      -apple-system,
-      BlinkMacSystemFont,
-      system-ui,
-      Roboto,
-      sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family:
+    "Pretendard",
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    sans-serif;
 }
 
 html {
-   min-height: 100dvh;
+  min-height: 100dvh;
 }
 
 body {
-   min-height: 100vh;
-   min-height: 100dvh;
-   background-color: #ffffff;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #ffffff;
 }
 
 ol,
 ul {
-   list-style: none;
+  list-style: none;
 }
 
 a {
-   text-decoration: none;
-   color: inherit;
-   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 button {
-   background-color: transparent;
-   cursor: pointer;
+  background-color: transparent;
+  cursor: pointer;
 }
