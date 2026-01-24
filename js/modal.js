@@ -20,7 +20,7 @@ function saveTodos(list) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
 }
 
-let todoStore = loadTodos();
+export let todoStore = loadTodos();
 
 // =====================
 // DOM
@@ -211,13 +211,22 @@ function updateCounts() {
   if (doneCardEl) doneCardEl.textContent = String(doneCount);
 }
 
-function renderAll() {
+// function renderAll() {
+// list(목록) 호출하면 검색된 것만 그리기
+export function renderAll(list) {
   clearLists();
 
-  todoStore.forEach((todo) => {
+  const searchList = list || todoStore;
+
+  searchList.forEach((todo) => {
     const listEl = getListElByStatus(todo.status);
     listEl?.appendChild(makeTodoCard(todo));
   });
+
+  // todoStore.forEach((todo) => {
+  //   const listEl = getListElByStatus(todo.status);
+  //   listEl?.appendChild(makeTodoCard(todo));
+  // });
 
   updateEmptyMsgs();
   updateCounts();

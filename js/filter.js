@@ -1,5 +1,3 @@
-"use strict";
-
 // const dropdown = document.querySelectorAll(".filter-dropdown");
 // document.addEventListener("click", function (hide) {
 //    dropdown.forEach((item) => {
