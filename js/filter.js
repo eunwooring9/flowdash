@@ -1,5 +1,3 @@
-"use strict";
-
 // const dropdown = document.querySelectorAll(".filter-dropdown");
 // document.addEventListener("click", function (hide) {
 //    dropdown.forEach((item) => {
@@ -37,14 +35,10 @@ document.querySelectorAll(".filter-dropdown").forEach((dropdown) => {
       mainText.textContent = text;
 
       // 기간: ~ 찾기
-      const period =
-        text === "전체 기간" || text === "오늘" || text === "최근 7일";
+      const period = text === "전체 기간" || text === "오늘" || text === "최근 7일";
       // 우선순위: ~ 찾기
       const sort =
-        text === "전체 우선순위" ||
-        text === "높음" ||
-        text === "중간" ||
-        text === "낮음";
+        text === "전체 우선순위" || text === "높음" || text === "중간" || text === "낮음";
 
       period
         ? // 기간: ~ 맞으면 이걸로

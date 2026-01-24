@@ -39,7 +39,7 @@ module.exports = {
    *
    * ※ HTML 속성은 Prettier가 자동 처리
    */
-  singleQuote: true,
+  singleQuote: false,
 
   /**
    * 객체 속성의 따옴표 처리 (JavaScript)
@@ -47,7 +47,7 @@ module.exports = {
    * - "consistent": 하나라도 있으면 전부 따옴표
    * - "preserve"  : 기존 코드 유지
    */
-  quoteProps: "as-needed",
+  quoteProps: 'as-needed',
 
   /**
    * 후행 쉼표(trailing comma)
@@ -57,7 +57,7 @@ module.exports = {
    *
    * ※ diff 최소화 + 협업 안정성 ↑
    */
-  trailingComma: "es5",
+  trailingComma: 'es5',
 
   /**
    * 객체 중괄호 내부 공백 (JS)
@@ -80,7 +80,7 @@ module.exports = {
    *
    * ※ 파라미터 추가 시 diff 최소화
    */
-  arrowParens: "always",
+  arrowParens: 'always',
 
   /**
    * 줄바꿈 문자
@@ -90,5 +90,5 @@ module.exports = {
    *
    * ※ OS 혼합 환경에서 diff 폭발 방지
    */
-  endOfLine: "lf",
+  endOfLine: 'lf',
 };
