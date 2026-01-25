@@ -1,7 +1,18 @@
 // 초반 데이터 설정 로컬스토리지 활용해서 하기
 // 상수는 대문자로 쓰기
 const DEFAULT_NICKNAME = "FlowDash";
-const savedNickname = localStorage.getItem("userNickname");
+
+// input 너비자연스럽게 하기
+// 최대 글자수 넣어서 글자수 너비 제한하기
+const MAX_NICKNAME_LENGTH = 12;
+const MIN_INPUT_WIDTH = 50;
+
+const savedNickname = localStorage.getItem("flowdash-nickname");
+
+// 로컬에 보이게 할당하기 key 넣어서 값 넣게 set으로
+const setNickname = (key) => {
+  return localStorage.setItem("flowdash-nickname", JSON.stringify(key));
+};
 
 // 이름이 있으면 쓰고 없으면 기본값 할당해
 let currentName = "";
@@ -38,16 +49,27 @@ function updateTimeGreeting() {
   }
 }
 
+// input 길이랑 글자수 맞춰서 함수 호출
+function changeInputWidth() {
+  const textLength = nicknameInput.value.length;
+
+  let newWidth = MIN_INPUT_WIDTH + textLength * 15;
+  if (newWidth > 200) {
+    newWidth = 200;
+  }
+  nicknameInput.style.width = newWidth + "px";
+}
+
 // 닉네임 클릭해서 수정했을때 원래대로
 function saveNicknameProcess() {
   const inputValue = nicknameInput.value.trim();
 
-  //빈칸이면 원래이름으로 이름 새로 넣으면 로컬로 업데이트
+  // 빈칸이면 원래이름으로 이름 새로 넣으면 로컬로 업데이트
   if (inputValue === "") {
     nicknameInput.value = currentName;
   } else {
     currentName = inputValue;
-    localStorage.setItem("userNickname", inputValue);
+    localStorage.setItem("flowdash-nickname", inputValue);
     //콘솔확인용
     // console.log('이름 저장 :', inputValue);
   }
@@ -64,7 +86,7 @@ function startName() {
     nicknameText.innerText = currentName;
   }
 
-  // 날짜 표시 기능 추가 (수정)
+  // 날짜 표시 기능 추가
   const dateElement = document.querySelector("#current-date");
   if (dateElement) {
     const now = new Date();
@@ -81,12 +103,15 @@ startName();
 // 이벤트 라인
 
 // 닉네임 부분 클릭했을때 클릭 이벤트로 function실행해서 수정중에는 나타나게 하기
-// 입력창 커서 깜빡이게 해서 포인트 주기
+// input 커서 깜빡이게 해서 포인트 주기
+// input 클릭하면 크기 맞추기
 nicknameText.addEventListener("click", function () {
   nicknameText.style.display = "none";
   nicknameInput.style.display = "inline-block";
   nicknameInput.value = currentName;
+
   nicknameInput.focus();
+  changeInputWidth();
 });
 
 // 입력할때 그외 밖에 만지면 blur 하면 저장하기
@@ -94,12 +119,21 @@ nicknameInput.addEventListener("blur", function () {
   saveNicknameProcess();
 });
 
-// 엔터 눌러도 저장되게 esc 누르면 취소되게 keydown 사용하기
+// 입력할때 실시간으로 크기 반영하기
+nicknameInput.addEventListener("input", function () {
+  changeInputWidth();
+});
+
+// enter 눌러도 저장되게 esc 누르면 취소되게 keydown 사용하기
 nicknameInput.onkeydown = (event) => {
   if (event.key === "Enter") {
     nicknameInput.blur();
   }
+
+  // esc키 누르면 원래 이름이나 수정전 이름으로 돌아가고 숨기기
+  // esc키  그전 닉네임 작성 하던 거 초기화해주기
   if (event.key === "Escape") {
+    nicknameInput.value = currentName;
     nicknameText.style.display = "inline";
     nicknameInput.style.display = "none";
   }
