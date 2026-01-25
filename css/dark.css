@@ -143,12 +143,29 @@ body {
 }
 
 /* 포커스 */
+
+/* 기존 */
+.search-box input,
+.filter-btn,
+.add-btn {
+  transform: 0.3s ease;
+  box-shadow: 0 0 0 rgba(99, 102, 241, 0);
+}
 .search-box input:focus,
-.form-input:focus,
+.filter-btn:focus,
+.add-btn:focus {
+  outline: none;
+  border: 1px solid #6366f1;
+  box-shadow: 1px 2px 11px -1px rgba(99, 102, 241, 0.3);
+  transition: all 0.5s ease-in-out;
+  transform: translateY(-0.8px);
+}
+/* 새 할일 모달 안 버튼컬러*/
+.form-input:focus:focus,
 .form-textarea:focus,
 .select-wrap select:focus {
   outline: none;
-  border: 1px solid #6366f1;
+  border: 0.3px solid #ecb864;
 }
 
 /* ===== 모달 다크 ===== */

@@ -88,7 +88,7 @@
     transform: translateY(-2.5px);
   }
   .nickname-container .suffix {
-    transform: translateY(-2.5px);
+    transform: translateY(-2.7px);
   }
 }
 
@@ -119,11 +119,15 @@
 
   /* 1024 닉네임 부분 추가 */
   .nickname-container .nickname-text,
-  .nickname-container .nickname-edit-input,
-  .nickname-container .suffix {
+  .nickname-container .nickname-edit-input {
     font-size: 40px;
     font-weight: 600;
     transform: translateY(-2.5px);
+  }
+  .nickname-container .suffix {
+    font-size: 40px;
+    font-weight: 600;
+    transform: translateY(-3px);
   }
 }
 /* ----- 모바일 버전 ----- */
@@ -263,7 +267,7 @@
   .greeting h1 .nickname-container .nickname-text,
   .greeting h1 .nickname-container .nickname-edit-input,
   .greeting h1 .nickname-container .suffix {
-    font-size: 23px;
+    font-size: 24px;
   }
 
   .greeting h1 .nickname-container .nickname-edit-input {
@@ -271,9 +275,11 @@
     font-size: inherit;
   }
   .nickname-container .nickname-text,
-  .nickname-container .nickname-edit-input,
+  .nickname-container .nickname-edit-input {
+    transform: translateY(-2px);
+  }
   .nickname-container .suffix {
-    transform: translateY(-1.5px);
+    transform: translateY(-2.4px);
   }
 }
 

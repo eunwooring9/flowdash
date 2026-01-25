@@ -3,15 +3,20 @@
   padding: 30px;
   width: 90%;
   min-height: auto;
-  border: 2px solid #22c55e;
+  border: 2px solid #f59e0b;
   border-radius: 20px;
   background-color: #fff;
-  font-size: 32px;
+  font-size: 35px;
   font-weight: 400;
-  color: #fff;
+  color: #000;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  max-height: 100vh;
+  overflow: auto;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 
 /* 상단 */
@@ -32,7 +37,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  font-size: 15px;
+  font-size: 19px;
 }
 
 .form-input {
@@ -63,7 +68,7 @@
   flex-wrap: wrap;
   gap: 30px;
   margin-top: 10px;
-  font-size: 15px;
+  font-size: 19px;
 }
 
 /* 왼쪽 우선순위- 상태 사이 공간 똑같이 flex */
@@ -77,7 +82,7 @@
 
 .bottom-actions-group {
   display: flex;
-  gap: 10px;
+  gap: 13px;
 }
 
 /* --- 여기 부터가 클릭 시 네온 부분 --- */
@@ -86,63 +91,87 @@
 .bottom-actions-high,
 .bottom-actions-medium,
 .bottom-actions-low {
-  padding: 8px 8px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 20px;
-  transition: all 0.3s ease;
-  border: none;
   display: flex;
+  padding: 10px 14px;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  transform: scale(1);
+  transition:
+    transform 0.4s ease-in-out,
+    box-shadow 0.6s ease-in-out;
 }
 
 /* 클릭 전 기존 배경 컬러 */
-.bottom-actions-high,
-body.dark .bottom-actions-high {
+.bottom-actions-high {
   background-color: #f22a2a;
 }
-
-.bottom-actions-medium,
-body.dark .bottom-actions-medium {
-  background-color: #f59e0b;
+.bottom-actions-medium {
+  background-color: #ffa01b;
+}
+.bottom-actions-low {
+  background-color: #0fc521;
 }
 
-.bottom-actions-low,
-body.dark .bottom-actions-low {
-  background-color: #22c55e;
-}
-
-/* 클릭 될때 강조하고 네온 넣는 부분 */
-.bottom-actions-group label:has(input:checked) {
-  font-weight: bold;
-  transform: scale(1.03);
-}
-
-/* 높음 클릭 */
-.bottom-actions-high:has(input:checked) {
+/* 높음 버튼 클릭 */
+:checked + .bottom-actions-high {
+  transform: scale(1.02);
   box-shadow:
-    0 0 0 1px #f22a2a,
-    0 0 6px #ee5d5d;
+    0 0 0 2px #f22a2a,
+    0 0 8px #ee5d5d;
 }
 
-/* 중간 클릭 */
-.bottom-actions-medium:has(input:checked) {
+/* 중간 버튼 클릭 */
+:checked + .bottom-actions-medium {
+  transform: scale(1.02);
   box-shadow:
-    0 0 0 1px #f59e0b,
-    0 0 6px #f5b23d;
+    0 0 0 2px #f59e0b,
+    0 0 8px #ecab3b;
 }
 
 /* 낮음 체크 */
-.bottom-actions-low:has(input:checked) {
+:checked + .bottom-actions-low {
+  transform: scale(1.02);
   box-shadow:
-    0 0 0 1px #22c55e,
-    0 0 6px #57ec8e;
+    0 0 0 2px #22c55e,
+    0 0 8px #57ec8e;
 }
 
 /* 오른쪽 상태 */
 .select-wrap {
   position: relative;
+}
+
+/*  column 카드 3개 호버시 보더 컬러 */
+/* 할일 카드 */
+.board .column:nth-child(1):hover {
+  transition: all 0.4s ease;
+  transform: scale(1.02);
+  box-shadow:
+    0 0 0 0.05px #f22a2a,
+    0 0 4px #ee5d5d;
+}
+
+/* 진행 중 카드 */
+.board .column:nth-child(2):hover {
+  transition: all 0.4s ease;
+  transform: scale(1.02);
+  box-shadow:
+    0 0 0 0.05px #f59e0b,
+    0 0 4px #f5b23d;
+}
+
+/* 완료 카드 */
+.board .column:nth-child(3):hover {
+  transition: all 0.4s ease;
+  transform: scale(1.02);
+  box-shadow:
+    0 0 0 0.05px #22c55e,
+    0 0 4px #57ec8e;
 }
 
 .select-wrap select {
@@ -169,20 +198,31 @@ body.dark .bottom-actions-low {
 .form-actions {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 13px;
 }
 
 /* 취소-완료 동일 사이즈 */
-.modal-card .btn-cancel,
-.modal-card .btn-submit {
+.modal-card .btn-cancel {
   margin-top: 15px;
-  padding: 8px 15px;
+  padding: 10px 14px;
   border: 1px solid #afaaaaa0;
   border-radius: 8px;
   font-size: 20px;
   cursor: pointer;
   background-color: #fff;
   color: var(--text);
+  transition: all 0.2s;
+}
+
+.modal-card .btn-submit {
+  margin-top: 15px;
+  padding: 10px 14px;
+  border: 1px solid #afaaaaa0;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #4e56ed;
+  color: #fff;
   transition: all 0.2s;
 }
 
@@ -241,20 +281,11 @@ body.dark .modal-card .btn-submit:hover {
 }
 
 /* ===== 모달 카드 ===== */
-.modal-card {
-  width: 100vh;
-  max-height: 100vh;
-  overflow: auto;
-  border-radius: 20px;
-  background: #fff;
-  transform: translateY(10px);
-  opacity: 0;
-}
-
 .modal-overlay.is-open .modal-card {
   transform: translateY(0);
   opacity: 1;
 }
+
 .task-list {
   display: flex;
   flex-direction: column;
@@ -270,6 +301,13 @@ body.dark .modal-card .btn-submit:hover {
   border: 1px solid #e6e6e6;
   border-radius: 14px;
   padding: 14px 14px 12px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+/* 카드 호버시 살짝 위로 올라가게  */
+.task-card:hover {
+  transform: scale(1.02);
+  cursor: pointer;
 }
 
 /* 제목 */
@@ -296,4 +334,24 @@ body.dark .modal-card .btn-submit:hover {
   gap: 10px;
   font-size: 12px;
   color: #777;
+}
+
+/* -------------------------------------------- */
+/* 할 일 - 진행 중 - 수정 모달 임시 css  */
+
+/* 할 일 - 수정모달 임시로 밑에 보이기 위해서 코드 쓴 것 */
+/* 속성 선택자로 우선순위 올려서 맞춘 코드라 js때 제거 필수해주세요  */
+[id="modalOverlay-edit"],
+[id="modalOverlay-ing"] {
+  position: relative;
+  display: block;
+  background: #f9f9f9;
+  padding: 50px 0;
+}
+
+[id="modalOverlay-edit"] .modal-card,
+[id="modalOverlay-ing"] .modal-card {
+  opacity: 1;
+  transform: translateY(0);
+  margin: 0 auto;
 }
