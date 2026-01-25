@@ -297,13 +297,12 @@ body.dark .modal-card .btn-submit:hover {
 
 /* 카드 기본 스타일 */
 .task-card {
-  background: #fff;
   border: 1px solid #e6e6e6;
   border-radius: 14px;
   padding: 14px 14px 12px;
   position: relative;
-  transition: transform 0.3s ease;
 }
+
 /* 카드 호버시 살짝 위로 올라가게  */
 .task-card:hover {
   transform: scale(1.02);

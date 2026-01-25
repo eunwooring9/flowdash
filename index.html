@@ -13,34 +13,6 @@
   </head>
   <body>
     <div class="container">
-      <!-- 사이드 바 -->
-      <nav class="sidebar">
-        <!-- 햄버거, Project, Schedule -->
-        <div class="menu-top">
-          <!-- 햄버거 -->
-          <button class="menu-item hamburger" type="button">
-            <img src="./assets/img/hamburger-light.svg" alt="삼단바" />
-          </button>
-          <!-- Project -->
-          <button class="menu-item project" type="button">
-            <img src="./assets/img/folder-light.svg" alt="폴더" />
-            <span>Project</span>
-          </button>
-          <!-- Schedule -->
-          <button class="menu-item schedule" type="button">
-            <img src="./assets/img/date-light.svg" alt="달력" />
-            <span>Schedule</span>
-          </button>
-        </div>
-        <!-- 설정 / 톱니바퀴 -->
-        <div class="menu-bottom">
-          <button class="menu-item settings" type="button">
-            <img src="./assets/img/settings-light.svg" alt="톱니바퀴" />
-            <span>Settings</span>
-          </button>
-        </div>
-      </nav>
-
       <!-- 메인  -->
       <main class="main-content">
         <!-- 헤더 부분 -->
@@ -60,8 +32,8 @@
           </div>
 
           <div class="header-actions">
-            <button class="icon-btn bell" type="button">
-              <img src="./assets/img/bell-light.svg" alt="알림" />
+            <button class="icon-btn manual" type="button">
+              <img src="./assets/img/icons8-checkmark.svg" alt="메뉴얼" />
             </button>
             <!-- 테마 -->
             <button class="icon-btn theme" id="themeToggle" type="button" aria-label="테마 전환">
@@ -515,10 +487,9 @@
 
     <!-- JS -->
     <script type="module" src="./js/filter.js"></script>
-    <script type="module" src="./js/filter2.js"></script>
+    <script type="module" src="./js/filterState.js"></script>
     <script src="./js/theme.js"></script>
     <script src="./js/nickname.js"></script>
-    <script src="./js/main.js"></script>
     <script type="module" src="./js/modal.js"></script>
     <script type="module" src="./js/search.js"></script>
   </body>

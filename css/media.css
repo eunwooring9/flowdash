@@ -1,27 +1,11 @@
-* {
-  transition: all 0.3s ease;
-}
-
 /* 태블릿 기준 - 1279px */
 @media screen and (max-width: 1279px) {
-  /* 햄버거, Project, Schedule */
-  .menu-top img,
-  .menu-bottom img {
-    width: 27px;
-    height: 27px;
-  }
-
-  .menu-item.hamburger img {
-    width: 27px;
-    height: 27px;
-  }
-
   /* 인사 */
   .greeting h1 {
     font-size: 30px;
   }
 
-  /* 벨 / 테마 */
+  /* 체크 / 테마 */
   .header-actions {
     padding-right: 35px;
   }
@@ -99,12 +83,20 @@
     gap: 25px;
   }
 
+  .controls input {
+    min-width: 160px;
+  }
+
   .reset-btn {
     font-size: 14px;
   }
 
   .task-list {
     min-height: 300px;
+  }
+
+  .add-btn {
+    width: 440px;
   }
 
   /* nickname */
@@ -132,18 +124,6 @@
 }
 /* ----- 모바일 버전 ----- */
 @media screen and (max-width: 768px) {
-  /* ----- 사이드 바 ----- */
-  .sidebar {
-    display: none;
-  }
-
-  /* 햄버거, Project, Schedule */
-  .menu-item.project,
-  .menu-item.schedule,
-  .menu-bottom {
-    display: none;
-  }
-
   /* ----- 메인 영역 ----- */
   .main-content {
     padding: 0px 10px 20px 0px;
@@ -236,7 +216,7 @@
 
   .bar-wrap {
     width: auto;
-    min-width: 100px;
+    min-width: 160px;
     flex: 1;
   }
 
@@ -329,11 +309,15 @@
 
   /* 버튼 높이 조절 */
   .search-box input {
-    height: 50px;
+    height: 43px;
   }
 
   .filters {
     gap: 10px;
+  }
+
+  .filter-btn {
+    height: 43px;
   }
 
   .add-btn {
@@ -345,7 +329,7 @@
 
   .bar-wrap {
     width: auto;
-    min-width: 90px;
+    min-width: 160px;
   }
 
   .bar-wrap.reset-wrap {
