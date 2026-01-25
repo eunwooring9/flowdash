@@ -1,9 +1,9 @@
 function generateId() {
   return Date.now().toString(36) + Math.random().toString(36).slice(2);
 }
-// =====================
+
 // Storage
-// =====================
+
 const STORAGE_KEY = "todoList";
 
 // 데이터 꺼내오는 부분
@@ -25,21 +25,18 @@ function saveTodos(list) {
 // filter, search에서 사용
 export let todoStore = loadTodos();
 
-// =====================
 // DOM
-// =====================
 const addBtn = document.querySelector(".add-btn");
 const overlay = document.getElementById("modalOverlay");
 const modalCancelBtn = document.querySelector(".btn-cancel");
 const modalSubmitBtn = document.querySelector(".btn-submit");
-
 const titleInput = document.getElementById("title");
 const contentInput = document.getElementById("content");
 
-// ✅ status select (너 HTML id가 select-wraps)
+// status select (너 HTML id가 select-wraps)
 const statusSelect = document.getElementById("select-wraps");
 
-// ✅ 3개 컬럼 task-list 잡기 (순서: 할일/진행중/완료)
+// 3개 컬럼 task-list 잡기 (순서: 할일/진행중/완료)
 const columns = document.querySelectorAll(".board .column");
 const todoListEl = columns[0]?.querySelector(".task-list");
 const doingListEl = columns[1]?.querySelector(".task-list");
@@ -61,9 +58,7 @@ const todoCardEl = document.querySelector(".card.todo .total-number");
 const doingCardEl = document.querySelector(".card.ing .total-number");
 const doneCardEl = document.querySelector(".card.done .total-number");
 
-// =====================
 // Modal Open/Close
-// =====================
 function openModal() {
   if (!overlay) return;
   overlay.classList.add("is-open");
@@ -88,9 +83,7 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && overlay?.classList.contains("is-open")) closeModal();
 });
 
-// =====================
 // Utils
-// =====================
 function formatTime(ts) {
   const d = new Date(ts);
   const pad = (n) => String(n).padStart(2, "0");
@@ -129,9 +122,7 @@ function getEmptyMsgByStatus(status) {
   return todoEmptyMsg;
 }
 
-// =====================
 // Card 만들기 (DOM API 방식)
-// =====================
 function makeTodoCard(todo) {
   const card = document.createElement("div");
   card.className = `task-card priority-${todo.priority}`;
@@ -177,9 +168,7 @@ function makeTodoCard(todo) {
   return card;
 }
 
-// =====================
 // Render (3칸 전체 다시 그리기)
-// =====================
 function clearLists() {
   // task-card만 지우고, 빈 문구 p는 유지
   [todoListEl, doingListEl, doneListEl].forEach((listEl) => {
@@ -222,9 +211,7 @@ function updateCounts(list) {
 }
 
 // function renderAll() {
-// =====================
-// list(목록) 호출하면 검색된 것만 그리기
-// =====================
+// list 호출하면 검색된 것만 그리기
 export function renderAll(list) {
   clearLists();
 
@@ -245,9 +232,7 @@ export function renderAll(list) {
   updateCounts(searchList);
 }
 
-// =====================
 // Submit (모달 완료)
-// =====================
 modalSubmitBtn?.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -259,6 +244,12 @@ modalSubmitBtn?.addEventListener("click", (e) => {
     return;
   }
 
+  // if (!content) {
+  //   alert("내용은 필수입니다!");
+  //   contentInput.focus();
+  //   return;
+  // }
+
   const now = Date.now();
   const status = getStatus();
   const priority = getPriority();
@@ -267,11 +258,11 @@ modalSubmitBtn?.addEventListener("click", (e) => {
     id: generateId(),
     title,
     content,
-    status, // ✅ todo/doing/done 저장
-    priority, // ✅ high/medium/low 저장
+    status, // todo/doing/done 저장
+    priority, // high/mid/low 저장
     createdAt: now,
     updatedAt: now,
-    completedAt: status === "done" ? now : null, // ✅ 완료면 완료시간
+    completedAt: status === "done" ? now : null, // 완료면 완료시간
   };
 
   todoStore.push(newTodo);
@@ -289,7 +280,5 @@ modalSubmitBtn?.addEventListener("click", (e) => {
   closeModal();
 });
 
-// =====================
 // 최초 로드 시 렌더
-// =====================
 renderAll();
