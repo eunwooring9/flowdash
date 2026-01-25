@@ -6,10 +6,12 @@ function generateId() {
 // =====================
 const STORAGE_KEY = "todoList";
 
+// 데이터 꺼내오는 부분
 function loadTodos() {
   const data = localStorage.getItem(STORAGE_KEY);
   if (!data) return [];
   try {
+    // 텍스트 -> 객체로 변환
     return JSON.parse(data);
   } catch {
     return [];
@@ -20,6 +22,7 @@ function saveTodos(list) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
 }
 
+// filter, search에서 사용
 export let todoStore = loadTodos();
 
 // =====================
@@ -94,14 +97,14 @@ function formatTime(ts) {
   return `${d.getFullYear()}. ${pad(d.getMonth() + 1)}. ${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
 }
 
-// priority 라디오 값 가져오기 (high / medium / low -> high / mid / low)
+// priority 라디오 값 가져오기 (high / medium / low -> high / medium / low)
 function getPriority() {
   const checked = document.querySelector('input[name="bottom-actions"]:checked');
-  if (!checked) return "mid";
+  if (!checked) return "medium";
   if (checked.value === "high") return "high";
-  if (checked.value === "medium") return "mid";
+  if (checked.value === "medium") return "medium";
   if (checked.value === "low") return "low";
-  return "mid";
+  return "medium";
 }
 
 // status select 값 가져오기 (todo/done만 있으면 doing은 추후 옵션 추가 가능)
@@ -152,7 +155,7 @@ function makeTodoCard(todo) {
 
   const priorityEl = document.createElement("span");
   priorityEl.textContent =
-    todo.priority === "high" ? "높음" : todo.priority === "mid" ? "중간" : "낮음";
+    todo.priority === "high" ? "높음" : todo.priority === "medium" ? "중간" : "낮음";
 
   const timeEl = document.createElement("span");
   timeEl.className = "task-card__time";
@@ -185,21 +188,28 @@ function clearLists() {
   });
 }
 
-function updateEmptyMsgs() {
-  const todoCount = todoStore.filter((t) => t.status === "todo").length;
-  const doingCount = todoStore.filter((t) => t.status === "doing").length;
-  const doneCount = todoStore.filter((t) => t.status === "done").length;
+function updateEmptyMsgs(list) {
+  // const todoCount = todoStore.filter((t) => t.status === "todo").length;
+  // const doingCount = todoStore.filter((t) => t.status === "doing").length;
+  // const doneCount = todoStore.filter((t) => t.status === "done").length;
+  // filter용 (list 들어오면 좌측 없으면 우측 적용)
+  const targetList = list || todoStore;
+  const todoCount = targetList.filter((t) => t.status === "todo").length;
+  const doingCount = targetList.filter((t) => t.status === "doing").length;
+  const doneCount = targetList.filter((t) => t.status === "done").length;
 
   if (todoEmptyMsg) todoEmptyMsg.style.display = todoCount === 0 ? "" : "none";
   if (doingEmptyMsg) doingEmptyMsg.style.display = doingCount === 0 ? "" : "none";
   if (doneEmptyMsg) doneEmptyMsg.style.display = doneCount === 0 ? "" : "none";
 }
 
-function updateCounts() {
-  const todoCount = todoStore.filter((t) => t.status === "todo").length;
-  const doingCount = todoStore.filter((t) => t.status === "doing").length;
-  const doneCount = todoStore.filter((t) => t.status === "done").length;
-  const total = todoStore.length;
+function updateCounts(list) {
+  // filter용 (list 들어오면 좌측 없으면 우측 적용)
+  const targetList = list || todoStore;
+  const todoCount = targetList.filter((t) => t.status === "todo").length;
+  const doingCount = targetList.filter((t) => t.status === "doing").length;
+  const doneCount = targetList.filter((t) => t.status === "done").length;
+  const total = targetList.length;
 
   if (todoCountEl) todoCountEl.textContent = String(todoCount);
   if (doingCountEl) doingCountEl.textContent = String(doingCount);
@@ -212,10 +222,13 @@ function updateCounts() {
 }
 
 // function renderAll() {
+// =====================
 // list(목록) 호출하면 검색된 것만 그리기
+// =====================
 export function renderAll(list) {
   clearLists();
 
+  // filter용 남은 것만 그림
   const searchList = list || todoStore;
 
   searchList.forEach((todo) => {
@@ -228,8 +241,8 @@ export function renderAll(list) {
   //   listEl?.appendChild(makeTodoCard(todo));
   // });
 
-  updateEmptyMsgs();
-  updateCounts();
+  updateEmptyMsgs(searchList);
+  updateCounts(searchList);
 }
 
 // =====================
@@ -255,7 +268,7 @@ modalSubmitBtn?.addEventListener("click", (e) => {
     title,
     content,
     status, // ✅ todo/doing/done 저장
-    priority, // ✅ high/mid/low 저장
+    priority, // ✅ high/medium/low 저장
     createdAt: now,
     updatedAt: now,
     completedAt: status === "done" ? now : null, // ✅ 완료면 완료시간
