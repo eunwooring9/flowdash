@@ -79,8 +79,6 @@ body {
 .filter-btn,
 .form-input,
 .form-textarea,
-.btn-cencel,
-.btn-submit,
 .dropdown-menu,
 .dropdown-item {
   background: var(--panel2);
@@ -146,20 +144,20 @@ body {
 
 .search-box input:focus,
 .filter-btn:focus,
-.add-btn:focus,
-.dropdown-menu:hover {
+.add-btn:focus {
   outline: none;
   /* border: 1px solid #6366f1; */
   box-shadow: 1px 2px 5px -1px rgba(43, 46, 255, 0.652);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
   transform: translateY(-0.8px);
 }
+
 /* 새 할일 모달 안 버튼컬러*/
 .form-input:focus:focus,
 .form-textarea:focus,
 .select-wrap select:focus {
   outline: none;
-  border: 0.3px solid #ecb864;
+  box-shadow: 0px 3px 6px rgba(119, 119, 119, 0.15);
 }
 
 /* ===== 모달 다크 ===== */
@@ -185,17 +183,14 @@ body.dark .arrow {
 }
 
 /* 모달 버튼 호버 다크 대응 */
-body.dark .btn-cencel:hover {
-  background: rgba(148, 163, 184, 0.12);
+body.dark .btn-cancel:hover {
   border-color: rgba(148, 163, 184, 0.35);
 }
 
 body.dark .btn-submit {
-  background: rgba(129, 140, 248, 0.18);
-  border-color: rgba(129, 140, 248, 0.45);
+  background: rgba(43, 46, 255, 0.652);
 }
 
 body.dark .btn-submit:hover {
-  background: rgba(129, 140, 248, 0.28);
   border-color: rgba(129, 140, 248, 0.65);
 }
