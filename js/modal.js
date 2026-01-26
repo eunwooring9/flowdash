@@ -163,6 +163,43 @@ function makeTodoCard(todo) {
     metaEl.appendChild(doneEl);
   }
 
+  // task-card 안에 삭제 이미지 넣고 삭제할 수 있게 하기
+  // 이미지에 flex넣으려고 card에 줬을때 기존코드 문제가 생겨 새로운 감싸줄 div만들기
+  const deletes = document.createElement("div");
+  deletes.className = "task-card-deletes";
+
+  // 이미지를 카드 안에 넣어야 하니깐 부모인 metaEL에 이미지 넣기
+  // 테스트나 우선순위 보다 제일 위로 넣기
+
+  // img태그만들기
+  const deleteImg = document.createElement("img");
+  //내가 넣은 이미지불러오기 ""안에 넣기
+  deleteImg.src = "./assets/img/delete.svg";
+  //이미지 위치랑 크기 맞춰야 하기 때문에 class 넣기
+  deleteImg.className = "task-card-delete";
+
+  // 삭제 버튼
+  deleteImg.addEventListener("click", (e) => {
+    // 삭제 클릭시 수정모달이벤트가 같이 발생하는 버블링 현상 막기
+    e.stopPropagation();
+    // 삭제 경고창
+    if (!confirm("정말 삭제하시겠습니까?")) return;
+    // 카드 자체를 삭제하하는거 카드 id선언하기
+    const id = card.dataset.id;
+    // 저된 여러 리스트 중에 클릭한것만 삭제 되게
+    todoStore = todoStore.filter((todo) => {
+      return todo.id !== id;
+    });
+    // 삭제되고 다시 저장하게 하고 렌더링에 다시 그리기
+    saveTodos(todoStore);
+    renderAll();
+  });
+
+  // 만들어 놓은 deletes는 카드에 넣기
+  card.prepend(deletes);
+  // 새로 만든 div 에 이미지 넣기
+  deletes.prepend(deleteImg);
+
   card.appendChild(metaEl);
 
   return card;
