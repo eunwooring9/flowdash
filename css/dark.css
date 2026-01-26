@@ -16,7 +16,7 @@
 
 /* 다크 모드 */
 body.dark {
-  --bg: #151515;
+  --bg: #19191d;
   --panel: #19191d;
   --panel2: #18181b;
 
@@ -25,8 +25,8 @@ body.dark {
   --muted2: #94a3b8;
   --border: #f59e0b;
 
-  --shadow: 0px 3px 6px rgba(167, 167, 167, 0.15);
-  --shadow2: 0px 3px 6px rgba(167, 167, 167, 0.15);
+  --shadow: 0px 3px 6px rgba(167, 167, 167, 0.346);
+  --shadow2: 0px 3px 6px rgba(167, 167, 167, 0.302);
 
   --primary: #4e56ed;
   --focus: rgba(129, 140, 248, 0.18);
@@ -35,6 +35,7 @@ body.dark {
 body.dark .header-actions img {
   filter: invert(1) brightness(1.1);
 }
+
 body.dark #themeToggle img {
   filter: none;
 }
@@ -79,7 +80,9 @@ body {
 .form-input,
 .form-textarea,
 .btn-cencel,
-.btn-submit {
+.btn-submit,
+.dropdown-menu,
+.dropdown-item {
   background: var(--panel2);
   color: var(--text);
   border-color: #b0b0b0;
@@ -118,6 +121,7 @@ body {
 /* + 새 할 일 버튼 */
 .add-btn {
   background-color: var(--primary);
+  box-shadow: var(--shadow);
 }
 
 /* 정렬바 */
@@ -133,18 +137,20 @@ body {
 /* 포커스 */
 
 /* 기존 */
-.search-box input,
+/* .search-box input,
 .filter-btn,
 .add-btn {
   transform: 0.3s ease;
   box-shadow: 0 0 0 rgba(167, 167, 167, 0.15);
-}
+} */
+
 .search-box input:focus,
 .filter-btn:focus,
-.add-btn:focus {
+.add-btn:focus,
+.dropdown-menu:hover {
   outline: none;
-  border: 1px solid #6366f1;
-  box-shadow: 1px 2px 11px -1px rgba(99, 102, 241, 0.3);
+  /* border: 1px solid #6366f1; */
+  box-shadow: 1px 2px 5px -1px rgba(43, 46, 255, 0.652);
   transition: all 0.5s ease-in-out;
   transform: translateY(-0.8px);
 }
