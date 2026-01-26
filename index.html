@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -282,194 +282,67 @@
       </div>
     </div>
 
-    <!----------- 할 일 - 수정 모달  ------------>
-    <!-- 첫 번째줄 class is-open은 숨겨둔 모달을 보이기 위해 넣은것 후에는 삭제해야 함 -->
-    <!-- 첫 번째줄 class modal-overlay 때문에 모달이 중간에 띄워지고 아직 들어갈 코드가 없어서 사라지지 않아서 삭제 한것이니 후에 추가해야 함  -->
-    <!-- 임시로 밑에 띄우기 위해 디자인 보일수 있도록 임시 코드 modal.css파일 맨 밑에 넣어뒀으니 후에 고쳐야 함 -->
-    <!-- 수정 제목 -->
-    <!-- id name for 선언한 것 만 다름 확인 필수 -->
-    <div class="is-open" id="modalOverlay-edit" aria-hidden="false">
-      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle-edit">
-        <!-- 상단 -->
+    <div class="modal-overlay" id="editModalOverlay" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="editModalTitle">
         <div class="modal-card-header">
-          <span class="modal-card-title" id="modalTitle-edit">할 일 수정</span>
+          <span class="modal-card-title" id="editModalTitle">할 일 수정</span>
         </div>
+
         <div class="modal-card-form">
-          <!-- 수정 제목 -->
-          <!-- id name for 선언한 것 만 다름 확인 필수 -->
           <div class="form-item">
             <label class="form-label">제목*</label>
             <input
               type="text"
               class="form-input"
-              id="edit-title"
-              name="edit-title"
-              placeholder="최대 20자 이내로 제목을 입력하세요..."
+              id="editTitle"
               maxlength="20"
+              placeholder="최대 20자 이내로 제목을 입력하세요..."
               required
             />
           </div>
-          <!-- 수정 내용 -->
+
           <div class="form-item">
             <label class="form-label">내용</label>
             <textarea
-              name="edit-content"
               class="form-textarea"
-              id="edit-content"
-              placeholder="최대 60자 이내로 상세 내용을 입력하세요..."
+              id="editContent"
               maxlength="60"
-              required
+              placeholder="최대 60자 이내로 상세 내용을 입력하세요..."
             ></textarea>
           </div>
         </div>
 
-        <!-- 하단 우선순위 - 상태  -->
         <div class="bottom-priority-situation">
-          <!-- 왼족 우선순위 -->
           <div class="bottom-actions-left">
             <span>우선순위</span>
-            <!-- 우선순위 input -->
             <div class="bottom-actions-group">
+              <input type="radio" id="editPriorityHigh" name="editPriority" value="high" hidden />
+              <label for="editPriorityHigh" class="bottom-actions-high"><span>높음</span></label>
+
               <input
                 type="radio"
-                id="edit-priority-high"
-                name="edit-bottom-actions"
-                value="high"
-                required
-                hidden
-              />
-              <label for="edit-priority-high" class="bottom-actions-high">
-                <span>높음</span>
-              </label>
-              <input
-                type="radio"
-                id="edit-priority-medium"
-                name="edit-bottom-actions"
+                id="editPriorityMedium"
+                name="editPriority"
                 value="medium"
                 hidden
               />
-              <label for="edit-priority-medium" class="bottom-actions-medium">
-                <span class="medium">중간</span>
-              </label>
-              <input
-                type="radio"
-                id="edit-priority-low"
-                name="edit-bottom-actions"
-                value="low"
-                hidden
-              />
-              <label for="edit-priority-low" class="bottom-actions-low">
-                <span class="low">낮음</span>
-              </label>
+              <label for="editPriorityMedium" class="bottom-actions-medium"
+                ><span class="medium">중간</span></label
+              >
+
+              <input type="radio" id="editPriorityLow" name="editPriority" value="low" hidden />
+              <label for="editPriorityLow" class="bottom-actions-low"
+                ><span class="low">낮음</span></label
+              >
             </div>
           </div>
 
-          <!-- 오른쪽 상태 -->
           <div class="bottom-actions-right">
             <span>상태</span>
             <div class="select-wrap">
-              <select name="edit-select-wraps" id="edit-select-wraps" disabled>
+              <select id="editStatus">
+                <option value="todo">할 일</option>
                 <option value="doing">진행 중</option>
-                <!--  <option value="done">완료</option> -->
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <!-- 취소/완료 버튼 -->
-        <div class="form-actions">
-          <button type="button" class="btn-cancel">취소</button>
-          <button type="submit" class="btn-submit">완료</button>
-        </div>
-      </div>
-    </div>
-
-    <!----------- 진행 중 - 수정 모달 ----------->
-    <!-- 첫 번째줄 class is-open은 숨겨둔 모달을 보이기 위해 넣은것 후에는 삭제해야 함 -->
-    <!-- 첫 번째줄 class modal-overlay 때문에 모달이 중간에 띄워지고 아직 들어갈 코드가 없어서 사라지지 않아서 삭제 한것이니 후에 추가해야 함  -->
-    <!-- 임시로 밑에 띄우기 위해 디자인 보일수 있도록 임시 코드 modal.css파일 맨 밑에 넣어뒀으니 후에 고쳐야 함 -->
-    <!-- 수정 제목 -->
-    <!-- id name for 선언한 것 만 다름 확인 필수 -->
-    <div class="is-open" id="modalOverlay-ing" aria-hidden="false">
-      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle-ing">
-        <!-- 상단 -->
-        <div class="modal-card-header">
-          <span class="modal-card-title" id="modalTitle-ing">진행 중 수정</span>
-        </div>
-        <div class="modal-card-form">
-          <div class="form-item">
-            <label class="form-label">제목*</label>
-            <input
-              type="text"
-              class="form-input"
-              id="ing-title"
-              name="ing-title"
-              placeholder="최대 20자 이내로 제목을 입력하세요..."
-              maxlength="20"
-              required
-            />
-          </div>
-          <!-- 수정 내용 -->
-          <div class="form-item">
-            <label class="form-label">내용</label>
-            <textarea
-              name="ing-content"
-              class="form-textarea"
-              id="ing-content"
-              placeholder="최대 60자 이내로 상세 내용을 입력하세요..."
-              maxlength="60"
-              required
-            ></textarea>
-          </div>
-        </div>
-
-        <!-- 하단 우선순위 - 상태  -->
-        <div class="bottom-priority-situation">
-          <!-- 왼족 우선순위 -->
-          <div class="bottom-actions-left">
-            <span>우선순위</span>
-            <!-- 우선순위 input -->
-            <div class="bottom-actions-group">
-              <input
-                type="radio"
-                id="ing-priority-high"
-                name="ing-bottom-actions"
-                value="high"
-                required
-                hidden
-              />
-              <label for="ing-priority-high" class="bottom-actions-high">
-                <span>높음</span>
-              </label>
-              <input
-                type="radio"
-                id="ing-priority-medium"
-                name="ing-bottom-actions"
-                value="medium"
-                hidden
-              />
-              <label for="ing-priority-medium" class="bottom-actions-medium">
-                <span class="medium">중간</span>
-              </label>
-              <input
-                type="radio"
-                id="ing-priority-low"
-                name="ing-bottom-actions"
-                value="low"
-                hidden
-              />
-              <label for="ing-priority-low" class="bottom-actions-low">
-                <span class="low">낮음</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- 오른쪽 상태 -->
-          <div class="bottom-actions-right">
-            <span>상태</span>
-            <div class="select-wrap">
-              <select name="ing-select-wraps" id="ing-select-wraps">
-                <option value="doing">할 일</option>
                 <option value="done">완료</option>
               </select>
               <span class="arrow">▼</span>
@@ -477,10 +350,9 @@
           </div>
         </div>
 
-        <!-- 취소/완료 버튼 -->
         <div class="form-actions">
-          <button type="button" class="btn-cancel">취소</button>
-          <button type="submit" class="btn-submit">완료</button>
+          <button type="button" class="btn-cancel" id="editCancelBtn">취소</button>
+          <button type="button" class="btn-submit" id="editSubmitBtn">완료</button>
         </div>
       </div>
     </div>
@@ -491,6 +363,7 @@
     <script src="./js/theme.js"></script>
     <script src="./js/nickname.js"></script>
     <script type="module" src="./js/modal.js"></script>
+    <script type="module" src="./js/editModal.js"></script>
     <script type="module" src="./js/search.js"></script>
   </body>
 </html>
