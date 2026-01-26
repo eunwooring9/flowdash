@@ -338,7 +338,7 @@ body,
   display: flex;
   flex-direction: column;
   background: #ffffff;
-  box-shadow: 0px 3px 6px rgba(119, 119, 119, 0.25);
+  box-shadow: 0 0 4px 2px #f5b23d;
   border-radius: 25px;
 }
 
@@ -356,25 +356,25 @@ body,
 /* 할 일 - 경계선 */
 .to-do {
   border-bottom-color: #f22a2a;
-  box-shadow: 0 4px 4px -2px #ee5d5d;
+  box-shadow: 0 6px 3px -3px #ee5d5d;
   border-bottom-width: 2px;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 }
 
 /* 진행 중 - 경계선 */
 .column-header.ing {
   border-bottom-color: #f59e0b;
-  box-shadow: 0 4px 4px -2px #f5b23d;
+  box-shadow: 0 6px 3px -3px #f5b23d;
   border-bottom-width: 2px;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 }
 
 /* 완료 - 경계선 */
 .finish {
   border-bottom-color: #22c55e;
-  box-shadow: 0 4px 4px -2px #57ec8e;
+  box-shadow: 0 6px 3px -3px #57ec8e;
   border-bottom-width: 2px;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 }
 
 /* task 박스 */
@@ -388,11 +388,29 @@ body,
   overflow-y: auto;
 }
 
-.column:nth-child(1)::-webkit-scrollbar {
+.column:nth-child(1) .task-list::-webkit-scrollbar {
   width: 5px;
 }
 
-.column:nth-child(1):-webkit-scrollbar-thumb {
+.column:nth-child(1) .task-list::-webkit-scrollbar-thumb {
   background-color: #ff000017;
-  border-radius: 10px;
+  border-radius: 30px;
+}
+
+.column:nth-child(2) .task-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.column:nth-child(2) .task-list::-webkit-scrollbar-thumb {
+  background-color: #f5b23d4f;
+  border-radius: 30px;
+}
+
+.column:nth-child(3) .task-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.column:nth-child(3) .task-list::-webkit-scrollbar-thumb {
+  background-color: #57ec8e2a;
+  border-radius: 30px;
 }

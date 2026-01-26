@@ -122,6 +122,14 @@
     transform: translateY(-3px);
   }
 }
+
+/* nickname */
+@media (min-width: 1024px) {
+  .nickname-container .nickname-edit-input {
+    font-size: 40px;
+  }
+}
+
 /* ----- 모바일 버전 ----- */
 @media screen and (max-width: 768px) {
   /* ----- 메인 영역 ----- */
@@ -261,12 +269,22 @@
   .nickname-container .suffix {
     transform: translateY(-2.4px);
   }
-}
 
-/* nickname */
-@media (min-width: 1024px) {
-  .nickname-container .nickname-edit-input {
-    font-size: 40px;
+  .bottom-actions-left {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .bottom-actions-high,
+  .bottom-actions-medium,
+  .bottom-actions-low {
+    width: 100%;
+    min-width: 58px;
+    max-height: 38px;
+  }
+
+  .select-wrap select {
+    min-width: 200px;
   }
 }
 
@@ -369,5 +387,28 @@
 
   .greeting h1 .nickname-container .nickname-edit-input {
     width: 90px;
+  }
+
+  .modal-card {
+    margin: 10px 10px;
+  }
+
+  .bottom-actions-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bottom-actions-high,
+  .bottom-actions-medium,
+  .bottom-actions-low {
+    width: 40%;
+    min-width: 58px;
+    max-height: 38px;
+  }
+
+  .select-wrap select {
+    min-width: 160px;
   }
 }
