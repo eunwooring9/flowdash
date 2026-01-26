@@ -16,7 +16,7 @@
 
 /* 다크 모드 */
 body.dark {
-  --bg: #19191d;
+  --bg: #151516;
   --panel: #19191d;
   --panel2: #18181b;
 
@@ -25,8 +25,8 @@ body.dark {
   --muted2: #94a3b8;
   --border: #f59e0b;
 
-  --shadow: 0px 3px 6px rgba(167, 167, 167, 0.346);
-  --shadow2: 0px 3px 6px rgba(167, 167, 167, 0.302);
+  --shadow: 0px 3px 6px rgba(166, 166, 166, 0.315);
+  --shadow2: 0px 3px 6px rgba(218, 218, 218, 0.153);
 
   --primary: #4e56ed;
   --focus: rgba(129, 140, 248, 0.18);
@@ -38,6 +38,13 @@ body.dark .header-actions img {
 
 body.dark #themeToggle img {
   filter: none;
+  transition: all 0.3s ease-in-out;
+}
+
+body.dark #themeToggle:hover img {
+  transform: scale(1.1);
+  filter: brightness(0) saturate(100%) invert(77%) sepia(66%) saturate(3293%) hue-rotate(1deg)
+    brightness(107%) contrast(103%);
 }
 
 /* 전체 배경/텍스트 */
@@ -49,8 +56,12 @@ body {
 /* 헤더 */
 .header {
   background: var(--panel);
-  box-shadow: 0px 3px 6px rgba(167, 167, 167, 0.15);
+  box-shadow: var(--shadow);
 }
+
+/* body.dark .header {
+  box-shadow: 0px 3px 6px rgba(167, 167, 167, 0.15);
+} */
 
 .greeting h1 {
   color: var(--text);
@@ -165,7 +176,7 @@ body.dark .modal-card {
   background-color: var(--panel);
   color: var(--text);
   border-color: var(--border);
-  box-shadow: 0px 3px 6px rgba(167, 167, 167, 0.15);
+  box-shadow: 0 0 2px 0.5px #f5b23d;
 }
 body.dark .card {
   box-shadow: 0px 3px 6px rgba(167, 167, 167, 0.15);
@@ -193,4 +204,43 @@ body.dark .btn-submit {
 
 body.dark .btn-submit:hover {
   border-color: rgba(129, 140, 248, 0.65);
+}
+
+body.dark .bottom-actions-high,
+body.dark .bottom-actions-medium,
+body.dark .bottom-actions-low {
+  color: #ffffff;
+}
+
+body.dark .column:nth-child(1) .task-list::-webkit-scrollbar,
+body.dark .column:nth-child(3) .task-list::-webkit-scrollbar,
+body.dark .column:nth-child(2) .task-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+body.dark .column:nth-child(1) .task-list::-webkit-scrollbar-thumb,
+body.dark .column:nth-child(3) .task-list::-webkit-scrollbar-thumb,
+body.dark .column:nth-child(2) .task-list::-webkit-scrollbar-thumb {
+  background-color: #534f4f6f;
+  border-radius: 30px;
+}
+
+body.dark .board .column:nth-child(1):hover {
+  box-shadow:
+    0 0 0 0.1px #f22a2a,
+    0 0 7px #ee5d5d;
+}
+
+/* 진행 중 카드 */
+body.dark .board .column:nth-child(2):hover {
+  box-shadow:
+    0 0 0 0.1px #f59e0b,
+    0 0 7px #f5b23d;
+}
+
+/* 완료 카드 */
+body.dark .board .column:nth-child(3):hover {
+  box-shadow:
+    0 0 0 0.1px #22c55e,
+    0 0 7px #57ec8e;
 }
