@@ -1,17 +1,22 @@
 // 초반 데이터 설정 로컬스토리지 활용해서 하기
 // 상수는 대문자로 쓰기
 const DEFAULT_NICKNAME = "FlowDash";
+// flowdash-nickname 대신 똑같이 상수로 선언하기
+const STORAGE_KEY = "flowdash-nickname";
 
 // input 너비자연스럽게 하기
 // 최대 글자수 넣어서 글자수 너비 제한하기
 const MAX_NICKNAME_LENGTH = 12;
 const MIN_INPUT_WIDTH = 50;
 
-const savedNickname = localStorage.getItem("flowdash-nickname");
+// 여기도 상수로 바꾸기
+const savedNickname = localStorage.getItem(STORAGE_KEY);
 
-// 로컬에 보이게 할당하기 key 넣어서 값 넣게 set으로
-const setNickname = (key) => {
-  return localStorage.setItem("flowdash-nickname", JSON.stringify(key));
+// 로컬에 보이게 할당하기 nickname 넣어서 값 넣게 set으로
+// 기존에 넣었던 key는 맨처음 선언했던 상수랑 구별을 못함? 그래서 제대로 명시하게 바꾸기
+// nicknamea대신 상수로 위에처럼 선언해서 대입하기
+const setNickname = (nickname) => {
+  return localStorage.setItem(STORAGE_KEY, JSON.stringify(nickname));
 };
 
 // 이름이 있으면 쓰고 없으면 기본값 할당해
@@ -31,17 +36,17 @@ const greetingMessage = document.querySelector("#greeting-message");
 function updateTimeGreeting() {
   const now = new Date();
   const hours = now.getHours();
-  let message = "안녕하세요";
 
-  if (hours >= 5 && hours < 11) {
-    message = "좋은 아침이에요";
-  } else if (hours >= 11 && hours < 17) {
-    message = "좋은 오후에요";
-  } else if (hours >= 17 && hours < 22) {
-    message = "좋은 저녁이에요";
-  } else {
-    message = "안녕하세요";
-  }
+  //삼항으로 바꿔서 한번 바꿔보기 조건이 ? 참이면 : 거짓이면
+  const message =
+    hours >= 5 && hours < 11
+      ? "좋은 아침이에요"
+      : hours >= 11 && hours < 17
+        ? "좋은 오후에요"
+        : hours >= 17 && hours < 22
+          ? "좋은 저녁이에요"
+          : // 위에 조건이 다아니면 안녕하세요로 바꾸기
+            "안녕하세요";
 
   // 인사말 화면에 넣기
   if (greetingMessage) {
@@ -69,7 +74,7 @@ function saveNicknameProcess() {
     nicknameInput.value = currentName;
   } else {
     currentName = inputValue;
-    localStorage.setItem("flowdash-nickname", inputValue);
+    localStorage.setItem(STORAGE_KEY, inputValue);
     //콘솔확인용
     // console.log('이름 저장 :', inputValue);
   }
