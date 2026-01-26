@@ -1,7 +1,7 @@
 .modal-card {
   margin: 20px auto;
   padding: 30px;
-  width: 70%;
+  width: 600px;
   min-height: auto;
   box-shadow: 0 0 4px 2px #f5b23d;
   border-radius: 20px;
@@ -106,20 +106,39 @@
   border-radius: 5px;
   color: #fff;
   border: none;
-  transition:
-    transform 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
 }
 
 /* 클릭 전 기존 배경 컬러 */
 .bottom-actions-high {
   background-color: #f22a2a;
 }
+
+.bottom-actions-group label {
+  background-color: transparent;
+  color: #000;
+}
+
+.bottom-actions-group #priority-high:checked + .bottom-actions-high {
+  background-color: #f22a2a;
+  color: #ffffff;
+}
+
 .bottom-actions-medium {
   background-color: #ffa01b;
 }
+
+.bottom-actions-group #priority-medium:checked + .bottom-actions-medium {
+  background-color: #ffa01b;
+  color: #ffffff;
+}
+
 .bottom-actions-low {
   background-color: #0fc521;
+}
+
+.bottom-actions-group #priority-low:checked + .bottom-actions-low {
+  background-color: #0fc521;
+  color: #ffffff;
 }
 
 /* 높음 버튼 클릭 */
@@ -239,7 +258,7 @@
 .modal-card .btn-submit:hover {
   border: none;
   background-color: #ffffff;
-  color: #ff0000;
+  color: #4e56ed;
 }
 
 /* 다크 모드 버튼 대응 부분 */

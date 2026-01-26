@@ -13,7 +13,7 @@
   /* ----- 통계 카드 2열로 변경 ----- */
   .stats-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    gap: 20px;
   }
 
   .stats-container .card:last-child {
@@ -132,11 +132,6 @@
 
 /* ----- 모바일 버전 ----- */
 @media screen and (max-width: 768px) {
-  /* ----- 메인 영역 ----- */
-  .main-content {
-    padding: 0px 10px 20px 0px;
-  }
-
   /* ----- 헤더 ----- */
   .header {
     justify-content: space-between;
@@ -157,18 +152,18 @@
   .header-actions {
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 20px;
     padding-right: 10px;
   }
 
   .icon-btn img {
-    width: 25px;
-    height: 25px;
+    width: 27px;
+    height: 27px;
   }
 
   /* 중단 ~ 하단 박스 */
   .content-wrap {
-    padding: 0px 10px 30px 10px;
+    padding: 0px 20px 30px 20px;
   }
 
   /* 통계 2열로 변경 */
@@ -184,7 +179,7 @@
 
   .card {
     width: 100%;
-    min-height: 70px;
+    min-height: 60px;
   }
 
   .controls {
@@ -252,6 +247,11 @@
   .nickname-input {
     width: 110px;
   }
+
+  .board {
+    gap: 20px;
+  }
+
   .greeting h1 .nickname-container .nickname-text,
   .greeting h1 .nickname-container .nickname-edit-input,
   .greeting h1 .nickname-container .suffix {
@@ -410,5 +410,9 @@
 
   .select-wrap select {
     min-width: 160px;
+  }
+
+  .board {
+    gap: 10px;
   }
 }
