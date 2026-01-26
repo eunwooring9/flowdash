@@ -150,7 +150,7 @@
 /* 할일 카드 */
 .board .column:nth-child(1):hover {
   transition: all 0.4s ease;
-  transform: scale(1.02);
+  transform: scale(1.01);
   box-shadow:
     0 0 0 0.05px #f22a2a,
     0 0 4px #ee5d5d;
@@ -159,7 +159,7 @@
 /* 진행 중 카드 */
 .board .column:nth-child(2):hover {
   transition: all 0.4s ease;
-  transform: scale(1.02);
+  transform: scale(1.01);
   box-shadow:
     0 0 0 0.05px #f59e0b,
     0 0 4px #f5b23d;
@@ -168,7 +168,7 @@
 /* 완료 카드 */
 .board .column:nth-child(3):hover {
   transition: all 0.4s ease;
-  transform: scale(1.02);
+  transform: scale(1.01);
   box-shadow:
     0 0 0 0.05px #22c55e,
     0 0 4px #57ec8e;
@@ -291,13 +291,14 @@ body.dark .modal-card .btn-submit:hover {
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  gap: 12px;
+  gap: 17px;
   padding: 16px;
 }
 
 /* 카드 기본 스타일 */
 .task-card {
-  border: 1px solid #e6e6e6;
+  /* border: 1px solid #e6e6e6; */
+  box-shadow: 0px 2px 4px rgba(119, 119, 119, 0.15);
   border-radius: 14px;
   padding: 14px 14px 12px;
   position: relative;

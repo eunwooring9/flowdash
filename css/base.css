@@ -59,7 +59,7 @@ body,
   justify-content: space-between;
   align-items: center;
   padding: 35px 45px;
-  margin-bottom: 45px;
+  margin-bottom: 30px;
   background: #ffffff;
   box-shadow: 0px 3px 6px rgba(136, 136, 136, 0.25);
 }
@@ -108,7 +108,7 @@ body,
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 25px;
-  margin-bottom: 57px;
+  margin-bottom: 30px;
 }
 
 /* ----- 카드 ----- */
@@ -141,6 +141,14 @@ body,
 
 .card.achieve {
   border-top-color: #8b5cf6;
+}
+
+.card.total:hover,
+.card.todo:hover,
+.card.ing:hover,
+.card.done:hover,
+.card.achieve:hover {
+  transform: scale(1.03);
 }
 
 /* ----- Total Takes / To Do / In Progress / Done / Achievement ----- */
@@ -179,8 +187,10 @@ body,
   height: 61px;
   padding: 18px;
   background: #fffeff;
-  border: 1px solid #cfcfcf;
-  border-radius: 15px;
+  /* border: 1px solid #cfcfcf;
+  border-radius: 15px; */
+  box-shadow: 0px 3px 6px rgba(122, 122, 122, 0.25);
+  border-radius: 10px;
 }
 
 /* ----- 필터 ----- */
@@ -192,12 +202,13 @@ body,
 }
 
 .filter-btn {
+  box-shadow: 0px 3px 6px rgba(122, 122, 122, 0.25);
+  border-radius: 10px;
   font-weight: 500;
   width: 154px;
   height: 61px;
-  background: #ffffff;
-  border: 1px solid #e2e2e2;
-  border-radius: 10px;
+  /* background: #ffffff; */
+  /* border: 1px solid #e2e2e2; */
 }
 
 /* ----- 정렬 부분 빼고 화살표 표시 ----- */
@@ -223,7 +234,7 @@ body,
   width: 100%;
   background-color: #ffffff;
   border-radius: 15px;
-  border: 1px solid #cfcfcf;
+  /* border: 1px solid #cfcfcf; */
   box-shadow: 0px 3px 6px rgba(122, 122, 122, 0.25);
   top: 63px;
   padding: 10px;
@@ -335,24 +346,25 @@ body,
 .column-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-bottom: 15px;
   margin-bottom: 15px;
-  border-bottom: 2px solid;
   font-size: 25px;
-  color: #767676;
-  padding: 10px 11px 22px 20px;
+  padding: 15px 11px 15px 20px;
 }
 
 /* 할 일 - 경계선 */
 .to-do {
   border-bottom-color: #f22a2a;
+  box-shadow: 0 4px 4px -2px #ee5d5d;
   border-bottom-width: 2px;
   border-radius: 15px;
 }
 
 /* 진행 중 - 경계선 */
-.ing {
+.column-header.ing {
   border-bottom-color: #f59e0b;
+  box-shadow: 0 4px 4px -2px #f5b23d;
   border-bottom-width: 2px;
   border-radius: 15px;
 }
@@ -360,6 +372,7 @@ body,
 /* 완료 - 경계선 */
 .finish {
   border-bottom-color: #22c55e;
+  box-shadow: 0 4px 4px -2px #57ec8e;
   border-bottom-width: 2px;
   border-radius: 15px;
 }
@@ -375,11 +388,11 @@ body,
   overflow-y: auto;
 }
 
-.task-list::-webkit-scrollbar {
+.column:nth-child(1)::-webkit-scrollbar {
   width: 5px;
 }
 
-.task-list::-webkit-scrollbar-thumb {
+.column:nth-child(1):-webkit-scrollbar-thumb {
   background-color: #ff000017;
   border-radius: 10px;
 }
