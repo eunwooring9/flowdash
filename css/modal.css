@@ -101,7 +101,9 @@
   font-size: 20px;
   border: none;
   transform: scale(1);
-  transition: transform 0.4s ease-in-out, box-shadow 0.6s ease-in-out;
+  transition:
+    transform 0.4s ease-in-out,
+    box-shadow 0.6s ease-in-out;
 }
 
 /* 클릭 전 기존 배경 컬러 */
@@ -118,19 +120,25 @@
 /* 높음 버튼 클릭 */
 :checked + .bottom-actions-high {
   transform: scale(1.02);
-  box-shadow: 0 0 0 2px #f22a2a, 0 0 8px #ee5d5d;
+  box-shadow:
+    0 0 0 2px #f22a2a,
+    0 0 8px #ee5d5d;
 }
 
 /* 중간 버튼 클릭 */
 :checked + .bottom-actions-medium {
   transform: scale(1.02);
-  box-shadow: 0 0 0 2px #f59e0b, 0 0 8px #ecab3b;
+  box-shadow:
+    0 0 0 2px #f59e0b,
+    0 0 8px #ecab3b;
 }
 
 /* 낮음 체크 */
 :checked + .bottom-actions-low {
   transform: scale(1.02);
-  box-shadow: 0 0 0 2px #22c55e, 0 0 8px #57ec8e;
+  box-shadow:
+    0 0 0 2px #22c55e,
+    0 0 8px #57ec8e;
 }
 
 /* 오른쪽 상태 */
@@ -143,21 +151,27 @@
 .board .column:nth-child(1):hover {
   transition: all 0.4s ease;
   transform: scale(1.01);
-  box-shadow: 0 0 0 0.05px #f22a2a, 0 0 4px #ee5d5d;
+  box-shadow:
+    0 0 0 0.05px #f22a2a,
+    0 0 4px #ee5d5d;
 }
 
 /* 진행 중 카드 */
 .board .column:nth-child(2):hover {
   transition: all 0.4s ease;
   transform: scale(1.01);
-  box-shadow: 0 0 0 0.05px #f59e0b, 0 0 4px #f5b23d;
+  box-shadow:
+    0 0 0 0.05px #f59e0b,
+    0 0 4px #f5b23d;
 }
 
 /* 완료 카드 */
 .board .column:nth-child(3):hover {
   transition: all 0.4s ease;
   transform: scale(1.01);
-  box-shadow: 0 0 0 0.05px #22c55e, 0 0 4px #57ec8e;
+  box-shadow:
+    0 0 0 0.05px #22c55e,
+    0 0 4px #57ec8e;
 }
 
 .select-wrap select {
@@ -288,6 +302,8 @@ body.dark .modal-card .btn-submit:hover {
   border-radius: 14px;
   padding: 14px 14px 12px;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 카드 호버시 살짝 위로 올라가게  */

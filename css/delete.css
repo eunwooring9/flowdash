@@ -1,0 +1,13 @@
+.task-card-deletes {
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+  opacity: 0.5;
+}
+
+.task-card-delete {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
