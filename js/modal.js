@@ -210,6 +210,28 @@ function updateCounts(list) {
   if (doneCardEl) doneCardEl.textContent = String(doneCount);
 }
 
+// 달성률
+// 전체 할 일이 몇개인지
+function updatePercent() {
+  const total = todoStore.length;
+
+  // 전체에서 완료된 걸 새리스트로 만들고 그 개수를 뽑기
+  const done = todoStore.filter((todo) => todo.status === "done").length;
+
+  // 내가 넣을 화면 가져오는거 먼저
+  const ratebox = document.querySelector(".card.achieve .total-number");
+  if (!ratebox) return;
+
+  // 완료된게 하나도 없으면 0이면 0%라고 적기
+  if (total === 0) {
+    ratebox.textContent = "-";
+  } else {
+    // (DONE / 전체) * 100 적고 확률숫자랑 + % ratebox에 나오게하기
+    const rate = Math.floor((done / total) * 100);
+    ratebox.textContent = rate + "%";
+  }
+}
+
 // function renderAll() {
 // list 호출하면 검색된 것만 그리기
 export function renderAll(list) {
@@ -230,6 +252,7 @@ export function renderAll(list) {
 
   updateEmptyMsgs(searchList);
   updateCounts(searchList);
+  updatePercent();
 }
 
 // Submit (모달 완료)
