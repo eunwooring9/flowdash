@@ -1,8 +1,10 @@
 :root {
-  --bg: #ffffff;
-  --panel: #ffffff;
+  /* --bg: #ffffff; */
+  --bg: url("../assets/img/light.png");
+  --bg-attachment: fixed;
+  /* --panel: #ffffff; */
+  --panel: rgba(255, 255, 255, 0.2);
   --panel2: #ffffff;
-
   --text: #121216;
   --muted: #6a6a6a;
   --muted2: #767676;
@@ -48,6 +50,12 @@ body.dark #themeToggle:hover img {
 body {
   background: var(--bg);
   color: var(--text);
+  /* 추가 */
+  background-attachment: var(--bg-attachment);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 /* 헤더 */
@@ -74,6 +82,10 @@ body {
 .column {
   background: var(--panel);
   box-shadow: var(--shadow);
+
+  /* 추가 */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /* 카드 제목 */
@@ -168,6 +180,11 @@ body {
   box-shadow: 0px 3px 6px rgba(119, 119, 119, 0.15);
 }
 
+/* 우선순위 내 task-card background 투명도 0  */
+.task-card {
+  background-color: rgb(255 255 255);
+}
+
 /* ===== 모달 다크 ===== */
 body.dark .modal-card {
   background-color: var(--panel);
@@ -224,15 +241,21 @@ body.dark .column:nth-child(2) .task-list::-webkit-scrollbar-thumb {
 }
 
 body.dark .board .column:nth-child(1):hover {
-  box-shadow: 0 0 0 0.1px #f22a2a, 0 0 7px #ee5d5d;
+  box-shadow:
+    0 0 0 0.1px #f22a2a,
+    0 0 7px #ee5d5d;
 }
 
 /* 진행 중 카드 */
 body.dark .board .column:nth-child(2):hover {
-  box-shadow: 0 0 0 0.1px #f59e0b, 0 0 7px #f5b23d;
+  box-shadow:
+    0 0 0 0.1px #f59e0b,
+    0 0 7px #f5b23d;
 }
 
 /* 완료 카드 */
 body.dark .board .column:nth-child(3):hover {
-  box-shadow: 0 0 0 0.1px #22c55e, 0 0 7px #57ec8e;
+  box-shadow:
+    0 0 0 0.1px #22c55e,
+    0 0 7px #57ec8e;
 }
