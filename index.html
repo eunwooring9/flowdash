@@ -1,4 +1,4 @@
-<!doctype html>
+b<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -150,7 +150,9 @@
                 <p class="date" id="current-date">날짜 불러오는 중...</p>
               </div>
               <div class="profile-img-wrap">
-                <img src="./assets/img/임시프로필.png" alt="프로필 사진" />
+                <img src="./assets/img/임시프로필.png" alt="프로필 사진" id="profileImg" />
+                <button id="profileChange"">이미지 변경</button>
+                <input type="file" id="profileInput" accept="image/*" style="display: none" />
               </div>
             </div>
           </section>
@@ -373,5 +375,6 @@
     <script type="module" src="./js/editModal.js"></script>
     <script type="module" src="./js/search.js"></script>
     <script type="module" src="./js/reset.js"></script>
+    <script type="module" src="./js/profile.js"></script>
   </body>
 </html>
