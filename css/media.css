@@ -2,18 +2,18 @@
 @media screen and (max-width: 1279px) {
   /* 인사 */
   .greeting h1 {
-    font-size: 30px;
-  }
-
-  /* 체크 / 테마 */
-  .header-actions {
-    padding-right: 35px;
+    font-size: 45px;
   }
 
   /* ----- 통계 카드 2열로 변경 ----- */
   .stats-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 25px;
+  }
+
+  .card {
+    height: 140px;
+    padding: 20px 0px 44px 30px;
   }
 
   .stats-container .card:last-child {
@@ -28,7 +28,6 @@
   .controls {
     flex-wrap: wrap;
   }
-
   /* 검색 창 */
   .search-box {
     display: flex;
@@ -37,34 +36,37 @@
     flex: 1;
   }
 
-  /* 필터 */
-  .filters {
-    justify-content: center;
-    flex: 1;
-    margin-left: auto;
-  }
-
   /* 추가 버튼 / + 새 할 일... */
   .add-btn {
     margin: auto;
   }
 
+  .profile-container {
+    padding: 15px 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
   /* ----- 현재 선택 - 정렬 ----- */
   .sort-bar {
     gap: 20px;
+    justify-content: center;
   }
 
-  /* ----- 보드 1열로 변경 ----- */
   .board {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     height: auto;
+  }
+
+  .board .column:last-child {
+    grid-column: span 2;
   }
 
   .greeting h1 .nickname-container .nickname-text,
   .greeting h1 .nickname-container .nickname-edit-input,
   .greeting h1 .nickname-container .suffix {
-    font-size: 31px;
+    font-size: 35px;
   }
 
   /* 중간 살짝만 올라가게 */
@@ -76,60 +78,71 @@
   .nickname-container .suffix {
     transform: translateY(-2.7px);
   }
+
+  .filters {
+    flex-wrap: wrap;
+  }
 }
 
 /* 컨트롤러 중간 조정 */
 @media screen and (max-width: 1123px) {
   .controls {
     display: flex;
-    gap: 25px;
+    gap: 20px;
   }
 
   .controls input {
     min-width: 160px;
   }
 
-  .reset-btn {
-    font-size: 14px;
-  }
-
   .task-list {
     min-height: 300px;
   }
 
-  .add-btn {
-    width: 440px;
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
   }
-
-  /* nickname */
-  /* .greeting h1 {
-    font-size: 30px;
-  }
-  .nickname-text,
-  .nickname-input,
-  .suffix {
-    font-size: 30px;
-  } */
 
   /* 1024 닉네임 부분 추가 */
   .nickname-container .nickname-text,
   .nickname-container .nickname-edit-input {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 600;
     transform: translateY(-2.5px);
   }
 
   .nickname-container .suffix {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 600;
     transform: translateY(-3px);
   }
-}
 
-/* nickname */
-@media (min-width: 1024px) {
-  .nickname-container .nickname-edit-input {
-    font-size: 40px;
+  .greeting h1 {
+    font-size: 35px;
+  }
+
+  .sort-bar {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .profile-container {
+    padding: 20px 20px;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .filter-container {
+    gap: 25px;
+  }
+
+  .column {
+    height: 550px;
   }
 }
 
@@ -137,57 +150,44 @@
 @media screen and (max-width: 768px) {
   /* ----- 헤더 ----- */
   .header {
-    justify-content: space-between;
-    padding: 30px 20px;
-    margin-bottom: 25px;
-  }
-
-  /* 인사 */
-  .greeting h1 {
-    font-size: 23px;
+    padding: 30px 30px;
+    margin-bottom: 10px;
   }
 
   .date {
-    font-size: 13px;
+    font-size: 20px;
   }
 
-  /* 알람 / 테마 */
+  /* 테마 */
   .header-actions {
     display: flex;
-    justify-content: flex-end;
     gap: 20px;
     padding-right: 10px;
   }
 
   .icon-btn img {
-    width: 27px;
-    height: 27px;
+    width: 33px;
+    height: 33px;
   }
 
   /* 중단 ~ 하단 박스 */
   .content-wrap {
-    padding: 0px 20px 30px 20px;
-  }
-
-  /* 통계 2열로 변경 */
-  .stats-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-    margin-bottom: 20px;
-  }
-
-  .stats-container .card:last-child {
-    grid-column: span 2;
+    padding: 0px 30px 30px 30px;
   }
 
   .card {
     width: 100%;
-    min-height: 60px;
+    min-height: 50px;
   }
 
   .controls {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+  }
+
+  .filter-btn {
+    font-size: 14px;
+    min-width: 120px;
   }
 
   /* 검색 / 필터 / 추가 */
@@ -202,12 +202,7 @@
     margin-left: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .filters > .filter-btn,
-  .filters > .filter-dropdown {
-    flex: 1 1 calc(50% - 10px);
+    gap: 18px;
   }
 
   /* ----- 정렬 ----- */
@@ -215,7 +210,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 18px;
     height: auto;
     font-size: 13px;
   }
@@ -251,14 +246,19 @@
     width: 110px;
   }
 
-  .board {
-    gap: 20px;
+  .column {
+    height: 500px;
+    margin-bottom: 5px;
+  }
+
+  .greeting h1 {
+    font-size: 30px;
   }
 
   .greeting h1 .nickname-container .nickname-text,
   .greeting h1 .nickname-container .nickname-edit-input,
   .greeting h1 .nickname-container .suffix {
-    font-size: 24px;
+    font-size: 30px;
   }
 
   .greeting h1 .nickname-container .nickname-edit-input {
@@ -270,6 +270,7 @@
   .nickname-container .nickname-edit-input {
     transform: translateY(-2px);
   }
+
   .nickname-container .suffix {
     transform: translateY(-2.4px);
   }
@@ -290,12 +291,42 @@
   .select-wrap select {
     min-width: 200px;
   }
+
+  .profile-img-wrap img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .controls-wrap {
+    display: flex;
+    width: 100%;
+  }
+
+  .filter-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .board {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    height: auto;
+  }
+
+  .board .column:last-child {
+    grid-column: span 1;
+  }
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 640px) {
   /* ----- 헤더 ----- */
+  .content-wrap {
+    padding: 0px 30px 30px 30px;
+  }
+
   .header {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    padding: 20px 33px;
   }
 
   .greeting h1 {
@@ -308,8 +339,14 @@
 
   /* 알람 / 테마 */
   .icon-btn img {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-bottom: 20px;
   }
 
   /* ----- 카드 ----- */
@@ -326,38 +363,55 @@
   }
 
   .controls {
-    padding: 10px;
+    padding: 15px;
   }
 
   /* 버튼 높이 조절 */
   .search-box input {
-    height: 43px;
+    height: 50px;
   }
 
   .filters {
-    gap: 10px;
+    gap: 15px;
   }
 
   .filter-btn {
-    height: 43px;
+    height: 50px;
   }
 
   .add-btn {
-    height: 43px;
+    height: 50px;
     display: flex;
     align-items: center;
     font-size: 17px;
   }
 
   .bar-wrap {
-    width: auto;
-    min-width: 160px;
+    min-width: 155px;
   }
 
   .bar-wrap.reset-wrap {
     margin-left: 0;
     /* width: 100%; */
     text-align: center;
+  }
+
+  .profile-container {
+    width: 100%;
+  }
+
+  .profile-img-wrap img {
+    max-width: 200px;
+  }
+
+  .board {
+    gap: 10px;
+  }
+
+  .task-card__meta {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: flex-end;
   }
 }
 
@@ -368,7 +422,8 @@
   }
 
   .card {
-    padding: 20px 15px;
+    height: 120px;
+    padding: 17px 15px 17px 17px;
   }
 
   .card h3 {
@@ -387,7 +442,7 @@
   .greeting h1 .nickname-container .nickname-text,
   .greeting h1 .nickname-container .nickname-edit-input,
   .greeting h1 .nickname-container .suffix {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .greeting h1 .nickname-container .nickname-edit-input {
@@ -419,5 +474,36 @@
 
   .board {
     gap: 10px;
+  }
+
+  .profile-img-wrap img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  /* 버튼 높이 조절 */
+  .search-box input {
+    height: 45px;
+  }
+
+  .filters {
+    gap: 12px;
+  }
+
+  .filter-btn {
+    height: 45px;
+  }
+
+  .add-btn {
+    height: 45px;
+    font-size: 15px;
+  }
+
+  .sort-bar {
+    gap: 10px;
+  }
+
+  .controls {
+    padding: 15px;
   }
 }
