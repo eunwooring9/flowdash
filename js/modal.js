@@ -183,15 +183,20 @@ function makeTodoCard(todo) {
     e.stopPropagation();
     // 삭제 경고창
     if (!confirm("정말 삭제하시겠습니까? 삭제 후엔 되돌릴 수 없습니다.")) return;
+
+    // 삭제할때 속도 늦추기 위한
+    card.classList.add("deleting");
     // 카드 자체를 삭제하하는거 카드 id선언하기
-    const id = card.dataset.id;
-    // 저된 여러 리스트 중에 클릭한것만 삭제 되게
-    todoStore = todoStore.filter((todo) => {
-      return todo.id !== id;
-    });
-    // 삭제되고 다시 저장하게 하고 렌더링에 다시 그리기
-    saveTodos(todoStore);
-    renderAll();
+    setTimeout(() => {
+      const id = card.dataset.id;
+      // 저된 여러 리스트 중에 클릭한것만 삭제 되게
+      todoStore = todoStore.filter((todo) => {
+        return todo.id !== id;
+      });
+      // 삭제되고 다시 저장하게 하고 렌더링에 다시 그리기
+      saveTodos(todoStore);
+      renderAll();
+    }, 500);
   });
 
   // 만들어 놓은 deletes는 카드에 넣기
