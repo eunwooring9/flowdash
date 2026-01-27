@@ -297,6 +297,11 @@
     height: 200px;
   }
 
+  .profile-img-wrap button {
+    justify-content: center;
+    padding-top: 10px;
+  }
+
   .controls-wrap {
     display: flex;
     width: 100%;
