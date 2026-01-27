@@ -3,8 +3,7 @@
   font-weight: 45 920;
   font-style: normal;
   font-display: swap;
-  src:
-    url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/packages/pretendard/dist/web/variable/woff2/PretendardVariable.woff2")
+  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/packages/pretendard/dist/web/variable/woff2/PretendardVariable.woff2")
       format("woff2-variations"),
     url("/fonts/PretendardVariable.woff2") format("woff2-variations");
 }
@@ -95,8 +94,7 @@ body,
 }
 
 .icon-btn.theme:hover img {
-  transform: scale(1.1) rotate(120deg);
-  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(345deg) brightness(101%) contrast(101%);
+  transform: scale(1.1);
 }
 
 /* ----- 중앙 영역 시작 ----- */

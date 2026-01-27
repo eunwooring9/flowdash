@@ -1,21 +1,26 @@
-const toggle = document.getElementById("themeToggle");
+const themeToggleBtn = document.getElementById("themeToggle");
+const themeIcon = document.getElementById("themeIcon");
 
-// 저장된 테마 적용
-const saved = localStorage.getItem("theme");
-if (saved === "dark") document.body.classList.add("dark");
+const ICON_SUN = "./assets/img/icons8-sun.svg";
+const ICON_MOON = "./assets/img/icons8-moon.png";
 
-// 테마 버튼 아이콘(해/달)만 확실히 바꾸기
-function updateThemeIcon(isDark) {
-  const img = toggle?.querySelector("img");
-  if (!img) return;
+function applyTheme(isDark) {
+  document.body.classList.toggle("dark", isDark);
+  localStorage.setItem("theme", isDark ? "dark" : "light");
 
-  img.src = isDark ? "./assets/img/moon-dark.svg" : "./assets/img/sun-light.svg";
+  // 다크면 해, 라이트면 달
+  if (themeIcon) {
+    themeIcon.src = isDark ? ICON_SUN : ICON_MOON;
+    themeIcon.alt = isDark ? "라이트 모드로 전환" : "다크 모드로 전환";
+  }
 }
 
-updateThemeIcon(document.body.classList.contains("dark"));
+// 초기 로드
+const saved = localStorage.getItem("theme");
+applyTheme(saved === "dark");
 
-toggle?.addEventListener("click", () => {
-  const isDark = document.body.classList.toggle("dark");
-  localStorage.setItem("theme", isDark ? "dark" : "light");
-  updateThemeIcon(isDark);
+// 클릭 시 토글
+themeToggleBtn?.addEventListener("click", () => {
+  const isDarkNow = document.body.classList.contains("dark");
+  applyTheme(!isDarkNow);
 });
