@@ -18,25 +18,9 @@
       <main class="main-content">
         <!-- 헤더 부분 -->
         <header class="header">
-          <div class="greeting">
-            <h1>
-              <span id="greeting-message">안녕하세요</span>
-              <br class="mobile-br" />
-
-              <span class="nickname-container">
-                <span class="highlight nickname-text" id="nickname-text"></span>
-                <input type="text" class="nickname-input nickname-edit-input" maxlength="12" />
-                <span class="suffix">님</span>
-              </span>
-            </h1>
-            <p class="date" id="current-date">날짜 불러오는 중...</p>
-          </div>
-
           <div class="header-actions">
-            <button class="icon-btn manual" type="button">
-              <img src="./assets/img/icons8-checkmark.svg" alt="메뉴얼" />
-            </button>
             <!-- 테마 -->
+            <span>생각 좀 해보자 뭐 적지</span>
             <button class="icon-btn theme" id="themeToggle" type="button" aria-label="테마 전환">
               <img src="./assets/img/sun-light.svg" alt="테마" />
             </button>
@@ -68,86 +52,108 @@
             </div>
           </section>
 
-          <!-- 컨트롤러 -->
-          <section class="controls">
-            <!-- 할 일 검색... -->
-            <div class="search-box">
-              <input type="text" placeholder="할 일 검색..." />
-            </div>
+          <section class="filter-container">
+            <!-- 컨트롤러 -->
+            <div class="controls-wrap">
+              <div class="controls">
+                <!-- 할 일 검색... -->
+                <div class="search-box">
+                  <input type="text" placeholder="할 일 검색..." />
+                </div>
 
-            <!-- 필터 -->
-            <div class="filters">
-              <!-- 전체 기간 -->
-              <div class="filter-dropdown">
-                <button class="filter-btn" type="button">
-                  <span>전체 기간</span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li>
-                    <button type="button" class="dropdown-item">전체 기간</button>
-                  </li>
-                  <li>
-                    <button type="button" class="dropdown-item">오늘</button>
-                  </li>
-                  <li>
-                    <button type="button" class="dropdown-item">최근 7일</button>
-                  </li>
-                </ul>
+                <!-- 필터 -->
+                <div class="filters">
+                  <!-- 전체 기간 -->
+                  <div class="filter-dropdown">
+                    <button class="filter-btn" type="button">
+                      <span>전체 기간</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <button type="button" class="dropdown-item">전체 기간</button>
+                      </li>
+                      <li>
+                        <button type="button" class="dropdown-item">오늘</button>
+                      </li>
+                      <li>
+                        <button type="button" class="dropdown-item">최근 7일</button>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- 전체 우선순위 -->
+                  <div class="filter-dropdown">
+                    <button class="filter-btn" type="button">
+                      <span>우선순위</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <button type="button" class="dropdown-item">전체 우선순위</button>
+                      </li>
+                      <li>
+                        <button type="button" class="dropdown-item">높음</button>
+                      </li>
+                      <li>
+                        <button type="button" class="dropdown-item">중간</button>
+                      </li>
+                      <li>
+                        <button type="button" class="dropdown-item">낮음</button>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- 오름차순 / 내림차순 -->
+                  <button class="filter-btn sort" type="button">
+                    <span>정렬: <span class="sort-highlight" id="sort-text">오름차순</span></span>
+                  </button>
+                </div>
+                <!-- + 새 할 일... / 추가 버튼 -->
+                <button class="add-btn" type="button">+ 새 할 일</button>
               </div>
 
-              <!-- 전체 우선순위 -->
-              <div class="filter-dropdown">
-                <button class="filter-btn" type="button">
-                  <span>우선순위</span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li>
-                    <button type="button" class="dropdown-item">전체 우선순위</button>
-                  </li>
-                  <li>
-                    <button type="button" class="dropdown-item">높음</button>
-                  </li>
-                  <li>
-                    <button type="button" class="dropdown-item">중간</button>
-                  </li>
-                  <li>
-                    <button type="button" class="dropdown-item">낮음</button>
-                  </li>
-                </ul>
+              <!-- 현재 선택 - 정렬 -->
+              <div class="sort-bar">
+                <!-- 정렬: 오름차순 / 내림차순 -->
+                <div class="bar-wrap">
+                  <span class="priority-tag"
+                    >정렬:
+                    <span class="highlight" id="btn-priority">오름차순</span>
+                  </span>
+                </div>
+                <!-- 기간 -->
+                <div class="bar-wrap hidden">
+                  <span class="period-tag">기간: <span class="highlight">오늘</span></span>
+                  <button type="button" class="close-filter-btn" aria-label="필터 초기화">X</button>
+                </div>
+                <!-- 우선순위 -->
+                <div class="bar-wrap hidden">
+                  <span class="sort-tag">우선순위: <span class="highlight">중간</span></span>
+                  <button type="button" class="close-filter-btn" aria-label="필터 초기화">X</button>
+                </div>
+                <!-- 데이터 초기화 -->
+                <div class="bar-wrap reset-wrap">
+                  <button class="reset-btn" type="button">전체 데이터 초기화</button>
+                </div>
               </div>
-              <!-- 오름차순 / 내림차순 -->
-              <button class="filter-btn sort" type="button">
-                <span>정렬: <span class="sort-highlight" id="sort-text">오름차순</span></span>
-              </button>
             </div>
-            <!-- + 새 할 일... / 추가 버튼 -->
-            <button class="add-btn" type="button">+ 새 할 일</button>
+            <div class="profile-container">
+              <div class="greeting">
+                <h1>
+                  <span id="greeting-message">안녕하세요</span>
+                  <br class="mobile-br" />
+
+                  <span class="nickname-container">
+                    <span class="highlight nickname-text" id="nickname-text"></span>
+                    <input type="text" class="nickname-input nickname-edit-input" maxlength="12" />
+                    <span class="suffix">님</span>
+                  </span>
+                </h1>
+                <p class="date" id="current-date">날짜 불러오는 중...</p>
+              </div>
+              <div class="profile-img-wrap">
+                <img src="./assets/img/임시프로필.png" alt="프로필 사진" />
+              </div>
+            </div>
           </section>
-
-          <!-- 현재 선택 - 정렬 -->
-          <div class="sort-bar">
-            <!-- 정렬: 오름차순 / 내림차순 -->
-            <div class="bar-wrap">
-              <span class="priority-tag"
-                >정렬:
-                <span class="highlight" id="btn-priority">오름차순</span>
-              </span>
-            </div>
-            <!-- 기간 -->
-            <div class="bar-wrap hidden">
-              <span class="period-tag">기간: <span class="highlight">오늘</span></span>
-              <button type="button" class="close-filter-btn" aria-label="필터 초기화">X</button>
-            </div>
-            <!-- 우선순위 -->
-            <div class="bar-wrap hidden">
-              <span class="sort-tag">우선순위: <span class="highlight">중간</span></span>
-              <button type="button" class="close-filter-btn" aria-label="필터 초기화">X</button>
-            </div>
-            <!-- 데이터 초기화 -->
-            <div class="bar-wrap reset-wrap">
-              <button class="reset-btn" type="button">전체 데이터 초기화</button>
-            </div>
-          </div>
 
           <!-- 진행 상황 박스 -->
           <section class="board">

@@ -66,11 +66,13 @@
   .greeting h1 .nickname-container .suffix {
     font-size: 31px;
   }
+
   /* 중간 살짝만 올라가게 */
   .nickname-container .nickname-text,
   .nickname-container .nickname-edit-input {
     transform: translateY(-2.5px);
   }
+
   .nickname-container .suffix {
     transform: translateY(-2.7px);
   }
@@ -116,6 +118,7 @@
     font-weight: 600;
     transform: translateY(-2.5px);
   }
+
   .nickname-container .suffix {
     font-size: 40px;
     font-weight: 600;
@@ -262,6 +265,7 @@
     width: 110px;
     font-size: inherit;
   }
+
   .nickname-container .nickname-text,
   .nickname-container .nickname-edit-input {
     transform: translateY(-2px);
@@ -374,6 +378,7 @@
   .total-number {
     font-size: 30px;
   }
+
   .total-number {
     font-size: 30px;
   }
