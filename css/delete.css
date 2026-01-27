@@ -7,7 +7,14 @@
 
 .task-card-delete {
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   cursor: pointer;
+}
+
+/* 다크모드 삭제버튼 컬러 */
+/* 94a3b8 랑 가장 비슷한 조합 컬러*/
+body.dark .task-card-delete {
+  filter: brightness(0) saturate(100%) invert(64%) sepia(12%) saturate(640%) hue-rotate(175deg)
+    brightness(92%) contrast(92%);
 }

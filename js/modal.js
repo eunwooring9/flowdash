@@ -2,8 +2,7 @@ function generateId() {
   return Date.now().toString(36) + Math.random().toString(36).slice(2);
 }
 
-// Storage
-
+// Storageƒ
 const STORAGE_KEY = "todoList";
 
 // 데이터 꺼내오는 부분
@@ -174,7 +173,7 @@ function makeTodoCard(todo) {
   // img태그만들기
   const deleteImg = document.createElement("img");
   //내가 넣은 이미지불러오기 ""안에 넣기
-  deleteImg.src = "./assets/img/delete.svg";
+  deleteImg.src = "./assets/img/minus.svg";
   //이미지 위치랑 크기 맞춰야 하기 때문에 class 넣기
   deleteImg.className = "task-card-delete";
 
@@ -183,7 +182,7 @@ function makeTodoCard(todo) {
     // 삭제 클릭시 수정모달이벤트가 같이 발생하는 버블링 현상 막기
     e.stopPropagation();
     // 삭제 경고창
-    if (!confirm("정말 삭제하시겠습니까?")) return;
+    if (!confirm("정말 삭제하시겠습니까? 삭제 후엔 되돌릴 수 없습니다.")) return;
     // 카드 자체를 삭제하하는거 카드 id선언하기
     const id = card.dataset.id;
     // 저된 여러 리스트 중에 클릭한것만 삭제 되게
