@@ -351,9 +351,21 @@ body,
   gap: 100px;
 }
 
+.profile-img-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
 .profile-img-wrap img {
   width: 200px;
   height: 200px;
+}
+
+.profile-img-wrap button {
+  font-size: 13px;
+  display: flex;
+  justify-content: flex-end;
+  color: #2b2b2b90;
 }
 
 /* ----- 현재 진행상황 - 박스 분할 ----- */
