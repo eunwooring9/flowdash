@@ -2,11 +2,10 @@
 <br>
 
 <p align="right">
-  <img src="https://readme-typing-svg.demolab.com/?lines=Welcome%20to%20FlowDash&width=700&height=80&pause=400&duration=4000&color=9AB3C5&size=36&center=false&font=Montserrat&weight=700" />
+  <img src="https://readme-typing-svg.demolab.com/?lines=Welcome%20to%20FlowDash&width=450&height=80&pause=400&duration=4000&color=9AB3C5&size=36&center=false&font=Montserrat&weight=700" />
 </p>
 
-
-## 이스트 2차 팀 프로젝트 설명
+## _이스트 2차 팀 프로젝트 설명_
 
 ### 작업 제시안
 
@@ -27,12 +26,12 @@
 - **팀 이름 : 401호 (01즈)**
 
 - **각 역할**
-  
-| 이름 | 공식 역할 | 세부 역할 | GitHub |
-| :---: | :---: | :--- | :--- |
-| 🍔&nbsp; **최은우** | **팀장** | <img src="https://img.shields.io/badge/Design%20Lead-E0E0E0?style=flat-square"> <img src="https://img.shields.io/badge/Speaker-F5F5F5?style=flat-square"> <img src="https://img.shields.io/badge/Git-F3E5AB?style=flat-square"> <br> <img src="https://img.shields.io/badge/기획-FFE7E7?style=flat-square"> <img src="https://img.shields.io/badge/UI%20개발-D6E4FF?style=flat-square"> <br> <img src="https://img.shields.io/badge/Project%20Manager-E4F2E1?style=flat-square"> | [![eunwooring9](https://img.shields.io/badge/eunwooring9-181717?style=flat-square&logo=github)](https://github.com/eunwooring9) |
-| 🍺&nbsp; **박상우** | **팀원** | <img src="https://img.shields.io/badge/디자인-EBDCB2?style=flat-square"> <img src="https://img.shields.io/badge/ListView-D9C1A3?style=flat-square"> <br> <img src="https://img.shields.io/badge/SettingView-E8D9CD?style=flat-square"> <img src="https://img.shields.io/badge/데이터구조%20설계-EAD7D7?style=flat-square"> <br> <img src="https://img.shields.io/badge/기획-FFE7E7?style=flat-square"> <img src="https://img.shields.io/badge/UI%20개발-D6E4FF?style=flat-square"> | [![sangwoo-id](https://img.shields.io/badge/sangwoo--id-181717?style=flat-square&logo=github)](https://github.com/박상우아이디) |
-| 🍟&nbsp; **이해랑** | **팀원** | <img src="https://img.shields.io/badge/디자인-EBDCB2?style=flat-square"> <img src="https://img.shields.io/badge/Readme-D1D1FF?style=flat-square"> <img src="https://img.shields.io/badge/기획-FFE7E7?style=flat-square"> <br> <img src="https://img.shields.io/badge/UI%20개발-D6E4FF?style=flat-square"> <img src="https://img.shields.io/badge/Speaker-F5F5F5?style=flat-square"> | [![haerang-id](https://img.shields.io/badge/haerang--id-181717?style=flat-square&logo=github)](https://github.com/이해랑아이디) |
+
+|        이름         | 공식 역할 | 세부 역할                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | GitHub                                                                                                                          |
+| :-----------------: | :-------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ |
+| 🍔&nbsp; **최은우** | **팀장**  | <img src="https://img.shields.io/badge/Design%20Lead-E0E0E0?style=flat-square"> <img src="https://img.shields.io/badge/Speaker-F5F5F5?style=flat-square"> <img src="https://img.shields.io/badge/Git-F3E5AB?style=flat-square"> <br> <img src="https://img.shields.io/badge/기획-FFE7E7?style=flat-square"> <img src="https://img.shields.io/badge/UI%20개발-D6E4FF?style=flat-square"> <br> <img src="https://img.shields.io/badge/Project%20Manager-E4F2E1?style=flat-square">   | [![eunwooring9](https://img.shields.io/badge/eunwooring9-181717?style=flat-square&logo=github)](https://github.com/eunwooring9) |
+| 🍺&nbsp; **박상우** | **팀원**  | <img src="https://img.shields.io/badge/디자인-EBDCB2?style=flat-square"> <img src="https://img.shields.io/badge/ListView-D9C1A3?style=flat-square"> <br> <img src="https://img.shields.io/badge/SettingView-E8D9CD?style=flat-square"> <img src="https://img.shields.io/badge/데이터구조%20설계-EAD7D7?style=flat-square"> <br> <img src="https://img.shields.io/badge/기획-FFE7E7?style=flat-square"> <img src="https://img.shields.io/badge/UI%20개발-D6E4FF?style=flat-square"> | [![sangwoo-id](https://img.shields.io/badge/sangwoo--id-181717?style=flat-square&logo=github)](https://github.com/박상우아이디) |
+| 🍟&nbsp; **이해랑** | **팀원**  | <img src="https://img.shields.io/badge/디자인-EBDCB2?style=flat-square"> <img src="https://img.shields.io/badge/Readme-D1D1FF?style=flat-square"> <img src="https://img.shields.io/badge/기획-FFE7E7?style=flat-square"> <br> <img src="https://img.shields.io/badge/UI%20개발-D6E4FF?style=flat-square"> <img src="https://img.shields.io/badge/Speaker-F5F5F5?style=flat-square">                                                                                                | [![haerang-id](https://img.shields.io/badge/haerang--id-181717?style=flat-square&logo=github)](https://github.com/이해랑아이디) |
 
 <br>
 <br>
@@ -45,7 +44,6 @@
 <br>
 
 ## _✨프로젝트 구조_
-
 
 ```txt
 flowdash/
