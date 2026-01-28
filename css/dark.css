@@ -1,26 +1,22 @@
 :root {
-  /* --bg: #ffffff; */
   --bg: url("../assets/img/4.jpeg");
   --bg-attachment: fixed;
-  /* --panel: #ffffff; */
   --panel: rgba(255, 255, 255, 0.2);
   --panel2: #ffffff95;
   --text: #121216;
   --muted: #6a6a6a;
   --muted2: #767676;
-  /* --border: #cfcfcf; */
 
   --shadow: 0px 3px 6px rgba(174, 174, 174, 0.536);
   --shadow2: 0px 3px 6px rgba(174, 174, 174, 0.536);
   --primary: #4e56ed;
   --focus: rgba(99, 102, 241, 0.22);
 }
-/* 다크 모드 드롭다운 배경 강제 분리 */
 body.dark .filter-dropdown .dropdown-menu {
-  background: rgba(12, 14, 32, 0.96); /* 🔥 거의 불투명 */
+  background: rgba(12, 14, 32, 0.96);
   border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-  backdrop-filter: none; /* blur 제거 */
+  backdrop-filter: none;
 }
 body.dark .dropdown-item {
   color: rgba(255, 255, 255, 0.92);
@@ -80,7 +76,7 @@ body.dark .select-wrap select {
   background-color: var(--panel);
 }
 body.dark .task-card {
-  background: rgba(14, 18, 48, 0.75); /* 남보라 계열 */
+  background: rgba(14, 18, 48, 0.75);
   color: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -93,8 +89,7 @@ body.dark::before {
   position: fixed;
   inset: -25%;
   z-index: -2;
-  background:
-    radial-gradient(55% 45% at 18% 22%, rgba(130, 90, 255, 0.32), transparent 62%),
+  background: radial-gradient(55% 45% at 18% 22%, rgba(130, 90, 255, 0.32), transparent 62%),
     radial-gradient(55% 45% at 82% 28%, rgba(0, 140, 255, 0.26), transparent 62%),
     radial-gradient(55% 45% at 35% 82%, rgba(170, 80, 255, 0.2), transparent 65%),
     radial-gradient(45% 40% at 75% 78%, rgba(0, 210, 255, 0.12), transparent 70%),
@@ -315,23 +310,17 @@ body.dark .column:nth-child(2) .task-list::-webkit-scrollbar-thumb {
 }
 
 body.dark .board .column:nth-child(1):hover {
-  box-shadow:
-    0 0 0 0.1px #f22a2a,
-    0 0 7px #ee5d5d;
+  box-shadow: 0 0 0 0.1px #f22a2a, 0 0 7px #ee5d5d;
 }
 
 /* 진행 중 카드 */
 body.dark .board .column:nth-child(2):hover {
-  box-shadow:
-    0 0 0 0.1px #f59e0b,
-    0 0 7px #f5b23d;
+  box-shadow: 0 0 0 0.1px #f59e0b, 0 0 7px #f5b23d;
 }
 
 /* 완료 카드 */
 body.dark .board .column:nth-child(3):hover {
-  box-shadow:
-    0 0 0 0.1px #22c55e,
-    0 0 7px #57ec8e;
+  box-shadow: 0 0 0 0.1px #22c55e, 0 0 7px #57ec8e;
 }
 
 body.dark .profile-img-wrap img:nth-of-type(2) {
