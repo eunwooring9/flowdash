@@ -26,11 +26,6 @@ body,
 .filter-container,
 .controls-wrap,
 .profile-container,
-.search-box,
-.search-box input,
-.filters,
-.filter-btn,
-.add-btn,
 .sort-bar,
 .bar-wrap,
 .board,
@@ -38,7 +33,7 @@ body,
 .reset-btn,
 .nickname-text,
 .nickname-edit-input {
-  transition: all 0.6s ease;
+  transition: all 0.5s linear;
 }
 
 /* 레이아웃 */
@@ -91,33 +86,33 @@ body,
 @keyframes rainbow {
   0% {
     text-shadow:
-      0 0 3px #fff,
-      0 0 3px #ff0000;
+      0 0 2px #fff,
+      0 0 2px #ff0000;
   }
   20% {
     text-shadow:
-      0 0 3px #ff8000bd,
-      0 0 3px #ff8000;
+      0 0 2px #ff8000bd,
+      0 0 2px #ff8000;
   }
   40% {
     text-shadow:
-      0 0 3px #ffd500d4,
-      0 0 3px #ffd500;
+      0 0 2px #ffd500d4,
+      0 0 2px #ffd500;
   }
   60% {
     text-shadow:
-      0 0 3px #00a400bf,
-      0 0 3px #00ba00;
+      0 0 2px #00a400bf,
+      0 0 2px #00ba00;
   }
   80% {
     text-shadow:
-      0 0 3px #fff,
-      0 0 3px #0000ff;
+      0 0 2px #fff,
+      0 0 2px #0000ff;
   }
   100% {
     text-shadow:
-      0 0 3px #fff,
-      0 0 3px #ff00ff;
+      0 0 2px #fff,
+      0 0 2px #ff00ff;
   }
 }
 
@@ -491,20 +486,20 @@ body,
 .column:nth-child(1) .task-list::-webkit-scrollbar,
 .column:nth-child(2) .task-list::-webkit-scrollbar,
 .column:nth-child(3) .task-list::-webkit-scrollbar {
-  width: 5px;
+  width: 5.5px;
 }
 
 .column:nth-child(1) .task-list::-webkit-scrollbar-thumb {
-  background-color: #ff000017;
+  background-color: #ff00001b;
   border-radius: 30px;
 }
 
 .column:nth-child(2) .task-list::-webkit-scrollbar-thumb {
-  background-color: #f5b23d26;
+  background-color: #f5b23d1b;
   border-radius: 30px;
 }
 
 .column:nth-child(3) .task-list::-webkit-scrollbar-thumb {
-  background-color: #57ec8e2a;
+  background-color: #57ec8e1b;
   border-radius: 30px;
 }

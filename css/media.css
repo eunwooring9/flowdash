@@ -530,4 +530,8 @@
   .controls {
     padding: 15px;
   }
+
+  .column-header {
+    font-size: 18px;
+  }
 }
