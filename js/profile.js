@@ -2,7 +2,7 @@ const profileImg = document.querySelector("#profileImg");
 const profileInput = document.querySelector("#profileInput");
 const profileBtn = document.querySelector("#profileChange");
 
-const PROFILE_KEY = "userProfileImage";
+const PROFILE_KEY = "flowdash-profileImg";
 
 const savedImage = localStorage.getItem(PROFILE_KEY);
 if (savedImage) {
@@ -23,12 +23,12 @@ profileInput.addEventListener("change", (e) => {
     // FileReader: 파일 읽는 도구임
     const imgReader = new FileReader();
 
-    imgReader.onload = (e) => {
-      const imgUrl = e.target.result;
+    imgReader.onload = (event) => {
+      const imgUrl = event.target.result;
       profileImg.src = imgUrl;
 
       try {
-        localStorage.setItem(PROFILE_KEY, imageDataUrl);
+        localStorage.setItem(PROFILE_KEY, imgUrl);
       } catch (error) {
         alert("이미지 용량 초과!");
 
