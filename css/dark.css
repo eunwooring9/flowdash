@@ -4,14 +4,14 @@
   --bg-attachment: fixed;
   /* --panel: #ffffff; */
   --panel: rgba(255, 255, 255, 0.2);
-  --panel2: #ffffff;
+  --panel2: #ffffff95;
   --text: #121216;
   --muted: #6a6a6a;
   --muted2: #767676;
   /* --border: #cfcfcf; */
 
-  --shadow: 0px 3px 6px rgba(174, 174, 174, 0.736);
-  --shadow2: 0px 3px 6px rgba(174, 174, 174, 0.736);
+  --shadow: 0px 3px 6px rgba(174, 174, 174, 0.536);
+  --shadow2: 0px 3px 6px rgba(174, 174, 174, 0.536);
   --primary: #4e56ed;
   --focus: rgba(99, 102, 241, 0.22);
 }
@@ -87,7 +87,7 @@ body {
 
 /* 헤더 */
 .header {
-  background: var(--panel);
+  background: none;
   /* box-shadow: var(--shadow); */
 }
 
@@ -111,8 +111,8 @@ body {
   box-shadow: var(--shadow);
 
   /* 추가 */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 
 /* 카드 제목 */
@@ -122,15 +122,20 @@ body {
 
 /* 컨트롤 input/버튼 */
 .search-box input,
-.select-wrap select,
 .filter-btn,
 .form-input,
-.form-textarea,
-.dropdown-menu,
-.dropdown-item {
+.form-textarea {
   background: var(--panel2);
   color: var(--text);
   border-color: #b0b0b0;
+}
+
+.filters .dropdown-menu {
+  background-color: rgba(255, 255, 255, 0.941);
+}
+
+.select-wrap select {
+  cursor: default;
 }
 
 .bar-wrap {
@@ -209,7 +214,7 @@ body {
 
 /* 우선순위 내 task-card background 투명도 0  */
 .task-card {
-  background-color: rgb(255 255 255);
+  background-color: rgba(255, 255, 255, 0.589);
 }
 
 /* ===== 모달 다크 ===== */

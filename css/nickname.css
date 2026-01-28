@@ -14,22 +14,22 @@
   background-color: var(--modal-bg);
   color: var(--modal-text);
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .nickname-container .nickname-text,
 .nickname-container .nickname-edit-input,
 .nickname-container .suffix {
   position: relative;
-  transform: translateY(-4px);
+  transform: translateY(5px);
 }
 
 .nickname-text {
   padding: 2px 8px;
   color: #4e56ed;
-  font-size: 42px;
-  font-weight: 600;
-  padding: 2px 0 2px 8px;
+  font-size: 40px;
+  font-weight: 700;
+  padding: 2px 0 2px 2px;
   border-radius: 4px;
   line-height: 1.4;
   cursor: pointer;
@@ -39,10 +39,11 @@
 /* 님 글자 */
 .suffix {
   position: relative;
-  font-size: 42px;
-  font-weight: 600;
+  font-size: 40px;
+  font-weight: 700;
   margin-left: 2px;
 }
+
 /* 닉네임 수정때 text 수정 */
 .nickname-text:hover {
   background-color: rgba(78, 86, 237, 0.1);
