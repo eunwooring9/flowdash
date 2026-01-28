@@ -8,7 +8,6 @@ function applyTheme(isDark) {
   document.body.classList.toggle("dark", isDark);
   localStorage.setItem("theme", isDark ? "dark" : "light");
 
-  // 다크면 해, 라이트면 달
   if (themeIcon) {
     themeIcon.src = isDark ? ICON_SUN : ICON_MOON;
     themeIcon.alt = isDark ? "라이트 모드로 전환" : "다크 모드로 전환";
@@ -16,7 +15,7 @@ function applyTheme(isDark) {
 }
 
 // 초기 로드
-const saved = localStorage.getItem("theme");
+const saved = localStorage.getItem("flowdash-theme");
 applyTheme(saved === "dark");
 
 // 클릭 시 토글
