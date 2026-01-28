@@ -1,6 +1,6 @@
 :root {
   /* --bg: #ffffff; */
-  --bg: url("../assets/img/light.png");
+  --bg: url("../assets/img/light-back.jpeg");
   --bg-attachment: fixed;
   /* --panel: #ffffff; */
   --panel: rgba(255, 255, 255, 0.2);
@@ -84,8 +84,8 @@ body {
   box-shadow: var(--shadow);
 
   /* 추가 */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 
 /* 카드 제목 */
