@@ -63,6 +63,12 @@ function openModal() {
   overlay.classList.add("is-open");
   document.body.style.overflow = "hidden";
   titleInput?.focus();
+
+  // 새 할 일에 우선순위 중간으로 기본값 설정
+  const mediumBtn = document.querySelector("#priority-medium");
+  if (mediumBtn) {
+    mediumBtn.checked = true;
+  }
 }
 
 function closeModal() {
@@ -144,6 +150,10 @@ function makeTodoCard(todo) {
   metaEl.className = "task-card__meta";
 
   const priorityEl = document.createElement("span");
+
+  // 뱃지 컬러
+  // priorityEl.className = `priority-badge ${todo.priority}`;
+
   priorityEl.textContent =
     todo.priority === "high" ? "높음" : todo.priority === "medium" ? "중간" : "낮음";
 

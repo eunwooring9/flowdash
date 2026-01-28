@@ -138,7 +138,8 @@
   background-color: #f22a2a;
 }
 
-.bottom-actions-group #priority-high:checked + .bottom-actions-high {
+.bottom-actions-group #priority-high:checked + .bottom-actions-high,
+.bottom-actions-group #editPriorityHigh:checked + .bottom-actions-high {
   background-color: #f22a2a;
   color: #ffffff;
   transform: scale(1.01);
@@ -152,7 +153,8 @@
   background-color: #ffa01b;
 }
 
-.bottom-actions-group #priority-medium:checked + .bottom-actions-medium {
+.bottom-actions-group #priority-medium:checked + .bottom-actions-medium,
+.bottom-actions-group #editPriorityMedium:checked + .bottom-actions-medium {
   background-color: #ffa01b;
   color: #ffffff;
   transform: scale(1.01);
@@ -166,7 +168,8 @@
   background-color: #0fc521;
 }
 
-.bottom-actions-group #priority-low:checked + .bottom-actions-low {
+.bottom-actions-group #priority-low:checked + .bottom-actions-low,
+.bottom-actions-group #editPriorityLow:checked + .bottom-actions-low {
   background-color: #0fc521;
   color: #ffffff;
   transform: scale(1.01);
@@ -328,3 +331,34 @@ body.dark .modal-card .btn-submit:hover {
     0 0 0 0.05px #22c55e,
     0 0 4px #57ec8e;
 }
+
+/* Badge 컬러 .priority-badge {
+  display: inline-block;
+  padding: 2px 5px;
+  border-radius: 15px;
+}
+
+.priority-badge.high {
+  background-color: #f22a2a93;
+  box-shadow:
+    0 0 0 0.05px #f22a2a,
+    0 0 4px #ee5d5d;
+  color: rgb(255, 255, 255);
+}
+
+.priority-badge.medium,
+.priority-badge.mid {
+  background-color: #f59e0b93;
+  box-shadow:
+    0 0 0 0.05px #f59e0b,
+    0 0 4px #f5b23d;
+  color: rgb(255, 255, 255);
+}
+
+.priority-badge.low {
+  background-color: #22c55e93;
+  box-shadow:
+    0 0 0 0.05px #22c55e,
+    0 0 4px #57ec8e;
+  color: rgb(255, 255, 255);
+} */
