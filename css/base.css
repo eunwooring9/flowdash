@@ -17,6 +17,7 @@ body,
 .header,
 .greeting h1,
 .header-actions,
+.header-actions span,
 .stats-container,
 .card,
 .column,
@@ -68,7 +69,7 @@ body,
 /* 헤더 영역 */
 .header {
   padding: 30px 55px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   background: #ffffff;
 }
 
@@ -79,7 +80,45 @@ body,
 }
 
 .header-actions span {
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  color: #ffffff;
+
+  animation: rainbow 10s infinite linear;
+}
+
+@keyframes rainbow {
+  0% {
+    text-shadow:
+      0 0 3px #fff,
+      0 0 3px #ff0000;
+  }
+  20% {
+    text-shadow:
+      0 0 3px #ff8000bd,
+      0 0 3px #ff8000;
+  }
+  40% {
+    text-shadow:
+      0 0 3px #ffd500d4,
+      0 0 3px #ffd500;
+  }
+  60% {
+    text-shadow:
+      0 0 3px #00a400bf,
+      0 0 3px #00ba00;
+  }
+  80% {
+    text-shadow:
+      0 0 3px #fff,
+      0 0 3px #0000ff;
+  }
+  100% {
+    text-shadow:
+      0 0 3px #fff,
+      0 0 3px #ff00ff;
+  }
 }
 
 /* 인사말 */
@@ -389,6 +428,7 @@ body,
 
 .profile-img-wrap img:nth-of-type(2):hover {
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 /* 보드 */

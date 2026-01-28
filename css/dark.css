@@ -42,7 +42,8 @@ body.dark::before {
   position: fixed;
   inset: -25%;
   z-index: -2;
-  background: radial-gradient(55% 45% at 18% 22%, rgba(130, 90, 255, 0.32), transparent 62%),
+  background:
+    radial-gradient(55% 45% at 18% 22%, rgba(130, 90, 255, 0.32), transparent 62%),
     radial-gradient(55% 45% at 82% 28%, rgba(0, 140, 255, 0.26), transparent 62%),
     radial-gradient(55% 45% at 35% 82%, rgba(170, 80, 255, 0.2), transparent 65%),
     radial-gradient(45% 40% at 75% 78%, rgba(0, 210, 255, 0.12), transparent 70%),
@@ -273,15 +274,37 @@ body.dark .column:nth-child(2) .task-list::-webkit-scrollbar-thumb {
 }
 
 body.dark .board .column:nth-child(1):hover {
-  box-shadow: 0 0 0 0.1px #f22a2a, 0 0 7px #ee5d5d;
+  box-shadow:
+    0 0 0 0.1px #f22a2a,
+    0 0 7px #ee5d5d;
 }
 
 /* 진행 중 카드 */
 body.dark .board .column:nth-child(2):hover {
-  box-shadow: 0 0 0 0.1px #f59e0b, 0 0 7px #f5b23d;
+  box-shadow:
+    0 0 0 0.1px #f59e0b,
+    0 0 7px #f5b23d;
 }
 
 /* 완료 카드 */
 body.dark .board .column:nth-child(3):hover {
-  box-shadow: 0 0 0 0.1px #22c55e, 0 0 7px #57ec8e;
+  box-shadow:
+    0 0 0 0.1px #22c55e,
+    0 0 7px #57ec8e;
+}
+
+body.dark .profile-img-wrap img:nth-of-type(2) {
+  background-color: #c1c1c1db;
+  border-radius: 50%;
+  padding: 6px;
+  width: 36px;
+  height: 36px;
+}
+
+@media screen and (max-width: 420px) {
+  body.dark .profile-img-wrap img:nth-of-type(2) {
+    padding: 5px;
+    width: 27px;
+    height: 27px;
+  }
 }
