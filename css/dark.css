@@ -1,6 +1,6 @@
 :root {
   /* --bg: #ffffff; */
-  --bg: url("../assets/img/light.png");
+  --bg: url("../assets/img/4.jpeg");
   --bg-attachment: fixed;
   /* --panel: #ffffff; */
   --panel: rgba(255, 255, 255, 0.2);
@@ -18,20 +18,47 @@
 
 /* 다크 모드 */
 body.dark {
-  --bg: #151516;
-  --panel: #19191d;
-  --panel2: #18181b;
+  background: #050612;
+  position: relative;
+  overflow-x: hidden;
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.65);
 
-  --text: #e5e7eb;
-  --muted: #94a3b8;
-  --muted2: #94a3b8;
-  --border: #f59e0b;
+  --panel: rgba(10, 12, 28, 0.55);
+  --panel2: rgba(12, 14, 32, 0.65);
 
-  --shadow: 0px 3px 6px rgba(166, 166, 166, 0.315);
-  --shadow2: 0px 3px 6px rgba(218, 218, 218, 0.153);
+  --border: rgba(255, 255, 255, 0.14);
 
-  --primary: #4e56ed;
-  --focus: rgba(129, 140, 248, 0.18);
+  --shadow: 0px 6px 16px rgba(0, 0, 0, 0.55);
+  --shadow2: 0px 10px 30px rgba(0, 0, 0, 0.55);
+
+  --focus: rgba(99, 102, 241, 0.35);
+}
+body.dark .main-content .header {
+  background: none;
+}
+body.dark::before {
+  content: "";
+  position: fixed;
+  inset: -25%;
+  z-index: -2;
+  background: radial-gradient(55% 45% at 18% 22%, rgba(130, 90, 255, 0.32), transparent 62%),
+    radial-gradient(55% 45% at 82% 28%, rgba(0, 140, 255, 0.26), transparent 62%),
+    radial-gradient(55% 45% at 35% 82%, rgba(170, 80, 255, 0.2), transparent 65%),
+    radial-gradient(45% 40% at 75% 78%, rgba(0, 210, 255, 0.12), transparent 70%),
+    linear-gradient(180deg, #050612 0%, #070a1f 50%, #040410 100%);
+  filter: blur(22px) saturate(125%);
+  opacity: 0.95;
+  pointer-events: none;
+}
+body.dark .stats-container .card,
+body.dark .controls,
+body.dark .sort-bar,
+body.dark .board .column,
+body.dark .header {
+  background: rgba(12, 14, 32, 0.48);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 body.dark .header-actions img {
@@ -241,21 +268,15 @@ body.dark .column:nth-child(2) .task-list::-webkit-scrollbar-thumb {
 }
 
 body.dark .board .column:nth-child(1):hover {
-  box-shadow:
-    0 0 0 0.1px #f22a2a,
-    0 0 7px #ee5d5d;
+  box-shadow: 0 0 0 0.1px #f22a2a, 0 0 7px #ee5d5d;
 }
 
 /* 진행 중 카드 */
 body.dark .board .column:nth-child(2):hover {
-  box-shadow:
-    0 0 0 0.1px #f59e0b,
-    0 0 7px #f5b23d;
+  box-shadow: 0 0 0 0.1px #f59e0b, 0 0 7px #f5b23d;
 }
 
 /* 완료 카드 */
 body.dark .board .column:nth-child(3):hover {
-  box-shadow:
-    0 0 0 0.1px #22c55e,
-    0 0 7px #57ec8e;
+  box-shadow: 0 0 0 0.1px #22c55e, 0 0 7px #57ec8e;
 }
