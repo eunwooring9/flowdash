@@ -297,9 +297,11 @@
     height: 200px;
   }
 
-  .profile-img-wrap button {
-    justify-content: center;
-    padding-top: 10px;
+  .profile-img-wrap img:nth-of-type(2) {
+    width: 30px;
+    height: 30px;
+    bottom: 15px;
+    right: 15px;
   }
 
   .controls-wrap {
@@ -332,6 +334,10 @@
   .header {
     margin-bottom: 5px;
     padding: 20px 33px;
+  }
+
+  .header-actions span {
+    font-size: 20px;
   }
 
   .greeting h1 {
@@ -421,6 +427,10 @@
 }
 
 @media screen and (max-width: 420px) {
+  .header-actions span {
+    font-size: 15px;
+  }
+
   /* 인사칸 내리기 */
   .mobile-br {
     display: block;

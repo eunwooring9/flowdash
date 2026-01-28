@@ -42,7 +42,7 @@ function updateTimeGreeting() {
     hours >= 5 && hours < 11
       ? "좋은 아침이에요"
       : hours >= 11 && hours < 17
-        ? "좋은 오후에요"
+        ? "좋은 오후예요"
         : hours >= 17 && hours < 22
           ? "좋은 저녁이에요"
           : // 위에 조건이 다아니면 안녕하세요로 바꾸기
