@@ -1,12 +1,10 @@
 <br>
 <br>
 
-<p style="transform: translateX(400px);">
-  <img
-    src="https://readme-typing-svg.demolab.com/?lines=Welcome%20to%20FlowDash&width=800&height=80&pause=500&duration=4000&color=F5E9A8&size=32"
-    style="filter: drop-shadow(0 0 6px rgba(232, 228, 204, 0.91));"
-  />
+<p align="right">
+  <img src="https://readme-typing-svg.demolab.com/?lines=Welcome%20to%20FlowDash&width=700&height=80&pause=400&duration=4000&color=9AB3C5&size=36&center=false&font=Montserrat&weight=700" />
 </p>
+
 
 ## 이스트 2차 팀 프로젝트 설명
 
@@ -24,19 +22,17 @@
 
 <!-- 여기부터 팀  -->
 
-<h2 style="display: flex; align-items: center; gap: 12px;">
-  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a8d1f5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 5px #aed4ed);">
-    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-    <circle cx="9" cy="7" r="4"></circle>
-    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-  </svg>
-  <span>팀 이름 소개</span>
-</h2>
+## _🍽️ 팀 소개_
 
 - **팀 이름 : 401호 (01즈)**
 
-- **각 역할 :**
+- **각 역할**
+  
+| 이름 | 공식 역할 | 세부 역할 | GitHub |
+| :---: | :---: | :--- | :--- |
+| 🍔&nbsp; **최은우** | **팀장** | <img src="https://img.shields.io/badge/Design%20Lead-E0E0E0?style=flat-square"> <img src="https://img.shields.io/badge/Speaker-F5F5F5?style=flat-square"> <img src="https://img.shields.io/badge/Git-F3E5AB?style=flat-square"> <br> <img src="https://img.shields.io/badge/기획-FFE7E7?style=flat-square"> <img src="https://img.shields.io/badge/UI%20개발-D6E4FF?style=flat-square"> <br> <img src="https://img.shields.io/badge/Project%20Manager-E4F2E1?style=flat-square"> | [![eunwooring9](https://img.shields.io/badge/eunwooring9-181717?style=flat-square&logo=github)](https://github.com/eunwooring9) |
+| 🍺&nbsp; **박상우** | **팀원** | <img src="https://img.shields.io/badge/디자인-EBDCB2?style=flat-square"> <img src="https://img.shields.io/badge/ListView-D9C1A3?style=flat-square"> <br> <img src="https://img.shields.io/badge/SettingView-E8D9CD?style=flat-square"> <img src="https://img.shields.io/badge/데이터구조%20설계-EAD7D7?style=flat-square"> <br> <img src="https://img.shields.io/badge/기획-FFE7E7?style=flat-square"> <img src="https://img.shields.io/badge/UI%20개발-D6E4FF?style=flat-square"> | [![sangwoo-id](https://img.shields.io/badge/sangwoo--id-181717?style=flat-square&logo=github)](https://github.com/박상우아이디) |
+| 🍟&nbsp; **이해랑** | **팀원** | <img src="https://img.shields.io/badge/디자인-EBDCB2?style=flat-square"> <img src="https://img.shields.io/badge/Readme-D1D1FF?style=flat-square"> <img src="https://img.shields.io/badge/기획-FFE7E7?style=flat-square"> <br> <img src="https://img.shields.io/badge/UI%20개발-D6E4FF?style=flat-square"> <img src="https://img.shields.io/badge/Speaker-F5F5F5?style=flat-square"> | [![haerang-id](https://img.shields.io/badge/haerang--id-181717?style=flat-square&logo=github)](https://github.com/이해랑아이디) |
 
 <br>
 <br>
@@ -48,16 +44,8 @@
 <br>
 <br>
 
-<h2 style="display: flex; align-items: center; gap: 12px;">
-  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ade0b3ab" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 5px #8ccf98ff);">
-    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-    <polyline points="14 2 14 8 20 8"></polyline>
-    <line x1="16" y1="13" x2="8" y2="13"></line>
-    <line x1="16" y1="17" x2="8" y2="17"></line>
-    <polyline points="10 9 9 9 8 9"></polyline>
-  </svg>
-  <span>프로젝트 구조</span>
-</h2>
+## _✨프로젝트 구조_
+
 
 ```txt
 flowdash/
@@ -173,7 +161,7 @@ flowdash/
 ### 카드 삭제 기능 구현
 
 ```txt
-✓ **카드 우측 상단 삭제 버튼 구현**
+✓ 카드 우측 상단 삭제 버튼 구현
 ✓ 삭제 버튼 클릭 시 확인 / 취소 선택 가능한 안내 창 구현
 ✓ 확인 선택 시 카드가 화면과 저장 데이터에서 함께 삭제되도록 처리
 ```
@@ -212,12 +200,7 @@ flowdash/
 <br>
 <br>
 
-<h2 style="display: flex; align-items: center; gap: 12px;">
-  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 -960 960 960" fill="#F5E9A8" style="filter: drop-shadow(0 0 6px rgba(245, 233, 168, 0.9));">
-    <path d="m424-408-86-184-184-86 184-86 86-184 86 184 184 86-184 86-86 184Zm338 320-56-122-122-56 122-56 56-122 56 122 122 56-122 56-56 122ZM186-100l-42-92-92-42 92-42 42-92 42 92 92 42-92 42-42 92Z"/>
-  </svg>
-  <span>기술적 문제와 해결 과정</span>
-</h2>
+## _📝기술적 문제와 해결 과정_
 
 ### 기존 구현 구조에서 기능 추가 시 발생한 문제
 
@@ -225,13 +208,13 @@ flowdash/
   기능 확장 시 기존 구조에 영향을 주는 문제가 발생하였습니다.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ &nbsp;&nbsp;&nbsp;하나의 객체로 관리하고
-전체 목록에서 조건을 `순차적으로 적용하는 구조로 개선`하였습니다.
+전체 목록에서 조건을 **순차적으로 적용하는 구조로 개선**하였습니다.
 
 ### 후에 디자인 및 기획 측면에서의 보완점
 
 - 칸반 보드의 특성을 고려했을 때  
   카드를 직접 이동하는 드래그 앤 드롭 방식이 더 적합하다고 판단되었으나,  
-  기획 단계에서 반영하지 못해 `클릭기반 상태변경 방식`으로 구현하였습니다.
+  기획 단계에서 반영하지 못해 **클릭기반 상태변경 방식**으로 구현하였습니다.
 
 - 프로필 사진 변경 기능 구현 시  
   이미지 용량 초과에 대한 기본적인 제한 처리는 구현하였으나,  
