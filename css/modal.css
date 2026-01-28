@@ -331,34 +331,3 @@ body.dark .modal-card .btn-submit:hover {
     0 0 0 0.05px #22c55e,
     0 0 4px #57ec8e;
 }
-
-/* Badge 컬러 .priority-badge {
-  display: inline-block;
-  padding: 2px 5px;
-  border-radius: 15px;
-}
-
-.priority-badge.high {
-  background-color: #f22a2a93;
-  box-shadow:
-    0 0 0 0.05px #f22a2a,
-    0 0 4px #ee5d5d;
-  color: rgb(255, 255, 255);
-}
-
-.priority-badge.medium,
-.priority-badge.mid {
-  background-color: #f59e0b93;
-  box-shadow:
-    0 0 0 0.05px #f59e0b,
-    0 0 4px #f5b23d;
-  color: rgb(255, 255, 255);
-}
-
-.priority-badge.low {
-  background-color: #22c55e93;
-  box-shadow:
-    0 0 0 0.05px #22c55e,
-    0 0 4px #57ec8e;
-  color: rgb(255, 255, 255);
-} */

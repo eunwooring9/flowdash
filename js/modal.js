@@ -151,9 +151,6 @@ function makeTodoCard(todo) {
 
   const priorityEl = document.createElement("span");
 
-  // 뱃지 컬러
-  // priorityEl.className = `priority-badge ${todo.priority}`;
-
   priorityEl.textContent =
     todo.priority === "high" ? "높음" : todo.priority === "medium" ? "중간" : "낮음";
 

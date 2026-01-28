@@ -297,11 +297,11 @@
     height: 200px;
   }
 
-  .profile-img-wrap img:nth-of-type(2) {
-    width: 30px;
-    height: 30px;
-    bottom: 15px;
-    right: 15px;
+  .profile-img-wrap svg {
+    width: 40px;
+    height: 40px;
+    bottom: 12px;
+    right: 5px;
   }
 
   .controls-wrap {
@@ -496,13 +496,13 @@
     max-height: 150px;
   }
 
-  .profile-img-wrap img:nth-of-type(2) {
+  .profile-img-wrap svg {
     min-width: 20px;
     min-height: 20px;
-    width: 20px;
-    height: 20px;
-    bottom: 5px;
-    right: 14px;
+    width: 30px;
+    height: 30px;
+    bottom: 7px;
+    right: 7px;
   }
 
   /* 버튼 높이 조절 */
