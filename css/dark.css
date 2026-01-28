@@ -15,6 +15,47 @@
   --primary: #4e56ed;
   --focus: rgba(99, 102, 241, 0.22);
 }
+/* 다크 모드 드롭다운 배경 강제 분리 */
+body.dark .filter-dropdown .dropdown-menu {
+  background: rgba(12, 14, 32, 0.96); /* 🔥 거의 불투명 */
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  backdrop-filter: none; /* blur 제거 */
+}
+body.dark .dropdown-item {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+body.dark .dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.filter-dropdown {
+  position: relative;
+  z-index: 200;
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 9999;
+}
+
+.controls,
+.controls-wrap,
+.filters {
+  position: relative;
+  z-index: 150;
+}
+body.dark .select-wrap select {
+  color: var(--text);
+  background-color: var(--panel);
+}
+body.dark .task-card {
+  background: rgba(14, 18, 48, 0.75);
+  color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
 
 /* 다크 모드 */
 body.dark {
@@ -33,6 +74,16 @@ body.dark {
   --shadow2: 0px 10px 30px rgba(0, 0, 0, 0.55);
 
   --focus: rgba(99, 102, 241, 0.35);
+}
+body.dark .select-wrap select {
+  color: var(--text);
+  background-color: var(--panel);
+}
+body.dark .task-card {
+  background: rgba(14, 18, 48, 0.75); /* 남보라 계열 */
+  color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 body.dark .main-content .header {
   background: none;
@@ -53,7 +104,6 @@ body.dark::before {
 }
 body.dark .stats-container .card,
 body.dark .controls,
-body.dark .sort-bar,
 body.dark .board .column,
 body.dark .header {
   background: rgba(12, 14, 32, 0.48);
