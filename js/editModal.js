@@ -48,6 +48,8 @@ function fillForm(todo) {
 const board = document.querySelector(".board");
 
 board?.addEventListener("click", (e) => {
+  if (e.target.closest(".task-card-delete")) return;
+
   const card = e.target.closest(".task-card");
   if (!card) return;
 
@@ -103,6 +105,7 @@ submitBtn?.addEventListener("click", (e) => {
   todo.content = content;
   todo.status = nextStatus;
   todo.priority = nextPriority;
+  // 수정시간 넣는 부분
   todo.updatedAt = now;
 
   saveTodos(todoStore);

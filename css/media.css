@@ -63,24 +63,27 @@
     grid-column: span 2;
   }
 
-  .greeting h1 .nickname-container .nickname-text,
-  .greeting h1 .nickname-container .nickname-edit-input,
-  .greeting h1 .nickname-container .suffix {
-    font-size: 35px;
-  }
+  /* div.greeting h1 .nickname-container .nickname-text,
+  div.greeting h1 .nickname-container .nickname-edit-input,
+  div.greeting h1 .nickname-container .suffix {
+    font-size: 50px;
+  } */
 
   /* 중간 살짝만 올라가게 */
-  .nickname-container .nickname-text,
-  .nickname-container .nickname-edit-input {
+  div .nickname-container .nickname-text,
+  div .nickname-container .nickname-edit-input {
     transform: translateY(-2.5px);
   }
 
   .nickname-container .suffix {
-    transform: translateY(-2.7px);
+    transform: translateY(-3px);
   }
 
   .filters {
     flex-wrap: wrap;
+  }
+  .date {
+    font-size: 20px;
   }
 }
 
@@ -104,19 +107,17 @@
     align-items: center;
   }
 
-  /* 1024 닉네임 부분 추가 */
-  .nickname-container .nickname-text,
-  .nickname-container .nickname-edit-input {
+  .greeting h1 .nickname-container .nickname-text,
+  .greeting h1 .nickname-container .nickname-edit-input,
+  .greeting h1 .nickname-container .suffix {
     font-size: 35px;
-    font-weight: 600;
-    transform: translateY(-2.5px);
+    font-weight: 700;
+    vertical-align: middle;
   }
 
-  .nickname-container .suffix {
-    font-size: 35px;
-    font-weight: 600;
-    transform: translateY(-3px);
-  }
+  /* .greeting h1 .nickname-container .suffix {
+    transform: translateY(-2px);
+  } */
 
   .greeting h1 {
     font-size: 35px;
@@ -260,20 +261,23 @@
   .greeting h1 .nickname-container .suffix {
     font-size: 30px;
   }
+  .greeting h1 .nickname-container .suffix {
+    transform: translateY(-3px);
+  }
 
   .greeting h1 .nickname-container .nickname-edit-input {
     width: 110px;
     font-size: inherit;
   }
-
+  /* 
   .nickname-container .nickname-text,
   .nickname-container .nickname-edit-input {
     transform: translateY(-2px);
-  }
+  } */
 
-  .nickname-container .suffix {
-    transform: translateY(-2.4px);
-  }
+  /* .nickname-container .suffix {
+    transform: translateY(-10x);
+  } */
 
   .bottom-actions-left {
     display: flex;
@@ -341,11 +345,11 @@
   }
 
   .greeting h1 {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .date {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   /* 알람 / 테마 */
@@ -424,6 +428,17 @@
     justify-content: flex-end;
     align-content: flex-end;
   }
+
+  .greeting h1 .nickname-container .nickname-text,
+  .greeting h1 .nickname-container .nickname-edit-input,
+  .greeting h1 .nickname-container .suffix {
+    font-size: 31px;
+    transform: translateY(-1px);
+  }
+
+  .greeting h1 .nickname-container .suffix {
+    transform: translateY(-2px);
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -449,15 +464,12 @@
     font-size: 30px;
   }
 
-  .total-number {
-    font-size: 30px;
-  }
-
-  /* nickname */
+  /* 닉네임 세트: 글자 크기 30px 고정 및 위치 수정 */
   .greeting h1 .nickname-container .nickname-text,
   .greeting h1 .nickname-container .nickname-edit-input,
   .greeting h1 .nickname-container .suffix {
-    font-size: 25px;
+    font-size: 30px;
+    transform: translateY(-1px);
   }
 
   .greeting h1 .nickname-container .nickname-edit-input {

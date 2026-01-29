@@ -74,9 +74,8 @@ flowdash/
 │   ├── reset.js             # 전체 데이터 초기화
 │   ├── theme.js             # 다크/라이트 테마 전환
 │   │
-│   └── profile/
-│       ├── nickname.js      # 프로필 닉네임 수정·저장
-│       └── profile.js       # 프로필 이미지 변경
+│   ├── nickname.js          # 프로필 닉네임 수정·저장
+│   └── profile.js           # 프로필 이미지 변경
 │
 ├── .prettierrc.js           # 코드 포맷 스타일 설정
 ```
