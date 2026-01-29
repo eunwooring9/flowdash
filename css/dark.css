@@ -123,7 +123,6 @@ body.dark #themeToggle:hover img {
 body {
   background: var(--bg);
   color: var(--text);
-  /* 추가 */
   background-attachment: var(--bg-attachment);
   background-size: cover;
   background-position: center;
@@ -134,12 +133,7 @@ body {
 /* 헤더 */
 .header {
   background: none;
-  /* box-shadow: var(--shadow); */
 }
-
-/* body.dark .header {
-  box-shadow: 0px 3px 6px rgba(167, 167, 167, 0.15);
-} */
 
 .greeting h1 {
   color: var(--text);
@@ -235,13 +229,11 @@ body {
 .filter-btn:focus,
 .add-btn:focus {
   outline: none;
-  /* border: 1px solid #6366f1; */
   box-shadow: 1px 2px 5px -1px rgba(43, 46, 255, 0.652);
   transition: all 0.3s ease-in-out;
   transform: translateY(-0.8px);
 }
 
-/* 새 할일 모달 안 버튼컬러*/
 .form-input:focus:focus,
 .form-textarea:focus,
 .select-wrap select:focus {
@@ -249,7 +241,6 @@ body {
   box-shadow: 0px 3px 6px rgba(119, 119, 119, 0.15);
 }
 
-/* 우선순위 내 task-card background 투명도 0  */
 .task-card {
   background-color: rgba(255, 255, 255, 0.389);
 }
