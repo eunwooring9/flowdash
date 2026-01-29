@@ -21,13 +21,16 @@
 .nickname-container .nickname-edit-input,
 .nickname-container .suffix {
   position: relative;
-  transform: translateY(5px);
+  font-size: 45px;
+}
+
+.nickname-container .suffix {
+  transform: translateY(-1px);
 }
 
 .nickname-text {
   padding: 2px 8px;
   color: #4e56ed;
-  font-size: 40px;
   font-weight: 700;
   padding: 2px 0 2px 2px;
   border-radius: 4px;
@@ -39,7 +42,6 @@
 /* 님 글자 */
 .suffix {
   position: relative;
-  font-size: 40px;
   font-weight: 700;
   margin-left: 2px;
 }

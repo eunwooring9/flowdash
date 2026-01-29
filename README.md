@@ -2,7 +2,7 @@
 <br>
 
 <p align="right">
-  <img src="https://readme-typing-svg.demolab.com/?lines=Welcome%20to%20FlowDash&width=530&height=80&pause=400&duration=4000&color=9AB3C5&size=36&center=false&font=Montserrat&weight=700" />
+  <img src="https://readme-typing-svg.demolab.com/?lines=Welcome%20to%20FlowDash&width=720&height=80&pause=400&duration=4000&color=9AB3C5&size=36&center=false&font=Montserrat&weight=700" />
 </p>
 
 ## _이스트 2차 팀 프로젝트 설명_
@@ -74,9 +74,8 @@ flowdash/
 │   ├── reset.js             # 전체 데이터 초기화
 │   ├── theme.js             # 다크/라이트 테마 전환
 │   │
-│   └── profile/
-│       ├── nickname.js      # 프로필 닉네임 수정·저장
-│       └── profile.js       # 프로필 이미지 변경
+│   ├── nickname.js          # 프로필 닉네임 수정·저장
+│   └── profile.js           # 프로필 이미지 변경
 │
 ├── .prettierrc.js           # 코드 포맷 스타일 설정
 ```

@@ -21,12 +21,12 @@
     transform 0.5s ease,
     margin 0.5s ease;
 }
-
-.task-card.deleting {
+.task-card.is-deleting {
   opacity: 0;
-  transform: scale(0.95) translateX(10px);
+  /* transform: scale(0.95) translateX(40px); */
   transition-delay: 0.15s;
   margin-bottom: -60px;
+  transform: translateX(40px);
 }
 
 /* 다크모드 삭제버튼 컬러 */

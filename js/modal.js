@@ -3,7 +3,7 @@ function generateId() {
 }
 
 // Storageƒ
-const STORAGE_KEY = "todoList";
+const STORAGE_KEY = "flowdash-todoList";
 
 // 데이터 꺼내오는 부분
 function loadTodos() {
@@ -154,9 +154,27 @@ function makeTodoCard(todo) {
   priorityEl.textContent =
     todo.priority === "high" ? "높음" : todo.priority === "medium" ? "중간" : "낮음";
 
+  // 생성 안뜨고 수정만 나오게
+  // const timeEl = document.createElement("span");
+  // timeEl.className = "task-card__time";
+  // // timeEl.textContent = `생성: ${formatTime(todo.createdAt)}`;
+  // timeEl.textContent =
+  //   todo.updatedAt && todo.updatedAt !== todo.createdAt
+  //     ? `수정: ${formatTime(todo.updatedAt)}`
+  //     : `생성: ${formatTime(todo.createdAt)}`;
+
+  // 완료때는 수정 안뜨고 생성나오게
   const timeEl = document.createElement("span");
   timeEl.className = "task-card__time";
-  timeEl.textContent = `생성: ${formatTime(todo.createdAt)}`;
+
+  if (todo.status === "done") {
+    timeEl.textContent = `생성: ${formatTime(todo.createdAt)}`;
+  } else {
+    timeEl.textContent =
+      todo.updatedAt && todo.updatedAt !== todo.createdAt
+        ? `수정: ${formatTime(todo.updatedAt)}`
+        : `생성: ${formatTime(todo.createdAt)}`;
+  }
 
   metaEl.appendChild(priorityEl);
   metaEl.appendChild(timeEl);
@@ -192,7 +210,7 @@ function makeTodoCard(todo) {
     if (!confirm("정말 삭제하시겠습니까? 삭제 후엔 되돌릴 수 없습니다.")) return;
 
     // 삭제할때 속도 늦추기 위한
-    card.classList.add("deleting");
+    card.classList.add("is-deleting");
     // 카드 자체를 삭제하하는거 카드 id선언하기
     setTimeout(() => {
       const id = card.dataset.id;
@@ -203,7 +221,7 @@ function makeTodoCard(todo) {
       // 삭제되고 다시 저장하게 하고 렌더링에 다시 그리기
       saveTodos(todoStore);
       renderAll();
-    }, 500);
+    }, 700);
   });
 
   // 만들어 놓은 deletes는 카드에 넣기
@@ -332,7 +350,8 @@ modalSubmitBtn?.addEventListener("click", (e) => {
     status, // todo/doing/done 저장
     priority, // high/mid/low 저장
     createdAt: now,
-    updatedAt: now,
+    // updatedAt: now,
+    updatedAt: null,
     completedAt: status === "done" ? now : null, // 완료면 완료시간
   };
 

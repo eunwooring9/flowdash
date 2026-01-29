@@ -276,12 +276,10 @@ body.dark .modal-card .btn-submit:hover {
   position: relative;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s;
 }
 
-.task-card:hover {
+.task-card:not(.is-deleting):hover {
   transform: scale(1.02);
-  cursor: pointer;
 }
 
 .task-card__title {
