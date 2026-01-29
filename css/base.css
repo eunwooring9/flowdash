@@ -4,8 +4,7 @@
   font-weight: 45 920;
   font-style: normal;
   font-display: swap;
-  src:
-    url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/packages/pretendard/dist/web/variable/woff2/PretendardVariable.woff2")
+  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/packages/pretendard/dist/web/variable/woff2/PretendardVariable.woff2")
       format("woff2-variations"),
     url("/fonts/PretendardVariable.woff2") format("woff2-variations");
 }
@@ -61,7 +60,6 @@ body,
 .main-content {
   flex: 1;
   padding: 0;
-  /* height: 100%; */
 }
 
 .content-wrap {
@@ -100,34 +98,22 @@ body,
 
 @keyframes rainbow {
   0% {
-    text-shadow:
-      0 0 4px #fff,
-      0 0 4px #ff0000;
+    text-shadow: 0 0 4px #fff, 0 0 4px #ff0000;
   }
   20% {
-    text-shadow:
-      0 0 4px #ff8000bd,
-      0 0 4px #ff8000;
+    text-shadow: 0 0 4px #ff8000bd, 0 0 4px #ff8000;
   }
   40% {
-    text-shadow:
-      0 0 4px #ffd500d4,
-      0 0 4px #ffd500;
+    text-shadow: 0 0 4px #ffd500d4, 0 0 4px #ffd500;
   }
   60% {
-    text-shadow:
-      0 0 4px #00a400bf,
-      0 0 4px #00ba00;
+    text-shadow: 0 0 4px #00a400bf, 0 0 4px #00ba00;
   }
   80% {
-    text-shadow:
-      0 0 4px #fff,
-      0 0 4px #0000ff;
+    text-shadow: 0 0 4px #fff, 0 0 4px #0000ff;
   }
   100% {
-    text-shadow:
-      0 0 4px #fff,
-      0 0 4px #ff00ff;
+    text-shadow: 0 0 4px #fff, 0 0 4px #ff00ff;
   }
 }
 

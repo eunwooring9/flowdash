@@ -6,7 +6,6 @@ const sortText = document.querySelector("#sort-text");
 const priorityBtn = document.querySelector("#btn-priority");
 
 // 필터 태그 기간 / 우선순위 영역
-// 둘 다 bar-wrap으로 되어 있어서 closest로 잡음
 const periodTag = document.querySelector(".period-tag").closest(".bar-wrap");
 const priorityTag = document.querySelector(".sort-tag").closest(".bar-wrap");
 
@@ -74,11 +73,8 @@ document.querySelectorAll(".filter-dropdown").forEach((dropdown) => {
 
 // 오름차순 / 내림차순 버튼 클릭
 sortBtn.addEventListener("click", () => {
-  // 클릭했을 때 오름차순이야?
   const upDown = sortText.textContent === "오름차순";
-  // 맞으면 내림차순 아니면 오름차순
   const nextText = upDown ? "내림차순" : "오름차순";
-
   sortText.textContent = nextText;
   priorityBtn.textContent = nextText;
 

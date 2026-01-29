@@ -63,12 +63,6 @@
     grid-column: span 2;
   }
 
-  /* div.greeting h1 .nickname-container .nickname-text,
-  div.greeting h1 .nickname-container .nickname-edit-input,
-  div.greeting h1 .nickname-container .suffix {
-    font-size: 50px;
-  } */
-
   /* 중간 살짝만 올라가게 */
   div .nickname-container .nickname-text,
   div .nickname-container .nickname-edit-input {
@@ -114,10 +108,6 @@
     font-weight: 700;
     vertical-align: middle;
   }
-
-  /* .greeting h1 .nickname-container .suffix {
-    transform: translateY(-2px);
-  } */
 
   .greeting h1 {
     font-size: 35px;
@@ -269,15 +259,6 @@
     width: 110px;
     font-size: inherit;
   }
-  /* 
-  .nickname-container .nickname-text,
-  .nickname-container .nickname-edit-input {
-    transform: translateY(-2px);
-  } */
-
-  /* .nickname-container .suffix {
-    transform: translateY(-10x);
-  } */
 
   .bottom-actions-left {
     display: flex;
@@ -407,7 +388,6 @@
 
   .bar-wrap.reset-wrap {
     margin-left: 0;
-    /* width: 100%; */
     text-align: center;
   }
 
