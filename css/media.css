@@ -283,7 +283,7 @@
   }
 
   .profile-img-wrap svg {
-    width: 40px;
+    width: 45px;
     height: 40px;
     bottom: 12px;
     right: 5px;
@@ -491,8 +491,9 @@
   .profile-img-wrap svg {
     min-width: 20px;
     min-height: 20px;
-    width: 30px;
+    width: 35px;
     height: 30px;
+    padding: 5px;
     bottom: 7px;
     right: 7px;
   }

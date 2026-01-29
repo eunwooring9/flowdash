@@ -67,10 +67,19 @@ function applyFilters() {
 
   // 정렬 (오름차순 / 내림차순)
   result.sort((a, b) => {
+    const korean = (text) => /^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/.test(text);
+    const aKorean = korean(a.title);
+    const bKorean = korean(b.title);
+
     if (filters.sort === "오름차순") {
-      return a.createdAt - b.createdAt;
+      if (aKorean && !bKorean) return -1;
+      if (!aKorean && bKorean) return 1;
+
+      return a.title.localeCompare(b.title);
     } else {
-      return b.createdAt - a.createdAt;
+      if (aKorean && !bKorean) return 1;
+      if (!aKorean && bKorean) return -1;
+      return b.title.localeCompare(a.title);
     }
   });
 
