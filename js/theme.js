@@ -6,7 +6,7 @@ const ICON_MOON = "./assets/img/icons8-moon.png";
 
 function applyTheme(isDark) {
   document.body.classList.toggle("dark", isDark);
-  localStorage.setItem("theme", isDark ? "dark" : "light");
+  localStorage.setItem("flowdash-theme", isDark ? "dark" : "light");
 
   if (themeIcon) {
     themeIcon.src = isDark ? ICON_SUN : ICON_MOON;
