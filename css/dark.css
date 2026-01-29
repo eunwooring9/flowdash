@@ -42,16 +42,6 @@ body.dark .dropdown-item:hover {
   position: relative;
   z-index: 150;
 }
-body.dark .select-wrap select {
-  color: var(--text);
-  background-color: var(--panel);
-}
-body.dark .task-card {
-  background: rgba(14, 18, 48, 0.75);
-  color: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
 
 /* 다크 모드 */
 body.dark {

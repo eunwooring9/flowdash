@@ -1,6 +1,6 @@
 import { todoStore, renderAll } from "./modal.js";
 
-const STORAGE_KEY = "todoList";
+const STORAGE_KEY = "flowdash-todos";
 const saveTodos = (list) => localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
 
 const resetBtn = document.querySelector(".reset-btn");
