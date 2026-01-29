@@ -3,7 +3,7 @@ function generateId() {
 }
 
 // Storageƒ
-const STORAGE_KEY = "flowdash-todoList";
+const STORAGE_KEY = "flowdash-todos";
 
 // 데이터 꺼내오는 부분
 function loadTodos() {
