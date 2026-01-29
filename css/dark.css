@@ -1,0 +1,319 @@
+:root {
+  --bg: url("../assets/img/4.jpeg");
+  --bg-attachment: fixed;
+  --panel: rgba(255, 255, 255, 0.2);
+  --panel2: #ffffff95;
+  --text: #121216;
+  --muted: #6a6a6a;
+  --muted2: #767676;
+
+  --shadow: 0px 3px 6px rgba(174, 174, 174, 0.536);
+  --shadow2: 0px 3px 6px rgba(174, 174, 174, 0.536);
+  --primary: #4e56ed;
+  --focus: rgba(99, 102, 241, 0.22);
+}
+body.dark .filter-dropdown .dropdown-menu {
+  background: rgba(12, 14, 32, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  backdrop-filter: none;
+}
+body.dark .dropdown-item {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+body.dark .dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.filter-dropdown {
+  position: relative;
+  z-index: 200;
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 9999;
+}
+
+.controls,
+.controls-wrap,
+.filters {
+  position: relative;
+  z-index: 150;
+}
+
+/* 다크 모드 */
+body.dark {
+  background: #050612;
+  position: relative;
+  overflow-x: hidden;
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.65);
+
+  --panel: rgba(10, 12, 28, 0.55);
+  --panel2: rgba(12, 14, 32, 0.65);
+
+  --border: rgba(255, 255, 255, 0.14);
+
+  --shadow: 0px 6px 16px rgba(0, 0, 0, 0.55);
+  --shadow2: 0px 10px 30px rgba(0, 0, 0, 0.55);
+
+  --focus: rgba(99, 102, 241, 0.35);
+}
+body.dark .select-wrap select {
+  color: var(--text);
+  background-color: var(--panel);
+}
+body.dark .task-card {
+  background: rgba(14, 18, 48, 0.75);
+  color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+body.dark .main-content .header {
+  background: none;
+}
+body.dark::before {
+  content: "";
+  position: fixed;
+  inset: -25%;
+  z-index: -2;
+  background: radial-gradient(55% 45% at 18% 22%, rgba(130, 90, 255, 0.32), transparent 62%),
+    radial-gradient(55% 45% at 82% 28%, rgba(0, 140, 255, 0.26), transparent 62%),
+    radial-gradient(55% 45% at 35% 82%, rgba(170, 80, 255, 0.2), transparent 65%),
+    radial-gradient(45% 40% at 75% 78%, rgba(0, 210, 255, 0.12), transparent 70%),
+    linear-gradient(180deg, #050612 0%, #070a1f 50%, #040410 100%);
+  filter: blur(22px) saturate(125%);
+  opacity: 0.95;
+  pointer-events: none;
+}
+body.dark .stats-container .card,
+body.dark .controls,
+body.dark .board .column,
+body.dark .header {
+  background: rgba(12, 14, 32, 0.48);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+body.dark .header-actions img {
+  filter: invert(1) brightness(1.1);
+}
+
+body.dark #themeToggle img {
+  filter: none;
+  transition: all 0.3s ease-in-out;
+}
+
+body.dark #themeToggle:hover img {
+  transform: scale(1.1) rotate(120deg);
+}
+/* 전체 배경/텍스트 */
+body {
+  background: var(--bg);
+  color: var(--text);
+  background-attachment: var(--bg-attachment);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* 헤더 */
+.header {
+  background: none;
+}
+
+.greeting h1 {
+  color: var(--text);
+}
+
+.date {
+  color: var(--muted2);
+}
+
+/* 카드/컨트롤 */
+.card,
+.controls,
+.column {
+  background: var(--panel);
+  box-shadow: var(--shadow);
+
+  /* 추가 */
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* 카드 제목 */
+.card h3 {
+  color: var(--muted);
+}
+
+/* 컨트롤 input/버튼 */
+.search-box input,
+.filter-btn,
+.form-input,
+.form-textarea {
+  background: var(--panel2);
+  color: var(--text);
+  border-color: #b0b0b0;
+}
+
+.filters .dropdown-menu {
+  background-color: rgba(255, 255, 255, 0.941);
+}
+
+.select-wrap select {
+  cursor: default;
+}
+
+.bar-wrap {
+  border: none;
+  background: var(--panel2);
+  color: var(--text);
+}
+
+.reset-wrap {
+  border: none;
+  background: none;
+}
+
+/* placeholder */
+.search-box input::placeholder,
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--muted2);
+}
+
+/* 보드 헤더 글자 */
+.column-header {
+  color: var(--muted2);
+}
+
+/* “없음” 문구 */
+.to-do-msg,
+.ing-msg,
+.finish-msg {
+  color: var(--muted2);
+}
+
+/* + 새 할 일 버튼 */
+.add-btn {
+  background-color: var(--primary);
+  box-shadow: var(--shadow);
+}
+
+/* 정렬바 */
+.sort-bar {
+  color: var(--muted2);
+}
+
+.reset-wrap {
+  border: none;
+  box-shadow: none;
+}
+
+/* 포커스 */
+.search-box input:focus,
+.filter-btn:focus,
+.add-btn:focus {
+  outline: none;
+  box-shadow: 1px 2px 5px -1px rgba(43, 46, 255, 0.652);
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-0.8px);
+}
+
+.form-input:focus:focus,
+.form-textarea:focus,
+.select-wrap select:focus {
+  outline: none;
+  box-shadow: 0px 3px 6px rgba(119, 119, 119, 0.15);
+}
+
+.task-card {
+  background-color: rgba(255, 255, 255, 0.389);
+}
+
+/* ===== 모달 다크 ===== */
+body.dark .modal-card {
+  background-color: var(--panel);
+  color: var(--text);
+  border-color: var(--border);
+  box-shadow: 0 0 2px 0.5px #f5b23d;
+}
+
+body.dark .card {
+  box-shadow: 0px 3px 6px rgba(167, 167, 167, 0.15);
+}
+
+body.dark .modal-card-title,
+body.dark .form-label,
+body.dark .bottom-actions-left > span,
+body.dark .bottom-actions-right > span {
+  color: var(--text);
+}
+
+body.dark .arrow {
+  color: var(--muted2);
+}
+
+/* 모달 버튼 호버 다크 대응 */
+body.dark .btn-cancel:hover {
+  border-color: rgba(148, 163, 184, 0.35);
+}
+
+body.dark .btn-submit {
+  background: rgba(43, 46, 255, 0.652);
+}
+
+body.dark .btn-submit:hover {
+  border-color: rgba(129, 140, 248, 0.65);
+}
+
+body.dark .bottom-actions-high,
+body.dark .bottom-actions-medium,
+body.dark .bottom-actions-low {
+  color: #ffffff;
+}
+
+body.dark .column:nth-child(1) .task-list::-webkit-scrollbar,
+body.dark .column:nth-child(3) .task-list::-webkit-scrollbar,
+body.dark .column:nth-child(2) .task-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+body.dark .column:nth-child(1) .task-list::-webkit-scrollbar-thumb,
+body.dark .column:nth-child(3) .task-list::-webkit-scrollbar-thumb,
+body.dark .column:nth-child(2) .task-list::-webkit-scrollbar-thumb {
+  background-color: #534f4f6f;
+  border-radius: 30px;
+}
+
+body.dark .board .column:nth-child(1):hover {
+  box-shadow: 0 0 0 0.1px #f22a2a, 0 0 7px #ee5d5d;
+}
+
+/* 진행 중 카드 */
+body.dark .board .column:nth-child(2):hover {
+  box-shadow: 0 0 0 0.1px #f59e0b, 0 0 7px #f5b23d;
+}
+
+/* 완료 카드 */
+body.dark .board .column:nth-child(3):hover {
+  box-shadow: 0 0 0 0.1px #22c55e, 0 0 7px #57ec8e;
+}
+
+body.dark .profile-img-wrap svg {
+  fill: rgb(230, 230, 230);
+}
+
+@media screen and (max-width: 420px) {
+  body.dark .profile-img-wrap svg {
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    right: 7px;
+    bottom: 7px;
+  }
+}

@@ -1,0 +1,32 @@
+.task-card-deletes {
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+  opacity: 0.5;
+  filter: brightness(0) saturate(100%) invert(22%) sepia(95%) saturate(5700%) hue-rotate(355deg)
+    brightness(95%) contrast(105%);
+}
+
+.task-card-delete {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+/* 삭제할 card 속도 늦춰서 볼 수 있게 하기  */
+.task-card {
+  transition: opacity 0.5s ease, transform 0.5s ease, margin 0.5s ease;
+}
+.task-card.is-deleting {
+  opacity: 0;
+  transition-delay: 0.15s;
+  margin-bottom: -60px;
+  transform: translateX(40px);
+}
+
+/* 다크모드 삭제버튼 컬러 */
+body.dark .task-card-delete {
+  filter: brightness(0) saturate(100%) invert(22%) sepia(95%) saturate(5700%) hue-rotate(355deg)
+    brightness(95%) contrast(105%);
+}

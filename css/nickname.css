@@ -1,0 +1,52 @@
+.nickname-container {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+/* 기본 닉네임 input  */
+.nickname-input {
+  display: none;
+  padding: 0 10px;
+  outline: none;
+  width: 220px;
+  height: 45px;
+  background-color: var(--modal-bg);
+  color: var(--modal-text);
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.nickname-container .nickname-text,
+.nickname-container .nickname-edit-input,
+.nickname-container .suffix {
+  position: relative;
+  font-size: 45px;
+}
+
+.nickname-container .suffix {
+  transform: translateY(-1px);
+}
+
+.nickname-text {
+  padding: 2px 8px;
+  color: #4e56ed;
+  font-weight: 700;
+  padding: 2px 0 2px 2px;
+  border-radius: 4px;
+  line-height: 1.4;
+  cursor: pointer;
+  position: relative;
+}
+
+/* 님 글자 */
+.suffix {
+  position: relative;
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+/* 닉네임 수정때 text 수정 */
+.nickname-text:hover {
+  background-color: rgba(78, 86, 237, 0.1);
+}

@@ -1,237 +1,319 @@
+/* 모달 오버레이 */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  z-index: 9999;
+}
+
+.modal-overlay.is-open {
+  display: flex;
+}
+
+.modal-overlay.is-open .modal-card {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* 모달 카드 레이아웃 */
 .modal-card {
-   margin: 20px auto;
-   padding: 30px;
-   width: 90%;
-   /* 찾아 보니까 모바일 반응형 할때 생각해서 
-  미리 여백 확보하는게 좋다해서 90% 잡음*/
-   max-width: 740psx;
-   min-height: auto;
-   border: 2px solid #4ce700;
-   border-radius: 20px;
-   background-color: #fff;
-   font-size: 32px;
-   font-weight: 400;
-   color: #000;
-   display: flex;
-   flex-direction: column;
-   box-sizing: border-box;
+  position: relative;
+  margin: 20px auto;
+  padding: 30px;
+  width: 600px;
+  min-height: auto;
+  max-height: 100vh;
+  box-sizing: border-box;
+
+  background-color: rgba(255, 255, 255, 0.859);
+  box-shadow: 0 0 4px 2px #f5b23d;
+  border-radius: 20px;
+
+  font-size: 35px;
+  font-weight: 400;
+  color: #000;
+
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 
-/* 상단 */
 .modal-card-header {
-   margin-bottom: 30px;
-   padding-bottom: 10px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
 }
 
-/* 카드 메인(form) 입력 */
-.modal-card-from {
-   display: flex;
-   flex-direction: column;
-   /* margin-bottom: 20px; */
-   gap: 24px;
+/* 입력 폼 */
+.modal-card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-/* 제목-내용 */
 .form-item {
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
-   font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 19px;
 }
 
 .form-input {
-   padding: 13px;
-   width: 100%;
-   border: 1px solid #000;
-   border-radius: 10px;
-   font-size: 15px;
-   box-sizing: border-box;
+  padding: 13px;
+  width: 100%;
+  box-shadow: 0px 3px 6px rgba(122, 122, 122, 0.25);
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
 }
 
-/* 내용 */
 .form-textarea {
-   margin-bottom: 15px;
-   padding: 13px;
-   width: 100%;
-   height: 130px;
-   border: 1px solid #000;
-   border-radius: 10px;
-   font-size: 15px;
-   box-sizing: border-box;
+  margin-bottom: 15px;
+  padding: 13px;
+  width: 100%;
+  height: 130px;
+  box-shadow: 0px 3px 6px rgba(122, 122, 122, 0.25);
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
 }
 
-/* 하단 우선순위 - 상태 */
+/* 하단 우선순위 / 상태 구역 */
 .bottom-priority-situation {
-   display: flex;
-   flex-wrap: wrap;
-   gap: 30px;
-   margin-top: 10px;
-   font-size: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 10px;
+  font-size: 19px;
 }
 
-/* 왼쪽 우선순위- 상태 사이 공간 똑같이 flex */
 .bottom-actions-left,
 .bottom-actions-right {
-   flex: 1;
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
+.bottom-actions-left {
+  gap: 20px;
+}
+.bottom-actions-right {
+  gap: 15px;
+}
+
+/* 우선순위 버튼 */
 .bottom-actions-group {
-   display: flex;
-   gap: 10px;
+  display: flex;
+  gap: 13px;
 }
 
-/* --- 여기 부터가 클릭시 네온 부분 --- */
+.bottom-actions-group label {
+  background-color: transparent;
+  color: #000;
+}
 
-/* 우선순위 버튼3개 */
 .bottom-actions-high,
 .bottom-actions-medium,
 .bottom-actions-low {
-   padding: 8px 10px;
-   border-radius: 20px;
-   cursor: pointer;
-   font-size: 20px;
-   transition: all 0.3s ease;
-   border: none;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+  display: flex;
+  padding: 8px 12px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
 }
 
-/* 클릭 전 기존 배경 컬러 */
+/* 높음 */
 .bottom-actions-high {
-   background-color: #fc6969;
+  background-color: #f22a2a;
 }
+
+.bottom-actions-group #priority-high:checked + .bottom-actions-high,
+.bottom-actions-group #editPriorityHigh:checked + .bottom-actions-high {
+  background-color: #f22a2a;
+  color: #ffffff;
+  transform: scale(1.01);
+  box-shadow: 0 0 0 2px #f22a2a, 0 0 8px #ee5d5d;
+}
+
+/* 중간 */
 .bottom-actions-medium {
-   background-color: #e9e997;
+  background-color: #ffa01b;
 }
+
+.bottom-actions-group #priority-medium:checked + .bottom-actions-medium,
+.bottom-actions-group #editPriorityMedium:checked + .bottom-actions-medium {
+  background-color: #ffa01b;
+  color: #ffffff;
+  transform: scale(1.01);
+  box-shadow: 0 0 0 2px #f59e0b, 0 0 8px #ecab3b;
+}
+
+/* 낮음 */
 .bottom-actions-low {
-   background-color: #91c47b;
+  background-color: #0fc521;
 }
 
-/* 클릭 될때 강조하고 네온넣는 부분 */
-.bottom-actions-group label:has(input:checked) {
-   font-weight: bold;
-   transform: scale(1.03);
+.bottom-actions-group #priority-low:checked + .bottom-actions-low,
+.bottom-actions-group #editPriorityLow:checked + .bottom-actions-low {
+  background-color: #0fc521;
+  color: #ffffff;
+  transform: scale(1.01);
+  box-shadow: 0 0 0 2px #22c55e, 0 0 8px #57ec8e;
 }
 
-/* 높음 클릭 */
-.bottom-actions-high:has(input:checked) {
-   box-shadow:
-      0 0 0 2px #ff4d4d,
-      0 0 12px #fc6969;
-}
-
-/* 중간 클릭 */
-.bottom-actions-medium:has(input:checked) {
-   box-shadow:
-      0 0 0 2px #ffff00,
-      0 0 12px #e9e997;
-}
-
-/* 낮음 체크 */
-.bottom-actions-low:has(input:checked) {
-   box-shadow:
-      0 0 0 2px #00ff00,
-      0 0 12px #91c47b;
-}
-
-/* --- 이거는 js 할때 이거 넣으면 클릭 되고 
-다시 클릭하면 애니메이션 넣은거 취소 되는 코드
-
-<script>
-  const priorityButtons = document.querySelectorAll('.bottom-actions-group input[type="radio"]');
-
-  priorityButtons.forEach((radio) => {
-    radio.addEventListener('click', () => {
-      // 클릭 다시했을때 부분
-      if (radio.dataset.wasChecked === 'true') {
-        radio.checked = false;        
-        radio.dataset.wasChecked = 'false';
-      } else {
-        // 기존 체크 기록을 모두 초기화
-        priorityButtons.forEach((r) => {
-          r.dataset.wasChecked = 'false';
-        });
-
-        radio.dataset.wasChecked = 'true'; // 
-      }
-    });
-  });
-</script>*/
-
-/* ----------------------- */
-
-/* 오른쪽 상태 */
+/* 상태 선택 박스 */
 .select-wrap {
-   position: relative;
+  position: relative;
 }
 
 .select-wrap select {
-   padding: 12px;
-   width: 100%;
-   border: 1px solid #000;
-   border-radius: 12px;
-   font-size: 20px;
-   appearance: none;
-   background-color: #fff;
-   cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  border-radius: 12px;
+  font-size: 20px;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
-/* 화살표 / 이거는 가상요소 넣을 생각이면 지우면 됨 */
 .arrow {
-   position: absolute;
-   right: 15px;
-   top: 50%;
-   transform: translateY(-50%);
-   pointer-events: none;
-   cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  cursor: pointer;
 }
 
-/* 취소-완료 버튼 */
+/* 취소 / 완료 버튼 */
 .form-actions {
-   display: flex;
-   justify-content: flex-end;
-   gap: 10px;
-}
-/* 취소-완료 동일 사이즈 */
-.btn-cencel,
-.btn-submit {
-   margin-top: 15px;
-   padding: 8px 15px;
-   border: 1px solid #000;
-   border-radius: 10px;
-   font-size: 20px;
-   cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  gap: 13px;
 }
 
-/* 취소-완료 다른 컬러 */
-/* 취소 */
-.btn-cencel {
-   background-color: #fff;
-}
-/* 완료 */
-.btn-submit {
-   background-color: rgba(11, 11, 11, 0.5);
-}
-
-/* 취소 버튼 호버 */
-.btn-cencel:hover {
-   background-color: #f1f1f1;
-   border-color: #555;
+.modal-card .btn-cancel,
+.modal-card .btn-submit {
+  margin-top: 15px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-/* 완료 버튼 호버 */
-.btn-submit:hover {
-   background-color: rgba(11, 11, 11, 0.7);
-   color: #fff;
+.modal-card .btn-cancel {
+  border: 1px solid transparent;
 }
 
-/* 버튼 클릭 시 */
-.btn-cencel:active,
-.btn-submit:active {
-   transform: scale(0.95);
-   transition: transform 0.2s;
+.modal-card .btn-cancel:hover {
+  color: #f22a2a;
+  border-color: #f22a2a;
+}
+
+.modal-card .btn-submit {
+  border: 1px solid #afaaaaa0;
+  background-color: #4e56ed;
+  color: #fff;
+}
+.modal-card .btn-submit:hover {
+  border: 1px solid #4e56ed;
+  color: #ffffff;
+}
+
+/* 다크 모드 버튼 */
+body.dark .modal-card .btn-cancel {
+  background-color: var(--panel2);
+  color: var(--text);
+}
+body.dark .modal-card .btn-cancel:hover {
+  border-color: #4dabff;
+  color: #f22a2a;
+}
+
+body.dark .modal-card .btn-submit {
+  background-color: #4e56ed;
+  border: none;
+  color: var(--text);
+}
+
+body.dark .modal-card .btn-submit:hover {
+  background-color: #19191d;
+  color: #ffffff;
+}
+
+/* 태스크 카드 */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 17px;
+  padding: 16px;
+}
+
+.task-card {
+  box-shadow: 0px 2px 4px rgba(119, 119, 119, 0.15);
+  border-radius: 14px;
+  padding: 14px 14px 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-card:not(.is-deleting):hover {
+  transform: scale(1.02);
+}
+
+.task-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  word-break: break-word;
+}
+
+.task-card__content {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+
+.task-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #777;
+}
+
+/* 보드 컬럼 호버 효과 */
+.board .column:nth-child(1):hover {
+  transition: all 0.4s ease;
+  transform: scale(1.01);
+  box-shadow: 0 0 0 0.05px #f22a2a, 0 0 4px #ee5d5d;
+}
+
+.board .column:nth-child(2):hover {
+  transition: all 0.4s ease;
+  transform: scale(1.01);
+  box-shadow: 0 0 0 0.05px #f59e0b, 0 0 4px #f5b23d;
+}
+
+.board .column:nth-child(3):hover {
+  transition: all 0.4s ease;
+  transform: scale(1.01);
+  box-shadow: 0 0 0 0.05px #22c55e, 0 0 4px #57ec8e;
 }

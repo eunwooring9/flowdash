@@ -1,254 +1,530 @@
 /* 태블릿 기준 - 1279px */
 @media screen and (max-width: 1279px) {
-   * {
-      transition: all 0.3s ease;
-   }
+  /* 인사 */
+  .greeting h1 {
+    font-size: 45px;
+  }
 
-   /* ----- 사이드 바 ----- */
-   .sidebar {
-      width: 100px;
-   }
+  /* ----- 통계 카드 2열로 변경 ----- */
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
 
-   /* 햄버거, Project, Schedule */
-   .menu-top img {
-      width: 35px;
-      height: 35px;
-   }
+  .card {
+    height: 140px;
+    padding: 20px 0px 44px 30px;
+  }
 
-   .menu-item.hamburger > img {
-      width: 27px;
-      height: 27px;
-   }
+  .stats-container .card:last-child {
+    grid-column: span 2;
+  }
 
-   .menu-bottom img {
-      width: 35px;
-      height: 35px;
-   }
+  .column {
+    margin-bottom: 20px;
+  }
 
-   /* 인사 */
-   .greeting h1 {
-      font-size: 30px;
-      font-weight: 700;
-   }
+  /* ----- 컨트롤러 ----- */
+  .controls {
+    flex-wrap: wrap;
+  }
+  /* 검색 창 */
+  .search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
 
-   /* 벨 / 테마 */
-   .header-actions {
-      padding-right: 35px;
-   }
+  /* 추가 버튼 / + 새 할 일... */
+  .add-btn {
+    margin: auto;
+  }
 
-   /* ----- Total Takes / To Do / In Progress / Done / Achievement ----- */
-   .stats-container {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-   }
+  .profile-container {
+    padding: 15px 10px;
+    flex-direction: column;
+    align-items: center;
+  }
 
-   .board {
-      grid-template-columns: 1fr;
-      height: auto;
-   }
+  /* ----- 현재 선택 - 정렬 ----- */
+  .sort-bar {
+    gap: 20px;
+    justify-content: center;
+  }
 
-   .column {
-      margin-bottom: 20px;
-   }
+  .board {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    height: auto;
+  }
 
-   /* ----- 컨트롤러 ----- */
-   .controls {
-      flex-wrap: wrap;
-   }
+  .board .column:last-child {
+    grid-column: span 2;
+  }
 
-   /* 검색 창 */
-   .search-box {
-      display: flex;
-   }
+  /* 중간 살짝만 올라가게 */
+  div .nickname-container .nickname-text,
+  div .nickname-container .nickname-edit-input {
+    transform: translateY(-2.5px);
+  }
 
-   .search-box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex: 1;
-   }
+  .nickname-container .suffix {
+    transform: translateY(-3px);
+  }
 
-   /* 필터 */
-   .filters {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex: 1;
-      margin-left: auto;
-   }
-
-   /* 추가 버튼 / + 새 할 일... */
-   .add-btn {
-      margin: auto;
-   }
-
-   /* ----- 현재 선택 - 정렬 ----- */
-   .sort-bar {
-      gap: 20px;
-   }
-
-   /* ----- 진행 상황 ----- */
-   .board {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-   }
+  .filters {
+    flex-wrap: wrap;
+  }
+  .date {
+    font-size: 20px;
+  }
 }
 
 /* 컨트롤러 중간 조정 */
 @media screen and (max-width: 1123px) {
-   .controls {
-      display: flex;
-      gap: 25px;
-      transition: all 0.3s ease;
-   }
+  .controls {
+    display: flex;
+    gap: 20px;
+  }
 
-   .reset-btn {
-      font-size: 14px;
-   }
+  .controls input {
+    min-width: 160px;
+  }
 
-   .task-list {
-      min-height: 300px;
-      transition: all 0.3s ease;
-   }
+  .task-list {
+    min-height: 300px;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .greeting h1 .nickname-container .nickname-text,
+  .greeting h1 .nickname-container .nickname-edit-input,
+  .greeting h1 .nickname-container .suffix {
+    font-size: 35px;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+
+  .greeting h1 {
+    font-size: 35px;
+  }
+
+  .sort-bar {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .profile-container {
+    padding: 20px 20px;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .filter-container {
+    gap: 25px;
+  }
+
+  .column {
+    height: 550px;
+  }
 }
 
 /* ----- 모바일 버전 ----- */
 @media screen and (max-width: 768px) {
-   * {
-      transition: all 0.3s ease;
-   }
+  /* ----- 헤더 ----- */
+  .header {
+    padding: 30px 30px;
+    margin-bottom: 10px;
+  }
 
-   /* ----- 사이드 바 ----- */
-   /* .sidebar {
-      padding: 0;
-      width: auto;
-      height: auto;
-      background: transparent;
-      position: absolute;
-      right: 70px;
-      top: 67px;
-   } */
+  .date {
+    font-size: 20px;
+  }
 
-   /* 햄버거, Project, Schedule */
-   .menu-top {
-      display: flex;
-      width: 100%;
-      justify-content: space-around;
-      align-items: center;
-   }
+  /* 테마 */
+  .header-actions {
+    display: flex;
+    gap: 20px;
+    padding-right: 10px;
+  }
 
-   .menu-item.project,
-   .menu-item.schedule {
-      display: none;
-   }
+  .icon-btn img {
+    width: 33px;
+    height: 33px;
+  }
 
-   /* 톱니바퀴 / 설정 */
-   .menu-bottom {
-      display: none;
-   }
+  /* 중단 ~ 하단 박스 */
+  .content-wrap {
+    padding: 0px 30px 30px 30px;
+  }
 
-   /* ----- 메인부분 ----- */
-   .main-content {
-      padding: 20px;
-   }
+  .card {
+    width: 100%;
+    min-height: 50px;
+  }
 
-   /* ----- 헤더 ----- */
-   .header {
-      justify-content: space-between;
-   }
+  .controls {
+    flex-direction: column;
+    gap: 15px;
+  }
 
-   /* 인사 */
-   .greeting h1 {
-      font-size: 23px;
-      font-weight: 700;
-   }
+  .filter-btn {
+    font-size: 14px;
+    min-width: 120px;
+  }
 
-   /* 알람 / 테마 */
-   .header-actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      padding-right: 10px;
-   }
+  /* 검색 / 필터 / 추가 */
+  .search-box input,
+  .filter-btn,
+  .add-btn {
+    width: 100%;
+    justify-content: center;
+  }
 
-   /* 중단 ~ 하단 박스 */
-   .content-wrap {
-      padding: 0px 10px 30px 10px;
-   }
+  .filters {
+    margin-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
 
-   /* Total Takes / To Do / In Progress / Done / Achievement */
-   .stats-container {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-   }
+  /* ----- 정렬 ----- */
+  .sort-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    height: auto;
+    font-size: 13px;
+  }
 
-   .stats-container .card:last-child {
-      grid-column: span 2;
-   }
+  .bar-wrap {
+    width: auto;
+    min-width: 160px;
+    flex: 1;
+  }
 
-   .card {
-      width: 100%;
-      height: auto;
-      min-height: 120px;
-   }
+  .bar-wrap.reset-wrap {
+    margin-left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
-   .controls {
-      flex-direction: column;
-      gap: 10px;
-   }
+  /* 리셋 버튼 */
+  .reset-btn {
+    font-size: 13px;
+  }
 
-   /* 검색 / 필터 / 추가 */
-   .search-box input,
-   .filter-btn,
-   .add-btn {
-      width: 100%;
-      justify-content: center;
-   }
+  /* 진행 상황 */
+  .column-header {
+    font-size: 20px;
+  }
 
-   .filters {
-      margin-left: 0;
-   }
+  .task-list {
+    min-height: 250px;
+  }
 
-   /* ----- 정렬 ----- */
-   .sort-bar {
-      gap: 10px;
-      font-size: 13px;
-   }
+  .nickname-input {
+    width: 110px;
+  }
 
-   .bar-wrap {
-      width: 100px;
-   }
+  .column {
+    height: 500px;
+    margin-bottom: 5px;
+  }
 
-   /* 리셋 버튼 */
-   .reset-btn {
-      font-size: 13px;
-   }
+  .greeting h1 {
+    font-size: 30px;
+  }
 
-   /* 진행 상황 */
-   .column-header {
-      font-size: 20px;
-   }
+  .greeting h1 .nickname-container .nickname-text,
+  .greeting h1 .nickname-container .nickname-edit-input,
+  .greeting h1 .nickname-container .suffix {
+    font-size: 30px;
+  }
+  .greeting h1 .nickname-container .suffix {
+    transform: translateY(-3px);
+  }
 
-   .task-list {
-      min-height: 250px;
-   }
+  .greeting h1 .nickname-container .nickname-edit-input {
+    width: 110px;
+    font-size: inherit;
+  }
 
-   @media screen and (max-width: 620px) {
-      /* 인사칸 내리기 */
-      .mobile-br {
-         display: block;
-      }
+  .bottom-actions-left {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-      /* 알람 / 테마 */
-      .icon-btn > img {
-         width: 30px;
-         height: 30px;
-      }
+  .bottom-actions-high,
+  .bottom-actions-medium,
+  .bottom-actions-low {
+    width: 100%;
+    min-width: 58px;
+    max-height: 38px;
+  }
 
-      .menu-item.hamburger > img {
-         width: 30px;
-         height: 30px;
-      }
-   }
+  .select-wrap select {
+    min-width: 200px;
+  }
+
+  .profile-img-wrap img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .profile-img-wrap svg {
+    width: 45px;
+    height: 40px;
+    bottom: 12px;
+    right: 5px;
+  }
+
+  .controls-wrap {
+    display: flex;
+    width: 100%;
+  }
+
+  .filter-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .board {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    height: auto;
+  }
+
+  .board .column:last-child {
+    grid-column: span 1;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  /* ----- 헤더 ----- */
+  .content-wrap {
+    padding: 0px 30px 30px 30px;
+  }
+
+  .header {
+    margin-bottom: 5px;
+    padding: 20px 33px;
+  }
+
+  .header-actions span {
+    font-size: 20px;
+  }
+
+  .greeting h1 {
+    font-size: 30px;
+  }
+
+  .date {
+    font-size: 15px;
+  }
+
+  /* 알람 / 테마 */
+  .icon-btn img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+
+  /* ----- 카드 ----- */
+  .card {
+    padding: 25px;
+  }
+
+  .stats-container {
+    margin-bottom: 20px;
+  }
+
+  .total-number {
+    font-size: 35px;
+  }
+
+  .controls {
+    padding: 15px;
+  }
+
+  /* 버튼 높이 조절 */
+  .search-box input {
+    height: 50px;
+  }
+
+  .filters {
+    gap: 15px;
+  }
+
+  .filter-btn {
+    height: 50px;
+  }
+
+  .add-btn {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+  }
+
+  .bar-wrap {
+    min-width: 155px;
+  }
+
+  .bar-wrap.reset-wrap {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .profile-container {
+    width: 100%;
+  }
+
+  .profile-img-wrap img {
+    max-width: 200px;
+  }
+
+  .board {
+    gap: 10px;
+  }
+
+  .task-card__meta {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: flex-end;
+  }
+
+  .greeting h1 .nickname-container .nickname-text,
+  .greeting h1 .nickname-container .nickname-edit-input,
+  .greeting h1 .nickname-container .suffix {
+    font-size: 31px;
+    transform: translateY(-1px);
+  }
+
+  .greeting h1 .nickname-container .suffix {
+    transform: translateY(-2px);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .header-actions span {
+    font-size: 15px;
+  }
+
+  /* 인사칸 내리기 */
+  .mobile-br {
+    display: block;
+  }
+
+  .card {
+    height: 120px;
+    padding: 17px 15px 17px 17px;
+  }
+
+  .card h3 {
+    font-size: 13px;
+  }
+
+  .total-number {
+    font-size: 30px;
+  }
+
+  /* 닉네임 세트: 글자 크기 30px 고정 및 위치 수정 */
+  .greeting h1 .nickname-container .nickname-text,
+  .greeting h1 .nickname-container .nickname-edit-input,
+  .greeting h1 .nickname-container .suffix {
+    font-size: 30px;
+    transform: translateY(-1px);
+  }
+
+  .greeting h1 .nickname-container .nickname-edit-input {
+    width: 90px;
+  }
+
+  .modal-card {
+    margin: 10px 10px;
+  }
+
+  .bottom-actions-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bottom-actions-high,
+  .bottom-actions-medium,
+  .bottom-actions-low {
+    width: 40%;
+    min-width: 58px;
+    max-height: 38px;
+  }
+
+  .select-wrap select {
+    min-width: 160px;
+  }
+
+  .board {
+    gap: 10px;
+  }
+
+  .profile-img-wrap img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .profile-img-wrap svg {
+    min-width: 20px;
+    min-height: 20px;
+    width: 35px;
+    height: 30px;
+    padding: 5px;
+    bottom: 7px;
+    right: 7px;
+  }
+
+  /* 버튼 높이 조절 */
+  .search-box input {
+    height: 45px;
+  }
+
+  .filters {
+    gap: 12px;
+  }
+
+  .filter-btn {
+    height: 45px;
+  }
+
+  .add-btn {
+    height: 45px;
+    font-size: 15px;
+  }
+
+  .sort-bar {
+    gap: 10px;
+  }
+
+  .controls {
+    padding: 15px;
+  }
+
+  .column-header {
+    font-size: 18px;
+  }
 }
