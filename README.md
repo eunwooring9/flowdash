@@ -6,7 +6,7 @@
 </p>
 
 
-## _[ 이스트 캠프 ] **오르미 프런트엔드 11기** - 2차 팀 프로젝트 설명_
+## _[ 이스트 캠프 ] **오르미 프런트엔드 11기** - 2차 팀 프로젝트_
 
 ### 작업 제시안
 
@@ -17,49 +17,47 @@
 
 ### 프로젝트 진행 순서
 
-
 &nbsp;&nbsp;&nbsp;&nbsp;⇒&nbsp;&nbsp; 모든 요구사항을 분석하여 **구현 난이도와 중요도**에 따라 분류하였습니다.
 
 | 구분 | 핵심 요구사항 | 가산 및 디테일 |
 |:--:|:--:|:--:|
-| 📄<br>![](https://img.shields.io/badge/데이터%20로직-EFF3FA?style=flat-square) | &nbsp;&nbsp;&nbsp;Todo CRUD&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;3단계 상태 관리&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;LocalStorage 데이터 저장&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;기간 ⇨ 정렬 ⇨ 검색 필터&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;completedAt 기록 및 초기화&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;데이터 초기화 확인 절차&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;빈 데이터 전용 UI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| 📄<br>![](https://img.shields.io/badge/데이터%20로직-EFF3FA?style=flat-square) | &nbsp;&nbsp;&nbsp;Todo CRUD&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;3단계 상태 관리&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;LocalStorage 데이터 저장&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;기간 ⇒ 정렬 ⇒ 검색 필터&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;completedAt 기록 및 초기화&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;데이터 초기화 확인 절차&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;빈 데이터 전용 UI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | 💿<br>![](https://img.shields.io/badge/테마%20%26%20UX-F3EEF8?style=flat-square) | &nbsp;&nbsp;&nbsp;시간대별 인사말 노출&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;닉네임 인라인 수정 / 자동 저장&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;다크 / 라이트 모드 유지&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;로컬 이미지 프로필 변경&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;상태 변경 및 삭제 인터랙션&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;닉네임 빈 값 입력 예외 처리&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | ⌨️<br>![](https://img.shields.io/badge/대시보드-F1F5F2?style=flat-square) | &nbsp;&nbsp;&nbsp;상태별 집계&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;실시간 달성률&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;전체 통계 유지&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;데이터 부재 시 0% 처리&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예외 문구(-) 노출&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | 🖥️<br>![](https://img.shields.io/badge/레이아웃-F4F1EE?style=flat-square) | &nbsp;&nbsp;&nbsp;3단계 반응형 적용&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;Desktop 3열 / Tablet 2열 / Mobile 1열&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;자체 디자인 및 UI 커스터마이징&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;우선순위 단계별 컬러 시각화&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 
 ### 작업 기간
 
-- 2026.01.23 ~ 2026.01.30
+&nbsp;&nbsp;&nbsp;&nbsp;⇒&nbsp;&nbsp; 2026.01.23 ~ 2026.01.30
 
 <br>
 <br>
 
 <!-- 여기부터 팀  -->
 
-## _ 💻&nbsp;팀 소개_
+## _💻&nbsp;팀 소개_
 
 <span style="color:#8A6FCF; font-weight:600;">
-  &nbsp;팀 이름 : 401호 (01즈)
+  &nbsp;&nbsp;&nbsp;&nbsp;⇒&nbsp;&nbsp; 팀 이름 : 401호 (01즈)
 </span>
 
-
-
 <br>
+<br> 
 
-- **각 역할**
+&nbsp;&nbsp;&nbsp;&nbsp;⇒&nbsp;&nbsp; 각 역할
 
 |        이름         | 공식 역할 | 세부 역할                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | GitHub                                                                                                                          |
 | :-----------------: | :-------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ |
 | 👩🏻‍💻&nbsp; **최은우** | **팀장**  | <img src="https://img.shields.io/badge/Design%20Lead-E0E0E0?style=flat-square"> <img src="https://img.shields.io/badge/Speaker-F5F5F5?style=flat-square"> <img src="https://img.shields.io/badge/Git-F3E5AB?style=flat-square"> <br> <img src="https://img.shields.io/badge/기획-FFE7E7?style=flat-square"> <img src="https://img.shields.io/badge/UI%20개발-D6E4FF?style=flat-square"> <br> <img src="https://img.shields.io/badge/Project%20Manager-E4F2E1?style=flat-square">   | [![eunwooring9](https://img.shields.io/badge/eunwooring9-181717?style=flat-square&logo=github)](https://github.com/eunwooring9) |
-| 👨🏻‍💻&nbsp; **박상우** | **팀원**  | <img src="https://img.shields.io/badge/디자인-EBDCB2?style=flat-square"> <img src="https://img.shields.io/badge/ListView-D9C1A3?style=flat-square"> <br> <img src="https://img.shields.io/badge/SettingView-E8D9CD?style=flat-square"> <img src="https://img.shields.io/badge/데이터구조%20설계-EAD7D7?style=flat-square"> <br> <img src="https://img.shields.io/badge/기획-FFE7E7?style=flat-square"> <img src="https://img.shields.io/badge/UI%20개발-D6E4FF?style=flat-square"> | [![sangwoo-id](https://img.shields.io/badge/sangwoo--id-181717?style=flat-square&logo=github)](https://github.com/박상우아이디) |
-| 🧑🏻‍💻&nbsp; **이해랑** | **팀원**  | <img src="https://img.shields.io/badge/디자인-EBDCB2?style=flat-square"> <img src="https://img.shields.io/badge/Readme-D1D1FF?style=flat-square"> <img src="https://img.shields.io/badge/기획-FFE7E7?style=flat-square"> <br> <img src="https://img.shields.io/badge/UI%20개발-D6E4FF?style=flat-square"> <img src="https://img.shields.io/badge/Speaker-F5F5F5?style=flat-square">                                                                                                | [![haerang-id](https://img.shields.io/badge/haerang--id-181717?style=flat-square&logo=github)](https://github.com/이해랑아이디) |
+| 👨🏻‍💻&nbsp; **박상우** | **팀원**  | <img src="https://img.shields.io/badge/디자인-EBDCB2?style=flat-square"> <img src="https://img.shields.io/badge/ListView-D9C1A3?style=flat-square"> <br> <img src="https://img.shields.io/badge/SettingView-E8D9CD?style=flat-square"> <img src="https://img.shields.io/badge/데이터구조%20설계-EAD7D7?style=flat-square"> <br> <img src="https://img.shields.io/badge/기획-FFE7E7?style=flat-square"> <img src="https://img.shields.io/badge/UI%20개발-D6E4FF?style=flat-square"> | [![sangwoo-id](https://img.shields.io/badge/sangwoo--id-181717?style=flat-square&logo=github)](https://github.com/swachieve-01) |
+| 🧑🏻‍💻&nbsp; **이해랑** | **팀원**  | <img src="https://img.shields.io/badge/디자인-EBDCB2?style=flat-square"> <img src="https://img.shields.io/badge/Readme-D1D1FF?style=flat-square"> <img src="https://img.shields.io/badge/기획-FFE7E7?style=flat-square"> <br> <img src="https://img.shields.io/badge/UI%20개발-D6E4FF?style=flat-square"> <img src="https://img.shields.io/badge/Speaker-F5F5F5?style=flat-square">                                                                                                | [![haerang-id](https://img.shields.io/badge/haerang--id-181717?style=flat-square&logo=github)](https://github.com/h7-r) |
 
 <br>
 <br>
 
 ## _기획한 웹 페이지 소개_
 
-- **캘린더처럼 한눈에 상태를 확인할 수 있도록 구성하고, 어렵지 않은 구조와 간단한 수정 방식으로 쉽게 사용할 수 있는 태스크 관리 화면을 기획하였습니다.**
+**&nbsp;&nbsp;&nbsp;&nbsp;⇒&nbsp;&nbsp; 캘린더처럼 한눈에 상태를 확인할 수 있도록 구성하고, 어렵지 않은 구조와 간단한 수정 방식으로 쉽게 사용할 수 있는 태스크 관리 화면을 기획하였습니다.**
 
 ```txt
 ① 프로젝트 시작 단계에서 기능 구현에 앞서 기본 제공된 디자인을 
@@ -91,7 +89,7 @@
 <br>
 <br>
 
-## _✨프로젝트 구조_
+## _✨&nbsp;프로젝트 구조_
 
 ```txt
 flowdash/
@@ -270,7 +268,7 @@ flowdash/
 <br>
 <br>
 
-## _📝기술적 문제와 해결 과정(Trouble Shooting)_
+## _📝&nbsp;기술적 문제와 해결 과정(Trouble Shooting)_
 
 ### 기존 구현 구조에서 기능 추가 시 발생한 문제
 
