@@ -2,7 +2,7 @@
 <br>
 
 <p align="right">
-  <img src="https://readme-typing-svg.demolab.com/?lines=Welcome%20to%20FlowDash&width=550&height=80&pause=400&duration=4000&color=9AB3C5&size=36&center=false&font=Montserrat&weight=700" />
+  <img src="https://readme-typing-svg.demolab.com/?lines=Welcome%20to%20FlowDash&width=600&height=80&pause=400&duration=4000&color=9AB3C5&size=36&center=false&font=Montserrat&weight=700" />
 </p>
 
 ## _이스트 2차 팀 프로젝트 설명_
