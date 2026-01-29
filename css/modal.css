@@ -143,9 +143,7 @@
   background-color: #f22a2a;
   color: #ffffff;
   transform: scale(1.01);
-  box-shadow:
-    0 0 0 2px #f22a2a,
-    0 0 8px #ee5d5d;
+  box-shadow: 0 0 0 2px #f22a2a, 0 0 8px #ee5d5d;
 }
 
 /* 중간 */
@@ -158,9 +156,7 @@
   background-color: #ffa01b;
   color: #ffffff;
   transform: scale(1.01);
-  box-shadow:
-    0 0 0 2px #f59e0b,
-    0 0 8px #ecab3b;
+  box-shadow: 0 0 0 2px #f59e0b, 0 0 8px #ecab3b;
 }
 
 /* 낮음 */
@@ -173,9 +169,7 @@
   background-color: #0fc521;
   color: #ffffff;
   transform: scale(1.01);
-  box-shadow:
-    0 0 0 2px #22c55e,
-    0 0 8px #57ec8e;
+  box-shadow: 0 0 0 2px #22c55e, 0 0 8px #57ec8e;
 }
 
 /* 상태 선택 박스 */
@@ -243,7 +237,7 @@ body.dark .modal-card .btn-cancel {
   background-color: var(--panel2);
   color: var(--text);
 }
-body .dark .modal-card .btn-cancel:hover {
+body.dark .modal-card .btn-cancel:hover {
   border-color: #4dabff;
   color: #f22a2a;
 }
@@ -309,23 +303,17 @@ body.dark .modal-card .btn-submit:hover {
 .board .column:nth-child(1):hover {
   transition: all 0.4s ease;
   transform: scale(1.01);
-  box-shadow:
-    0 0 0 0.05px #f22a2a,
-    0 0 4px #ee5d5d;
+  box-shadow: 0 0 0 0.05px #f22a2a, 0 0 4px #ee5d5d;
 }
 
 .board .column:nth-child(2):hover {
   transition: all 0.4s ease;
   transform: scale(1.01);
-  box-shadow:
-    0 0 0 0.05px #f59e0b,
-    0 0 4px #f5b23d;
+  box-shadow: 0 0 0 0.05px #f59e0b, 0 0 4px #f5b23d;
 }
 
 .board .column:nth-child(3):hover {
   transition: all 0.4s ease;
   transform: scale(1.01);
-  box-shadow:
-    0 0 0 0.05px #22c55e,
-    0 0 4px #57ec8e;
+  box-shadow: 0 0 0 0.05px #22c55e, 0 0 4px #57ec8e;
 }
